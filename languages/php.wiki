@@ -12,3 +12,7 @@ completion: based on tag files
 
 syntax highlighting is known to be slow. By tweaking synmaxcol etc you can take
 some control.
+
+TIP: its trivial to catch exceptions, write them to a file and load that into
+quickfix. github.com/MarcWeber/php-essentials has one implemenation - you may
+want to write your own.
