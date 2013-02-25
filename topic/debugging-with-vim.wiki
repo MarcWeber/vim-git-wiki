@@ -1,0 +1,10 @@
+= debugging with vim =
+Due to async limitations debugging can be implemented using either
+client-server feature or polling (waiting for data to arrive) - which usually
+is implemented using python. A lot of details can be found in the documentation
+of the {{http://github.com/MarcWebervim-addon-async}} plugin.
+
+clewn is a special vim distribution having some gdb related patches.
+There are multiple multi purpose debuggers such as vdebug.
+
+Except that have a look at the notes found in the languages/* files.

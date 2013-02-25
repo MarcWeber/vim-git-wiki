@@ -1,0 +1,5 @@
+= vim & ur(web) =
+
+Plugins:
+  vim-addon-urweb (syntax, simple completion) depending on
+  vim-addon-async (run the compiler eventually even restarting the server)

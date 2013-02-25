@@ -1,0 +1,19 @@
+= vim and read print eval loops =
+
+repl is a shortcut for read print eval loop. Usually this means "run an
+interpreter in an interactive way". REPLs exist for many languages:
+  irb (ruby)
+  php -a (php)
+  scala
+
+and many more.
+
+vim-addon-async implements REPL completion for python and ruby (eventually scala).
+
+Conque Shell allows running any terminal apps (including shells), but you can't
+use vim editing keys
+
+https://github.com/troydm/shellasync.vim
+http://github.com/Shougo/vimproc
+
+There may be more implementations

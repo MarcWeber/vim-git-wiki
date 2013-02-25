@@ -1,0 +1,8 @@
+= vim & haskell =
+See also:
+[[../topics/tags]]
+
+
+{{http://projects.haskell.org/haskellmode-vim/}}
+vim-addon-haskell (run cabal using vim-addon-actions, has some more magic to
+add -X compiler flags by parsing compiler errors)

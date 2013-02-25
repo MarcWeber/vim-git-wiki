@@ -1,0 +1,12 @@
+= vim & ruby =
+
+Also see 
+[[../topics/syntax-checking]]
+[[../topics/repl]]
+
+debugging:
+  vim-addon-rdebug
+  vim-addon-ruby-debug-ide
+  vdebug
+  
+completion vim-ruby

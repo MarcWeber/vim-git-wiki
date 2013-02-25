@@ -1,0 +1,5 @@
+== vim & javascript ==
+
+Some people prefer syntactic suggar such as coffee script, you should know that it exist.
+
+nodejs debugging: vdebug

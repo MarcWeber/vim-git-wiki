@@ -1,0 +1,6 @@
+= vim & C C++ like =
+
+[[../plugins/youcompleteme]]
+[[../plugins/eclim]]
+
+and many more (TODO)

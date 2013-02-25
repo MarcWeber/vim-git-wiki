@@ -5,21 +5,39 @@ them too, because we are not blind and we know that we should pick the best
 tool for a job - which happens to be Vim very often whenever we edit text.
 
 = By topic: =
+
+VimL related:
 [[topic/vimrc]]
+[[topic/configuring-vim]]
 [[topic/vim plugin managment]]
+[[topic/designing-a-vim-plugin]]
+
+for programmers:
+[[topic/debugging-with-vim]]
+[[topic/syntax-checking]]
+[[topic/running-tools-or-compilers]]
+[[topic/repl]]
+
+general text editing:
 [[topic/text snippets]]
-[[topic/per-project-configuration]]
+[[topic/tags]]
 
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
 (like tagging, snippets) which are useful for many languages should be added as
 topic. Then they can be referenced.
 
-[[languages/viml]]
 [[languages/c-cpp-like]]
+[[languages/haxe]]
+[[languages/haskell]]
 [[languages/java]]
 [[languages/javascript]]
-[[languages/haxe]]
+[[languages/php]]
+[[languages/python]]
+[[languages/ruby]]
+[[languages/tcl]]
+[[languages/urweb]]
+[[languages/viml]]
 ...
 
 

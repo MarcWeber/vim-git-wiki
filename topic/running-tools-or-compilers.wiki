@@ -1,0 +1,23 @@
+= running tools or compilers =
+
+The well known standard way is something like this:
+{{{
+compiler java
+:set makeprg=javac
+:make %
+}}}
+
+great: you can cancel compilation by pressing ctrl-c. Bad: You see all lines
+scroll by (which may even be slow).
+
+There are a lot of additional plugins which can also run compilers.
+
+= vim-addon-actions =
+  Implements running compiler for many languages and let's you bind this to a
+  key or the buf write event
+
+= syntastic =
+nice for simple scripts, but runs the interpreter for some languages :(
+
+= more =
+on www.vim.org there are many more solutions

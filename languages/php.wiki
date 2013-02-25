@@ -1,0 +1,12 @@
+= vim & php =
+
+Also see 
+[[../topics/syntax-checking]]
+[[../topics/running-tools-or-compilers]]
+
+debugging: vdebug, vim-addon-xdebug
+
+completion: based on tag files
+
+syntax highlighting is known to be slow. By tweaking synmaxcol etc you can take
+some control.
