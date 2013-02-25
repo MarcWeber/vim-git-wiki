@@ -23,6 +23,8 @@ general text editing:
 [[topic/tags]]
 [[topic/opening-files]]
 
+[[topic/vim-keybinding-implementations]]
+
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
 (like tagging, snippets) which are useful for many languages should be added as

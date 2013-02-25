@@ -31,5 +31,5 @@ activate plugins at runtime: VAM
 supports dependencies: VAM
 plugin name completion and info: VAM
 
-Now it migh look that being able to install from git repositories only is a major disadvantage.
+Now it might look that being able to install from git repositories only is a major disadvantage.
 Its not because there is vim-scripts.org mirroring www.vim.org plugins in git repositories.

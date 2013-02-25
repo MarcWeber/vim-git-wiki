@@ -1,0 +1,10 @@
+= vim & java =
+
+[[../plugins/eclim]]
+[[../topics/tags]]
+
+On www.vim.org there is a viml only java parser. But AFAIK it is no longer
+developped. It may work well for simple Java projects.
+
+However for browsing proper IDES such as IDEA, Netbeans, Eclipse can be helpful, too.
+They even implement decompiling .jars on the fly and similar features

@@ -1,0 +1,11 @@
+= vim keybinding implementations ==
+
+IDEA, Netbeans (Java based IDEs) have plugins.
+For .net IDE there is a plugin.
+Eclipse (proprietary)
+Emacs (evil)
+
+web (http): http://gpl.internetconnection.net/vi/
+nvi (simple vi clone)
+
+This list is very likely to be incomplete

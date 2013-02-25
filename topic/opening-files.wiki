@@ -16,3 +16,5 @@ The_NERD_tree plugin is popular, because it has a tree view. However
 
 Command-T plugin (requires ruby, thus you may have little trouble setting it up)
 (TODO)
+
+also [../topics/tags] like features can be used.
