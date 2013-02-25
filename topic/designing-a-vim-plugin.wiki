@@ -1,0 +1,45 @@
+= designing a vim plugin =
+
+This is my (Marc Weber's) recommendation:
+
+plugin/*.vim files:
+Put the user interface there and code required to configure the plugin as well as code which is loaded always anyway
+
+autoload/*.vim files:
+Put code which is loaded sometimes only to keep startup time fast
+
+
+== configuration ==
+Since Vim 7 there are dictionaries, so we can use them. I personally like
+binding a global dictionary to a buffer local variable like this:
+
+{{{
+if !exists('g:your_plugin_name') | let g:your_plugin_name = {} | endif | let s:c = g:your_plugin_name
+let s:c.enable_feature_x = get(s:c, 'enable_feature_x', default_value)
+let s:c.command_x_lhs = '\foo'
+...
+
+exec 'noremap '.s:c.command_x_lhs.' :call dosomething()<cr>'
+}}}
+
+Its nice because the user can override any settings this way:
+
+{{{
+let g:your_plugin_name = {}
+let g:your_plugin_name.enable_feature_x = 1
+let g:your_plugin_name.command_x_lhs = '\bar'
+}}}
+
+and everything belonging to that plugin can be put into the dictionary which
+can be accessed from everywhere. (config, caches, etc)
+
+== completions ==
+Well - hot topic. Sometimes you may want to have multiple completion implementations at the same time.
+My personal recommendation is bind them all to different keys so that you always know exactly what your
+completing.
+{{https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt}}
+has some helper functions
+
+== plugin dependencies ==
+VAM (vim-addon-manager) introduced a addon-info.json file which let's you
+specify dependencies. Using VAM they'll be installed automatically.

@@ -1,0 +1,35 @@
+= plugin management =
+
+Traditionally plugins were mantained manually by extracting files into
+$HOME/.vim. Wrong about this approach is that its hard to maintain because its
+you having to keep track about which files belong to what plugin.
+:h plugin  tells you about this traditional way.
+
+The next advanced way is create a directory for each plugin like this:
+
+  ~/.vim/plugin-A/plugin/a.vim
+  ~/.vim/plugin-A/filetype/a.vim
+  ~/.vim/plugin-B/plugin/a.vim
+  ~/.vim/plugin-B/filetype/a.vim
+
+and add to your .vimrc:
+
+  set runtimepath+=~/.vim/plugin-A
+  set runtimepath+=~/.vim/plugin-B
+
+This tells Vim that it should look for plugin files to source at startup in
+additional directories.
+
+This is tedious, which is why Pathogen, Vundle and VAM automate this.
+
+Feature matrix:
+
+manipulate runtimepath: VAM, Pathogen, Vundle
+install from git repositories: VAM, Vundle
+install other sources: VAM
+activate plugins at runtime: VAM
+supports dependencies: VAM
+plugin name completion and info: VAM
+
+Now it migh look that being able to install from git repositories only is a major disadvantage.
+Its not because there is vim-scripts.org mirroring www.vim.org plugins in git repositories.

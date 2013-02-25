@@ -1,0 +1,16 @@
+= vimrc =
+Your personal vim config.
+Samples files:
+{{http://vim.wikia.com/wiki/Example_vimrc}}
+{{https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim}}
+
+
+Very notable are mappings are:
+{{{
+noremap \ft :exec 'e ~/.vim/ftplugin/'.&filetype.'_you.vim'<cr>
+}}}
+
+I can't repeat it often enough how helpful it can be to take notes where you
+find them again, eg in a such a ftplugin/javascript.vim file. Adding a line
+containing only "finish" let's you take arbitrary notes below that so that you
+can find them fast again.

@@ -1,0 +1,18 @@
+= configuring vim =
+Creating a vimrc is the first step  [[../topic/vimrc]].
+Writing ftplugin/*.vim files is the next (configure vim for some filetypes only).
+
+If you need more control you can try auto commands like this:
+
+{{{
+augroup YOUR_PROJECT
+  autocmd BufRead,BufNewFile PATH_TO_YOUR_PROJECT/**/*.c	set sw=2
+augroup end
+}}}
+
+or use local-vimrc plugins such as {{github.com/MarcWeber/vim-addon-local-vimrc}}
+
+Also modeline can be used (the :vim line you'll find at every :help page) which looks like this:
+{{{
+vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
+}}}

@@ -1,0 +1,28 @@
+= Introduction =
+This wiki is a manually index telling you about which tools & workflows will
+get your job done using Vim. If there are tools outside of Vim, its ok to list
+them too, because we are not blind and we know that we should pick the best
+tool for a job - which happens to be Vim very often whenever we edit text.
+
+= By topic: =
+[[topic/vimrc]]
+[[topic/vim plugin managment]]
+[[topic/text snippets]]
+[[topic/per-project-configuration]]
+
+= By language: =
+Here you'll find short introductions about which tools are most valuable. Tools
+(like tagging, snippets) which are useful for many languages should be added as
+topic. Then they can be referenced.
+
+[[languages/viml]]
+[[languages/c-cpp-like]]
+[[languages/java]]
+[[languages/javascript]]
+[[languages/haxe]]
+...
+
+
+= maintainers =
+This wiki will soon be too big for one person to maintain. Thus the following
+volunteers agreed on maintaining some files only:

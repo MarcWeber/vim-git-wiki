@@ -1,0 +1,20 @@
+== viml ==
+The vim scripting language.
+Short summaray about the language:
+
+  - supports lazily loading code (fast startup)
+  - simple to understand
+  - not too fast
+  - some language features do not exist (true objects with inheritance etc)
+
+Most plugins are written in this language
+
+See also [[../topic/designing-a-vim-plugin]]
+
+useful plugins:
+
+== vim-dev-plugin: ==
+provides completion and some hints about how to debug viml code
+as well as VimLGotoLastError helper command
+== autoreload: ==
+must have for all plugin developpers: Reloads .vim files automatically
