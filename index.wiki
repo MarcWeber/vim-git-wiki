@@ -21,6 +21,7 @@ for programmers:
 general text editing:
 [[topic/text snippets]]
 [[topic/tags]]
+[[topic/opening-files]]
 
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
