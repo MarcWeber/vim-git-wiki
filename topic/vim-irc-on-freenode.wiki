@@ -1,0 +1,6 @@
+== vim irc chat room, learning and getting help =
+irc: irc.freenode.net #vim {{http://webchat.freenode.net/}}
+enter a nickname, as channels enter #vim.
+You can also install one of the various irc clients out there.
+
+Tip: Lookup about how to enable logging so that all conversations are stored to disk automatically

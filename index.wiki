@@ -4,6 +4,15 @@ get your job done using Vim. If there are tools outside of Vim, its ok to list
 them too, because we are not blind and we know that we should pick the best
 tool for a job - which happens to be Vim very often whenever we edit text.
 
+= how to get help about vim =
+*
+  {{{
+  :help (use vim's builtin help
+  }}}
+* try google
+* [[topic/vim-irc-on-freenode]]
+* mailingilst {{http://www.vim.org/community.php}}
+
 = By topic: =
 
 VimL related:
@@ -43,6 +52,11 @@ topic. Then they can be referenced.
 [[languages/viml]]
 ...
 
+
+= additional vim related sites (random order) =
+{{http://vim.wikia.com}}
+{{http://glts.github.com/VimPluginMatrix/}}
+{{vam.mawercer.de}}
 
 = maintainers =
 This wiki will soon be too big for one person to maintain. Thus the following
