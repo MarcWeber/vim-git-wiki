@@ -1,0 +1,18 @@
+= github =
+Github is a proprietary project hosting git repositories.
+
+Also see 
+[[topic/version-control-systems]]
+[[topic/git]]
+
+It is still friendly to open source people, because hosting for public
+repositories is free. All you need is an account, then you can pick a project,
+hack on it, and provide patches via pull requests. Once you get used to it its
+pretty simple which is why the source of this wiki is hosted that way, too.
+Most people know git reasonable well.
+
+For this and similar reasons its very popular among open source developers.
+There are alternatives such as bitbucket and gitorious etc.
+
+The github page of this wiki currently is {{github.com/MarcWeber/vim-git-wiki}}
+which might change in the future.

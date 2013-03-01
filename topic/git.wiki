@@ -1,0 +1,11 @@
+= git =
+git is a "stupid" content tracker by design. Which means it almost only tracks
+content, and has some additional support for merging braches built on top of
+that. Originally it has been written by linux kernel devs to keep track of the
+huge kernel source changes - which is why they cared much about speed.
+
+git soon became very popular by devs because it usually gets its job done only
+having minor issues.
+
+Also see [[../topic/version-control-systems]]
+Also see [[../topic/github]]

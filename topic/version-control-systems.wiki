@@ -1,0 +1,26 @@
+= version control systems =
+
+Also see [[../topic/github]].
+
+version control systems serve these purposes:
+- Allow to understand the history of a project
+- allow many developers to work at code at the same time
+
+== centralized version control systems ==
+Examples: CVS, SVN
+
+Centralized version control systems tend to require a server which holds all history
+drawbacks:
+- single point of failure
+- you depend on internet access
+- you must have an account to be able to publish your changes
+
+== distributed version control systems ==
+fossil, git, mercurial, bazaar, monotone, (and probably some more, see Wikipedia)
+
+typical workflow
+1) get a copy of the history (which often is called cloning)
+2) hack and save (commit/record/..) your changes
+3) publish on your own location and tell maintainers about your changes, so
+   that they can pick them up
+
