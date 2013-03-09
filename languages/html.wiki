@@ -1,5 +1,6 @@
 See [[../topic/syntax-checking]]
 See [[../topic/autoclosing]]
+See [[../topics/reloading]]
 
 Interesting plugins:
 ZenCoding and sparkup: They both implement short ways to type html such as
@@ -12,6 +13,6 @@ which you can then expand to HTML
 == interesting filetype specific commands and mappings ==
     command! -buffer FormatHTML %!xmllint --format --html %
 
-
-== alternatives ==
+== alternatives & additional tools ==
 Don't type html, use a DSL such as haml-lang.org or similar
+
