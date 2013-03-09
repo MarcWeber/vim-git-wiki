@@ -13,6 +13,9 @@ tool for a job - which happens to be Vim very often whenever we edit text.
 * [[topic/vim-irc-on-freenode]]
 * mailingilst {{http://www.vim.org/community.php}}
 
+= how to contribute to this wiki =
+[[topic/github]]
+
 = By topic: =
 
 VimL related:

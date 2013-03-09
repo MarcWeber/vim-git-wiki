@@ -2,7 +2,7 @@
 
 Traditionally plugins were mantained manually by extracting files into
 $HOME/.vim. Wrong about this approach is that its hard to maintain because its
-you having to keep track about which files belong to what plugin.
+you having to keep track about which files belong to each plugin.
 :h plugin  tells you about this traditional way.
 
 The next advanced way is create a directory for each plugin like this:
@@ -18,7 +18,9 @@ and add to your .vimrc:
   set runtimepath+=~/.vim/plugin-B
 
 This tells Vim that it should look for plugin files to source at startup in
-additional directories.
+additional directories. What's wrong about this?
+Nothing except for example vim does not source plugin-A/plugin/after/*.vim
+files.
 
 This is tedious, which is why Pathogen, Vundle and VAM automate this.
 
@@ -30,6 +32,7 @@ install other sources: VAM
 activate plugins at runtime: VAM
 supports dependencies: VAM
 plugin name completion and info: VAM
+bootstrap from .vimrc: VAM (you can write this code for the other managers easily)
 
 Now it might look that being able to install from git repositories only is a major disadvantage.
 Its not because there is vim-scripts.org mirroring www.vim.org plugins in git repositories.
