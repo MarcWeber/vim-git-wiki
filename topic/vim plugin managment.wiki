@@ -29,19 +29,47 @@ Vundle was also written to checkout plugin from git repositories
 
 Feature matrix:
 
-manipulate runtimepath: VAM, Pathogen, Vundle
-install from git repositories: VAM, Vundle
-install other sources: VAM
-activate plugins at runtime: VAM
-supports dependencies: VAM
-plugin name completion and info: VAM
-bootstrap from .vimrc: VAM (you can write this code for the other managers easily)
-updating plugins: VAM (what about the others?)
+    manipulate runtimepath: VAM, Pathogen, Vundle
+    install from git repositories: VAM, Vundle
+    install other sources: VAM
+    activate plugins at runtime: VAM
+    plugin name completion and info: VAM
+    bootstrap from .vimrc: VAM (you can write this code for the other managers easily)
+    updating plugins: VAM (what about the others?)
+    install progress bar: Vundle (is it imporant?)
 
+== vim-scripts.org ==
 Now it might look that being able to install from git repositories only is a major disadvantage.
-Its not because there is vim-scripts.org mirroring www.vim.org plugins in git repositories.
+Its not because there is {{{vim-scripts.org}}} mirroring {{{www.vim.org}}} plugins in git repositories.
 
-What about git submodules? They are used to embed git repositories into
-existing git repositories. Thus style is used to reproduce the exact behaviour on
-a new machine. It can be used with any plugin manager - as long as plugins are
+== plugin dependencies ==
+VAM right now is the only plugin manager which introduces a addon-info.json
+file (which could be used by other tools) which allows to specify dependencies
+by name (without version constraints). Those plugins are installed and
+activated automatically.
+
+== git submodules ==
+They are used to embed git repositories into existing git repositories. Thus
+style is used to reproduce the exact behaviour on a new machine. It can be used
+with any plugin manager - as long as plugins are
 checked out by git.
+
+
+== existing vim plugin collections ==
+They often hint about important plugins - however Marc Weber thinks that they
+fail it proper plugin management (cause he believes in VAM doing it the right way)
+
+See janus, vimpyre and some others
+
+== additional solutions and in some way related projects ==
+{{{https://bitbucket.org/howlanderson/vimapt}}} (I don't know much about it yet)
+
+vimpyre: A python package managing vim scripts somehow. Its using pathogen to
+manage loading of the scripts: https://github.com/pct/vimpyre
+
+{{{https://github.com/c9s/Vimana}}}
+
+another list: {{{http://vim-scripts.org/tools.html}}}
+
+There is another project called vim-addon-manager for debian, see
+{{{http://packages.debian.org/sid/vim-addon-manager}}}
