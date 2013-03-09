@@ -27,6 +27,7 @@ VimL related:
 for programmers:
 [[topic/debugging-with-vim]]
 [[topic/syntax-checking]]
+[[topic/autoclosing]]
 [[topic/running-tools-or-compilers]]
 [[topic/repl]]
 
@@ -53,6 +54,7 @@ topic. Then they can be referenced.
 [[languages/tcl]]
 [[languages/urweb]]
 [[languages/viml]]
+[[languages/html]]
 ...
 
 

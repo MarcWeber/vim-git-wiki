@@ -1,0 +1,17 @@
+See [[../topic/syntax-checking]]
+See [[../topic/autoclosing]]
+
+Interesting plugins:
+ZenCoding and sparkup: They both implement short ways to type html such as
+
+    html>body>table>tr>3*td
+
+which you can then expand to HTML
+
+
+== interesting filetype specific commands and mappings ==
+    command! -buffer FormatHTML %!xmllint --format --html %
+
+
+== alternatives ==
+Don't type html, use a DSL such as haml-lang.org or similar
