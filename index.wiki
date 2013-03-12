@@ -15,6 +15,9 @@ tool for a job - which happens to be Vim very often whenever we edit text.
 
 = how to contribute to this wiki =
 [[topic/github]]
+[[topic/vimwiki-vs-mediawiki]]
+If installing git is too much pain you can also register at github and file a bug report describing
+what you'd change on this wiki: {{{http://github.com/MarcWeber/vim-git-wiki/issues}}}
 
 = By topic: =
 

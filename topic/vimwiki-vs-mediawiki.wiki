@@ -1,0 +1,27 @@
+= vimwiki-vs-mediawiki =
+
+== WIKI (such as a drupal wiki, mediawiki) online editable page: ==
++ you can edit in place - the page you're reading by clicking on _edit_
+  link
++ faster preview
+- drupal vulnerabilities are likely to exist, see
+  http://drupal.org/security
+? you can't read it offline (well probably you can render it as PDF or
+  HTML) - but then you can't edit.
+? what about spam ?
+? requires additional logins - or hook into the vim.sf.net's databse
+? there is a way to edit pages with vim using APIs (which are slower,
+  and tools such as grep are useless ?)
+? how to reset spamming ?
+
+== vimwiki like: ==
++ no spam
++ you can use vim for edting and reading
++ you can use grep
++ its fast (git pull, hack, push)
++ its distributed
++ branch support
++ under control (you can't hack html files, can you?)
++ no lock in, if you want to switch to a full blown wiki later, it
+  should be easy to convert content.
++ editing many files is painless and fast
