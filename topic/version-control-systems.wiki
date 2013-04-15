@@ -24,3 +24,28 @@ typical workflow
 3) publish on your own location and tell maintainers about your changes, so
    that they can pick them up
 
+
+= plugins which are about version control systems =
+
+Some plugins can work with multiple version control systems, they'll be listed
+multiple times
+
+== GIT ==
+fugitive:
+vim-addon-git:  {{{https://github.com/MarcWeber/vim-addon-git}}}
+
+== MERCURIAL ==
+
+== SVN ==
+
+== BAZAAR ==
+
+== FOSSIL ==
+
+== OTHER ==
+vim-signify: {{{https://github.com/mhinz/vim-signify}}}
+Shows new/dropped lines compared to VCS version
+
+https://github.com/airblade/vim-gitgutter (similar tool)
+
+There are much more: TODO: compare them.

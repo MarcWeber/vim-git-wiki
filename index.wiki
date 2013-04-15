@@ -20,6 +20,7 @@ If installing git is too much pain you can also register at github and file a bu
 what you'd change on this wiki: {{{http://github.com/MarcWeber/vim-git-wiki/issues}}}
 
 = By topic: =
+[[topic/saying-thanks]]
 
 VimL related:
 [[topic/vimrc]]

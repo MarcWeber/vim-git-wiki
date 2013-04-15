@@ -43,7 +43,7 @@ Now it might look that being able to install from git repositories only is a maj
 Its not because there is {{{vim-scripts.org}}} mirroring {{{www.vim.org}}} plugins in git repositories.
 
 == plugin dependencies ==
-VAM right now is the only plugin manager which introduces a addon-info.json
+Right now VAM is the only plugin manager which introduces a addon-info.json
 file (which could be used by other tools) which allows to specify dependencies
 by name (without version constraints). Those plugins are installed and
 activated automatically.

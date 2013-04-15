@@ -13,6 +13,7 @@
 ? there is a way to edit pages with vim using APIs (which are slower,
   and tools such as grep are useless ?)
 ? how to reset spamming ?
++ Eventually its easier to setup redirects 301?
 
 == vimwiki like: ==
 + no spam
@@ -25,3 +26,4 @@
 + no lock in, if you want to switch to a full blown wiki later, it
   should be easy to convert content.
 + editing many files is painless and fast
+? what about redirects

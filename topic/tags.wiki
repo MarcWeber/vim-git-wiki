@@ -13,3 +13,5 @@ and you can use :tjump /foo<c-d> to list all names containing foo and the like.
 Some languages such as PHP, nix, urweb require tags files for completion.
 
 some languages (such as Haskell) ship their own tagging various tagging tools
+
+:set tags=tags; will make Vim search for tag files in the current dir and all parent directories, see :h file-searching
