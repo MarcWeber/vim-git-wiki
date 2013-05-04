@@ -1,4 +1,6 @@
 = Introduction =
+Short intro about goals / status: See README.txt file
+
 This wiki is a manually index telling you about which tools & workflows will
 get your job done using Vim. If there are tools outside of Vim, its ok to list
 them too, because we are not blind and we know that we should pick the best
@@ -14,6 +16,7 @@ tool for a job - which happens to be Vim very often whenever we edit text.
 * mailingilst {{http://www.vim.org/community.php}}
 
 = how to contribute to this wiki =
+[[topic/contributing-to-this-wiki]]
 [[topic/github]]
 [[topic/vimwiki-vs-mediawiki]]
 If installing git is too much pain you can also register at github and file a bug report describing

@@ -11,6 +11,12 @@ Most plugins are written in this language
 
 See also [[../topic/designing-a-vim-plugin]]
 
+== how to learn viml ==
+{{{
+:h eval.txt
+:h usr_40.txt up to usr_45.txt
+}}}
+
 useful plugins:
 
 == vim-dev-plugin: ==

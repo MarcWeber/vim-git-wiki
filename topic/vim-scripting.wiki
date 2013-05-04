@@ -1,0 +1,60 @@
+= vim scripting (viml & others) =
+
+vim comes with its own scripting language called viml, however Vim can also be
+compiled with support for additional popular scripting language. The level of
+support differs.
+
+Keyboard mappings always have to be done using viml's syntax. A VimL action then
+can call python/ruby/perl/... code. So at the moment you have to learn some
+VimL in any case.
+If you want to patch Vim improving this that would be great :)
+
+= how to learn viml =
+See [[../languages/viml]]
+See [[../topic/designing-a-vim-plugin]]
+
+= How to call other interpreters =
+
+Vim often supports here documents like
+
+{{{
+python << EOF
+print "python running within Vim"
+EOF
+}}}
+
+However you may want to prefer sourcing a .py file instead because you get full
+python support [../languages/python.wiki].
+
+How to get path of current file? This way:
+{{{
+  " must be top-level, does not work when using <sfile> inside a function
+  let s:plugin_top_level_path = expand("<sfile>:h:h"
+  " then you can lead file relative to s:plugin_top_level_path
+}}}
+
+= threading support =
+
+Vim does not support "threading" - thus implementing debugger integration,
+chats and similar features is always awkward. Some ways still exist, most are
+listed in {{{github.com/MarcWeber/vim-addon-async}}}'s Readme file.
+(TODO: move the important information here). Briefly
+  - client-server option
+  - idle event option
+  - if_scheme option (which has much more locking in the C code, so it might
+    even have kind of threading support)
+
+Yes - you can use python threads, but you should not call back into vim,
+because vim is not thread safe.
+
+
+== notes about python ==
+
+quoting strings for vim.eval should be done this way
+{{{
+  def vimQuote(s):
+    return '"%s"' % s.replace("\\","\\\\").replace('"', '\\"').replace("\n", "\\n")
+}}}
+python's to string feature comes only close. Also to JSON often works good enough
+
+== notes about xx ==

@@ -2,6 +2,16 @@
 
 This is my (Marc Weber's) recommendation:
 
+== Why are you writing the plugin ? ==
+Ask on the irc channel, search on github and vim.sf.net/search.php whether a similar plugin already exists.
+Thus make yourself aware about why you want to write it - and document this in the README file or doc/*.txt
+files, so that others can decide on using your plugin fast.
+
+== python/ruby/.. support ==
+See [[../topic/vim-scripting]]
+
+== files belonging to a Vim plugin ==
+
 plugin/*.vim files:
 Put the user interface there and code required to configure the plugin as well as code which is loaded always anyway
 
