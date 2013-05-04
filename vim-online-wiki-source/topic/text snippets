@@ -34,8 +34,7 @@ can-read-snippets-files: snipmate is/was very popular. Comprehensive snippet col
 
 == snipmate: ==
   Features: automatic-reload, runtimepath-support, can-read-snippets-files
-  adds some features, therefore depends on additional libraries, but the engine
-  still has minor bugs
+  adds some features, therefore depends on additional libraries
 
 == UltiSnips ==
   Features: manual-reload
