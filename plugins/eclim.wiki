@@ -1,3 +1,0 @@
-= eclim =
-eclim (headless Eclipse Vim bridge) supporting Java, C/C++, PHP and maybe more
-languages supported by Eclipse.
