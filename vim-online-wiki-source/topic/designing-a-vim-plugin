@@ -8,7 +8,7 @@ Thus make yourself aware about why you want to write it - and document this in t
 files, so that others can decide on using your plugin fast.
 
 == python/ruby/.. support ==
-See [[../topic/vim-scripting]]
+See [[topic/vim-scripting]]
 
 == files belonging to a Vim plugin ==
 

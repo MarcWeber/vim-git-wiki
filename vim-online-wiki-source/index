@@ -1,26 +1,22 @@
 = Introduction =
-Short intro about goals / status: See README.txt file
+This wiki should become the greatest resource helping you to find the most
+productive workflows fast.
 
-This wiki is a manually index telling you about which tools & workflows will
-get your job done using Vim. If there are tools outside of Vim, its ok to list
-them too, because we are not blind and we know that we should pick the best
-tool for a job - which happens to be Vim very often whenever we edit text.
+See [[topic/this-wiki-design-goals]]
+
+contributing:
+[[topic/contributing-to-this-wiki]]
+[[topic/github]]
 
 = how to get help about vim =
-*
-  {{{
-  :help (use vim's builtin help
-  }}}
+* :help (use vim's builtin help
 * try google
 * [[topic/vim-irc-on-freenode]]
 * mailingilst {{http://www.vim.org/community.php}}
 
-= how to contribute to this wiki =
-[[topic/contributing-to-this-wiki]]
-[[topic/github]]
-[[topic/vimwiki-vs-mediawiki]]
+
 If installing git is too much pain you can also register at github and file a bug report describing
-what you'd change on this wiki: {{{http://github.com/MarcWeber/vim-git-wiki/issues}}}
+what you'd change on this wiki: [[http://github.com/MarcWeber/vim-git-wiki/issues|bug tracker]]
 
 = By topic: =
 [[topic/saying-thanks]]
@@ -71,5 +67,9 @@ topic. Then they can be referenced.
 {{vam.mawercer.de}}
 
 = maintainers =
-This wiki will soon be too big for one person to maintain. Thus the following
-volunteers agreed on maintaining some files only:
+This wiki will soon be too big for one person to maintain.
+
+Some files will be maintained by individuals, others will be patched by the
+community as needed.
+
+

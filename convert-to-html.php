@@ -5,17 +5,16 @@
 
 { // config
 
-  $target_directory = 'wiki'; // no spaces!
+  $target_directory = '../wiki'; // no spaces!
 
   $pages = array();
   $reference_pages = array();
 
+  chdir('vim-online-wiki-source');
   $wiki_files = 
     array_merge(
-      array('index'),
-      glob('topic/*'),
-      glob('languages/*'),
-      glob('plugins/*')
+      glob('*'),
+      glob('*/*')
     );
 
   // these functions defines the design:
@@ -39,9 +38,6 @@
       },
       'code_block' => function($text){
         return "<pre class=\"code\">".$text."</pre>";
-      },
-      'headline' =>  function($text, $level = 1){
-        return sprintf("<h%d>%s</h%d>", $level, quote($text), $level);
       },
       'wikilink' =>  function($wiki_path, $wiki_file_rel_path){
         $parts = pathinfo($wiki_file_rel_path);
@@ -110,7 +106,7 @@
       if (preg_match('/^(=+) (.*)$/', $line, $m)){
         $p_end();
         $l = strlen($m[1]);
-        $a(sprintf("\n<h%d>%s</h%d>", $l, quote($m[2]), $l));
+        $a(sprintf("\n<h%d>%s</h%d>", $l, quote(preg_replace('/=*$/', '', $m[2])), $l));
       } else if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
         if ($state == "in_bullet_list" && preg_match('/^\*(.*)/', $line, $m)){
           $a("<li>".$m[1]);
@@ -203,7 +199,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
   # KISS: count /
   $path_depth = strlen(preg_replace('/[^\/]*/', '', $wiki_file));
 
-  $html_file = $wiki_file.'.html';
+  $html_file = $target_directory.'/'.$wiki_file.'.html';
 
   $patterns = array(
     # code blocks:
@@ -229,8 +225,17 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
                 return $to_html['code_block']($m[1]);
                 break;
               case '[[':
-                $reference_pages[] = $m[1];
-                return $to_html['wikilink']($m[1], rel_path('./'.$m[1], dirname($wiki_file)));
+                if (preg_match('/^([^:]+:\/\/[^|]*)(|.*)?$/', $m[1], $m2)){
+                  // external url
+                  $href = $m2[1];
+                  $alt = '';
+                  $label = empty($m2[2]) ? $href : substr($m2[2], 1);
+                  return sprintf('<a href="%s" alt="%s">%s</a>', $href, $alt, $label);
+                } else {
+                  // internal url
+                  $reference_pages[] = $m[1];
+                  return $to_html['wikilink']($m[1], rel_path('./'.$m[1], dirname($wiki_file)));
+                }
                 break;
               default:
                 throw new Exception('bad replacement: '.var_export($m, true));

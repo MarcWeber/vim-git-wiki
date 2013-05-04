@@ -1,0 +1,37 @@
+= design goals of this wiki =
+
+* provide high quality content
+* keep it simple
+* editable by Vim
+
+High quality will be ensured by reviews and collaboration.
+* [[https://github.com/MarcWeber/vim-git-wiki/pulls|pull requests to be reviewed]]
+* [[topic/contributing-to-this-wiki]]
+* [[topic/github]]
+
+We keep things simple by using a plain text files, a simple convert-to-html.php
+PHP script.
+
+The wiki is editable by Vim: Its text you can checkout using git or download as
+zip. gf (jumping to a file) works, links are always absolute, so that you can
+use Vim's file completion <c-x><c-f>.
+
+== We are aware of alternatives ==
+
+Of course there are alternatives:
+* markdown like syntax
+* vim wiki
+* online editable wiki [[topic/vimwiki-vs-mediawiki]]
+* ..
+
+If you think a different solution would serve the community much more, tell by
+[[https://github.com/MarcWeber/vim-git-wiki/issues/1||commenting]]
+
+== We Marc Weber initially didn't choose an alternative solution
+Beacuse 
+* html files cannot be hacked 
+* he wanted to be able to edit the wiki offline
+* he wanted to use Vim for editing, including grep etc (no compromises)
+* he wants to make it easy to review changes - because nobody today knows
+  everything - vim does not need yet another way to do the same - Vim community
+  needs a way to share the best workflows, tools, habits, ...

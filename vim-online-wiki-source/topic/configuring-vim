@@ -1,5 +1,5 @@
 = configuring vim =
-Creating a vimrc is the first step  [[../topic/vimrc]].
+Creating a vimrc is the first step  [[topic/vimrc]].
 Writing ftplugin/*.vim files is the next (configure vim for some filetypes only).
 
 If you need more control you can try auto commands like this:

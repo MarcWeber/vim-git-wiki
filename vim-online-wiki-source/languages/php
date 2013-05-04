@@ -1,9 +1,9 @@
 = vim & php =
 
 Also see 
-[[../topics/syntax-checking]]
-[[../topics/running-tools-or-compilers]]
-[[../plugins/eclim]]
+[[topic/syntax-checking]]
+[[topic/running-tools-or-compilers]]
+[[plugins/eclim]]
 
 
 debugging: vdebug, vim-addon-xdebug

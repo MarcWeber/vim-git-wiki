@@ -1,8 +1,8 @@
 = vim & ruby =
 
 Also see 
-[[../topics/syntax-checking]]
-[[../topics/repl]]
+[[topic/syntax-checking]]
+[[topic/repl]]
 
 debugging:
   vim-addon-rdebug

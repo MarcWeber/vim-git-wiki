@@ -1,6 +1,6 @@
-See [[../topic/syntax-checking]]
-See [[../topic/autoclosing]]
-See [[../topics/reloading]]
+See [[topic/syntax-checking]]
+See [[topic/autoclosing]]
+See [[topic/reloading]]
 
 Interesting plugins:
 ZenCoding and sparkup: They both implement short ways to type html such as

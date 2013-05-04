@@ -9,7 +9,7 @@ Short summaray about the language:
 
 Most plugins are written in this language
 
-See also [[../topic/designing-a-vim-plugin]]
+See also [[topic/designing-a-vim-plugin]]
 
 == how to learn viml ==
 {{{

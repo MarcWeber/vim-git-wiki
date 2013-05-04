@@ -1,7 +1,7 @@
 = vim & java =
 
-[[../plugins/eclim]]
-[[../topics/tags]]
+[[plugins/eclim]]
+[[topic/tags]]
 
 On www.vim.org there is a viml only java parser. But AFAIK it is no longer
 developped. It may work well for simple Java projects.

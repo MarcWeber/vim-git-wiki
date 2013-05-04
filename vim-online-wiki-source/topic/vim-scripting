@@ -10,8 +10,8 @@ VimL in any case.
 If you want to patch Vim improving this that would be great :)
 
 = how to learn viml =
-See [[../languages/viml]]
-See [[../topic/designing-a-vim-plugin]]
+See [[languages/viml]]
+See [[topic/designing-a-vim-plugin]]
 
 = How to call other interpreters =
 
@@ -24,7 +24,7 @@ EOF
 }}}
 
 However you may want to prefer sourcing a .py file instead because you get full
-python support [../languages/python.wiki].
+python support [languages/python.wiki].
 
 How to get path of current file? This way:
 {{{

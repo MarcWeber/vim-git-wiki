@@ -1,6 +1,6 @@
 == languages, for which some kind of automatic relading is supported in some way ==
-[[../languages/viml]]
-[[../languages/urweb]]
+[[languages/viml]]
+[[languages/urweb]]
 
 == HTML / CSS / SASS ==
 There is autoreload, which can be used together with ruby's guard.
