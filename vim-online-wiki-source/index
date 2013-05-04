@@ -1,18 +1,18 @@
 = Introduction =
-This wiki should become the greatest resource helping you to find the most
-productive workflows fast.
+This wiki should become the greatest resource about Vim by telling you about
+most useful plugins, workflows and settings
 
 See [[topic/this-wiki-design-goals]]
 
 contributing:
-[[topic/contributing-to-this-wiki]]
-[[topic/github]]
+* [[topic/contributing-to-this-wiki]]
+* [[topic/github]]
 
 = how to get help about vim =
 * :help (use vim's builtin help
 * try google
 * [[topic/vim-irc-on-freenode]]
-* mailingilst {{http://www.vim.org/community.php}}
+* [[http://www.vim.org/community.php|mailinglist]]
 
 
 If installing git is too much pain you can also register at github and file a bug report describing
@@ -22,49 +22,49 @@ what you'd change on this wiki: [[http://github.com/MarcWeber/vim-git-wiki/issue
 [[topic/saying-thanks]]
 
 VimL related:
-[[topic/vimrc]]
-[[topic/configuring-vim]]
-[[topic/vim plugin managment]]
-[[topic/designing-a-vim-plugin]]
+* [[topic/vimrc]]
+* [[topic/configuring-vim]]
+* [[topic/vim plugin managment]]
+* [[topic/designing-a-vim-plugin]]
 
 for programmers:
-[[topic/debugging-with-vim]]
-[[topic/syntax-checking]]
-[[topic/autoclosing]]
-[[topic/running-tools-or-compilers]]
-[[topic/repl]]
+* [[topic/debugging-with-vim]]
+* [[topic/syntax-checking]]
+* [[topic/autoclosing]]
+* [[topic/running-tools-or-compilers]]
+* [[topic/repl]]
 
 general text editing:
-[[topic/text snippets]]
-[[topic/tags]]
-[[topic/opening-files]]
+* [[topic/text snippets]]
+* [[topic/tags]]
+* [[topic/opening-files]]
 
-[[topic/vim-keybinding-implementations]]
+* [[topic/vim-keybinding-implementations]]
 
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
 (like tagging, snippets) which are useful for many languages should be added as
 topic. Then they can be referenced.
 
-[[languages/c-cpp-like]]
-[[languages/haxe]]
-[[languages/haskell]]
-[[languages/java]]
-[[languages/javascript]]
-[[languages/php]]
-[[languages/python]]
-[[languages/ruby]]
-[[languages/tcl]]
-[[languages/urweb]]
-[[languages/viml]]
-[[languages/html]]
+* [[languages/c-cpp-like]]
+* [[languages/haxe]]
+* [[languages/haskell]]
+* [[languages/java]]
+* [[languages/javascript]]
+* [[languages/php]]
+* [[languages/python]]
+* [[languages/ruby]]
+* [[languages/tcl]]
+* [[languages/urweb]]
+* [[languages/viml]]
+* [[languages/html]]
 ...
 
 
 = additional vim related sites (random order) =
-{{http://vim.wikia.com}}
-{{http://glts.github.com/VimPluginMatrix/}}
-{{vam.mawercer.de}}
+* [[http://vim.wikia.com|vim wikia wiki]]
+* [[http://glts.github.com/VimPluginMatrix/|VimPluginMatrix]]
+* [[http://vam.mawercer.de|vam.mawercer.de]]
 
 = maintainers =
 This wiki will soon be too big for one person to maintain.

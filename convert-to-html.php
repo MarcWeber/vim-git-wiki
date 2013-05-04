@@ -203,7 +203,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
 
   $patterns = array(
     # code blocks:
-    '^(\{\{\{)((.|[\n])*)\}\}\}$',
+    '^(\{\{\{)((.|[\n])*?)\}\}\}$',
 
     # links
     '(\[\[)([^\]]*)\]\]',

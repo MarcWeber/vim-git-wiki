@@ -37,7 +37,7 @@ How to get path of current file? This way:
 
 Vim does not support "threading" - thus implementing debugger integration,
 chats and similar features is always awkward. Some ways still exist, most are
-listed in {{{github.com/MarcWeber/vim-addon-async}}}'s Readme file.
+listed in [[github.com/MarcWeber/vim-addon-async|vim-addon-async]]'s Readme file.
 (TODO: move the important information here). Briefly
   - client-server option
   - idle event option

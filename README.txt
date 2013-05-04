@@ -1,8 +1,9 @@
 vim-git-wiki
 ============
 
-contribute: See topic/contributing-to-this-wiki.wiki
-feedback: See topic/contributing-to-this-wiki.wiki -> submitting bugs
+design-goals: See vim-online-wiki-source/topic/this-wiki-design-goals
+contribute:   See vim-online-wiki-source/topic/contributing-to-this-wiki.wiki
+feedback:     See vim-online-wiki-source/topic/contributing-to-this-wiki.wiki -> submitting bugs
 
 purpose: create a manually mantained index about which tools exist to solve
 what purpose. Be as dynamic and vibrant as the world and community is: manage
@@ -11,8 +12,6 @@ usually works pretty well).
 
 status/goal: I want to make this all visible on vim.sf.net to help community be
 most productive fastest - which is what Vim is about.
-
-
 
 Assign maintainers which are responsible for certain kinds of content, so that
 work is not too much for any individual

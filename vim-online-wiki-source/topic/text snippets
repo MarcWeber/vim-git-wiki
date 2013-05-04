@@ -22,7 +22,7 @@ manual-reload: you have to reload snippet files
 automatic-reload: Its enough to write a snippet file, it'll be reloaded automatically
 runtimepath-support: Pick snippets by looking at &runtimepath
 space-abstraction: Some projects require for(a; b; c) others require for ( a; b; c; )
-can-read-snippets-files: snipmate is/was very popular. Comprehensive snippet collection can be found at {{http://github.com/honza/snipmate-snippets}}
+can-read-snippets-files: snipmate is/was very popular. Comprehensive snippet collection can be found at [[http://github.com/honza/vim-snippets|vim-snippets]]
 
 == XPTemplate: ==
   Features: manual-reload, space-abstraction

@@ -31,8 +31,8 @@ Some plugins can work with multiple version control systems, they'll be listed
 multiple times
 
 == GIT ==
-fugitive:
-vim-addon-git:  {{{https://github.com/MarcWeber/vim-addon-git}}}
+fugitive: [[git://github.com/tpope/vim-fugitive||vim-fugitive]]
+vim-addon-git:  [[https://github.com/MarcWeber/vim-addon-git|vim-addon-git]]
 
 == MERCURIAL ==
 

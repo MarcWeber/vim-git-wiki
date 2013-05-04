@@ -12,7 +12,8 @@ r!find<cr> then gf on a file
 
 The_NERD_tree plugin is popular, because it has a tree view. However
 
-{{https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim}} has a very simple glob open implementation. Many famous alternatives exist:
+[[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim|sample_vimrc_for_new_users.vim]]
+has a very simple glob open implementation. Many famous alternatives exist:
 
 Command-T plugin (requires ruby, thus you may have little trouble setting it up)
 ctrlp.vim

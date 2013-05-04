@@ -10,7 +10,7 @@ augroup YOUR_PROJECT
 augroup end
 }}}
 
-or use local-vimrc plugins such as {{github.com/MarcWeber/vim-addon-local-vimrc}}
+or use local-vimrc plugins such as [[http://github.com/MarcWeber/vim-addon-local-vimrc|vim-addon-local-vimrc]]
 
 Also modeline can be used (the :vim line you'll find at every :help page) which looks like this:
 {{{

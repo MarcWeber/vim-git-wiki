@@ -1,5 +1,5 @@
 == vim irc chat room, learning and getting help =
-irc: irc.freenode.net #vim {{http://webchat.freenode.net/}}
+irc: irc.freenode.net #vim [[http://webchat.freenode.net/|freenode web chat interface]]
 enter a nickname, as channels enter #vim.
 You can also install one of the various irc clients out there.
 

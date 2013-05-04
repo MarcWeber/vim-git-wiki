@@ -47,7 +47,7 @@ can be accessed from everywhere. (config, caches, etc)
 Well - hot topic. Sometimes you may want to have multiple completion implementations at the same time.
 My personal recommendation is bind them all to different keys so that you always know exactly what your
 completing.
-{{https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt}}
+[[https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt|vim-addon-completion]]
 has some helper functions
 
 == plugin dependencies ==

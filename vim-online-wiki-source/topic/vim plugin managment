@@ -40,7 +40,7 @@ Feature matrix:
 
 == vim-scripts.org ==
 Now it might look that being able to install from git repositories only is a major disadvantage.
-Its not because there is {{{vim-scripts.org}}} mirroring {{{www.vim.org}}} plugins in git repositories.
+Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring [[http://www.vim.org|www.vim.org]] plugins in git repositories.
 
 == plugin dependencies ==
 Right now VAM is the only plugin manager which introduces a addon-info.json
@@ -62,14 +62,14 @@ fail it proper plugin management (cause he believes in VAM doing it the right wa
 See janus, vimpyre and some others
 
 == additional solutions and in some way related projects ==
-{{{https://bitbucket.org/howlanderson/vimapt}}} (I don't know much about it yet)
+[[https://bitbucket.org/howlanderson/vimapt|vimapt]] (I don't know much about it yet)
 
 vimpyre: A python package managing vim scripts somehow. Its using pathogen to
 manage loading of the scripts: https://github.com/pct/vimpyre
 
-{{{https://github.com/c9s/Vimana}}}
+[[https://github.com/c9s/Vimana|Vimana]]
 
-another list: {{{http://vim-scripts.org/tools.html}}}
+another list: [[http://vim-scripts.org/tools.html]]
 
 There is another project called vim-addon-manager for debian, see
-{{{http://packages.debian.org/sid/vim-addon-manager}}}
+[[http://packages.debian.org/sid/vim-addon-manager|debian's vim-addon-manager]]

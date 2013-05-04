@@ -1,8 +1,8 @@
 = vimrc =
 Your personal vim config.
 Samples files:
-{{http://vim.wikia.com/wiki/Example_vimrc}}
-{{https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim}}
+[[http://vim.wikia.com/wiki/Example_vimrc|Example_vimrc]]
+[[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim|Vam's sample_vimrc_for_new_users.vim]]
 
 
 Very notable are mappings are:

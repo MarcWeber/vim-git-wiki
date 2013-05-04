@@ -3,9 +3,9 @@ See also:
 [[topic/tags]]
 
 
-{{http://projects.haskell.org/haskellmode-vim/}}
+[[http://projects.haskell.org/haskellmode-vim/|haskellmode-vim]]
 vim-addon-haskell (run cabal using vim-addon-actions, has some more magic to
 add -X compiler flags by parsing compiler errors)
 
-{{https://github.com/travitch/hasksyn}}
-which is a rewrite of {{https://github.com/dag/vim2hs}}
+[[https://github.com/travitch/hasksyn|hasksyn]]
+which is a rewrite of [[https://github.com/dag/vim2hs|dag/vim2hs]]
