@@ -60,7 +60,7 @@ VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.
 Pathogen: rtp
 Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
 
-== vim-scripts.org - is checking out from git only a problem==
+== supporting git only - is it a problem ? vim-scripts.org
 Now it might look that being able to install from git repositories only is a major disadvantage.
 Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring
 [[http://www.vim.org|www.vim.org]] plugins in git repositories.
