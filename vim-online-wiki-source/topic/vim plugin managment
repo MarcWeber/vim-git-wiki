@@ -32,6 +32,9 @@ and provides some more helper functions to run helptags etc
 
 **Vundle** was also written to checkout plugin from git repositories
 
+So both **Vundle** and **Pathogen** get the job done pretty well which is
+why they are referenced often.
+
 **VAM/vim-addon-manager** also tries to help you avoiding outdated plugins by
 introducing a pool of known plugins.
 
@@ -48,9 +51,10 @@ plugin name completion:
 bootstrap from .vimrc: you can write this code for the other managers easily
 updating plugins:
 install progress bar:
+dependencies: minimal dependency support
 
 MATRIX
-VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins
+VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies
 Pathogen: rtp
 Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
 
