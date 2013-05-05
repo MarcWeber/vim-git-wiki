@@ -352,7 +352,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
                 throw new Exception('bad replacement: '.var_export($m, true));
             };
           },
-          process_lists($wiki_file, file_get_contents($wiki_file))
+          process_lists($wiki_file, "[[index]]\n".file_get_contents($wiki_file))
           );
 
   system('mkdir -p '. escapeshellcmd(dirname($html_file)));
