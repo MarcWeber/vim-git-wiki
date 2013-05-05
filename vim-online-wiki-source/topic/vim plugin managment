@@ -40,7 +40,7 @@ introducing a pool of known plugins.
 
 FEATURES
 rtp: manipulate the runtimepath
-activate plugins at runtime:
+activate plugins at runtime: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
 plugin name completion:
 bootstrap from .vimrc: you can write this code for the other managers easily
 updating plugins:
@@ -86,9 +86,19 @@ vimrc:
   " recommended code checking out initial vim-addon-manager omitted here
   
   " plugin-name1 will be looked up from plugin pool
-  " vim-addon-manager-known-repositories
+  " vim-addon-manager-known-repositories, however you can create that
+  " plugin-name1 directory manually and put there any plugin code you like
   call vam#ActivateAddons(['plugin-name1', 'github:name/repo']
                         \ , {'auto_install': 1})
+
+  " eg when opening a .c file activate plugin-for-c-development lazily
+  let ft_addons = {
+      \ '^\%(c\|cpp\)$': [ 'plugin-for-c-development' ],
+      \ 'javascript': [ 'plugin-for-javascript' ]
+    \ }
+  au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) 
+                  \ | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) 
+                  \ | endfor
 }}}
 runtime:
 {{{

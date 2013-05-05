@@ -38,9 +38,9 @@ Then last bad links are reported
 
     <style type="text/css" media=screen>
 
-      h1 { border-bottom: 3px dotted #007f00; background-color: #EFE; max-width: 640px; }
-      h2 { border-bottom: 2px dotted #007f00; background-color: #EFE; max-width: 640px; }
-      h3 { border-bottom: 1px dotted #007f00; background-color: #EFE; max-width: 640px; }
+      h1 { border-bottom: 3px dotted #007f00; background-color: #DFD; max-width: 640px; }
+      h2 { border-bottom: 2px dotted #007f00; background-color: #DFD; max-width: 640px; }
+      h3 { border-bottom: 1px dotted #007f00; background-color: #DFD; max-width: 640px; }
 
       span.inline_code {
         background-color:#EEE;
@@ -61,10 +61,13 @@ Then last bad links are reported
       }
 
       th {
-        background-color: #EFE;
+        background-color: #DFD;
+        font-weight: bolder;
       }
       td, th {
         border: 1px dotted #03476F;
+      }
+      td, th {
         padding: .4em;
         color: #222;
       }
