@@ -1,0 +1,25 @@
+= Alternatives to this wiki =
+See [[topic/vimwiki-vs-mediawiki]]
+
+Yes - we know this solution is not perfect - its a temporary solution only.
+
+== The perfect solution
+would replace vim.sf.net.
+
+* automatically generate install instructions for vundle,pathogen,vam
+  Thus it would read the addon-info.json file I introduced for
+  simple dependency management
+* would allow adding git urls to keep install and project description up
+  to date by polling that git url - without duplicating the information in 3
+  places (vim.sf.net install section, README, doc/* files)
+* allow searching code (thus keep a copy of all codes)
+* provide a wiki which stores its content to git - while allowing to
+  edit online.
+* there would be a away to compile the wiki to vim help files, too.
+* be aware about renamings
+* .. And probably some more items ..
+
+== Who wants to help
+
+If you can/want to contribute then place your name and skills. (Editing,
+programming, which language)?

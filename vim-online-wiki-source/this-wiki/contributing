@@ -5,14 +5,15 @@ Right now we use regular github workflow: fork, clone, patch, push, send
 pull request which will be pulled.
 
 == if you don't know github ==
-If you're not able to install git _file a bug report_ and describe what
+Then submit a bug describing what you'd like to change
 
 == submitting bugs ==
-https://github.com/MarcWeber/vim-git-wiki/issues
+[[https://github.com/MarcWeber/vim-git-wiki/issues|bug tracker (github issues)]]
+
 Need more help? Contact marco-oweber@gmx.de
 
 == Alternatives ==
-See [[topic/vimwiki-vs-mediawiki]]
+See [[this-wiki/alternatives]]
 
 If you would prefer being able to edit pages here, submit this form and
 tell us why:
