@@ -180,7 +180,7 @@ Then last bad links are reported
             $render_feature_matrix();
             $state = '';
           } else {
-            if (preg_match('/^([^ ]*)[ ]*:[ ]*(.*)/', $line, $m)){
+            if (preg_match('/^([^:]*)[ ]*:[ ]*(.*)/', $line, $m)){
               $matrix[$m[1]] = preg_split('/[ ]*,[ ]*/',$m[2]);
             } else {
               $error('unexpected matrix line ');
