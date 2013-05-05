@@ -38,18 +38,29 @@ Then last bad links are reported
 
     <style type="text/css" media=screen>
 
-      h1 { border-bottom: 1px dotted #03476F; }
-      h2 { border-bottom: 1px dotted #03476F; }
-      h3 { border-bottom: 1px dotted #03476F; }
+      h1 { border-bottom: 3px dotted #007f00; background-color: #EFE; }
+      h2 { border-bottom: 2px dotted #007f00; background-color: #EFE; }
+      h3 { border-bottom: 1px dotted #007f00; background-color: #EFE; }
 
-      span.code {
-        background-color:#CCC;
+      span.inline_code {
+        background-color:#EEE;
+        padding: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
       }
       pre.code {
-        background-color:#CCC; 
+        background-color:#EEE; 
         padding: 10px;
+        margin-left: 20px;
+
+        border-radius: 5px; 
+        -moz-border-radius: 5px; 
+        -webkit-border-radius: 5px; 
       }
 
+      th {
+        background-color: #EFE;
+      }
        td, th {
          border: 1px dotted #03476F;
          padding: .4em;
