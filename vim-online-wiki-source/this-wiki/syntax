@@ -9,6 +9,8 @@
     {{{
     this is code
     }}}
+    
+    Ther are {{{inline code snippets}}}, too
 
     lists:
 
@@ -19,9 +21,18 @@
     1) or use numbers
     2)
 
-    I'm thinking about adding some special syntax for feature matrixes used 
-    at topic/vim plugin managment
-
     use **foo** to surround foo by a strong tag
-}}}
 
+    feature matrices:
+
+    FEATURES
+    blue: is blue
+    fast: is fast
+    loved_by_us: we use it
+    eventually_loved_by_us: we may use it also
+
+    MATRIX
+    emacs: blue, fast, eventually_loved_by_us
+    vim: blue, fast, loved_by_us
+
+}}}

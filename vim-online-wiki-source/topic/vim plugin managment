@@ -1,42 +1,58 @@
 = plugin management =
 
-Traditionally plugins were mantained manually by extracting files into
-$HOME/.vim. Wrong about this approach is that its hard to maintain because its
+**Traditionally** plugins were mantained **manually** by **extracting files into
+$HOME/.vim**. Wrong about this approach is that its hard to maintain because its
 you having to keep track about which files belong to each plugin.
-:h plugin  tells you about this traditional way.
+{{{:h plugin}}} tells you about this traditional way.
 
-The next advanced way is create a directory for each plugin like this:
+Little bit smarter is **creating a directory for each plugin** like this and
+adding two lines to your .vimrc:
 
+{{{
   ~/.vim/plugin-A/plugin/a.vim
   ~/.vim/plugin-A/filetype/a.vim
   ~/.vim/plugin-B/plugin/a.vim
   ~/.vim/plugin-B/filetype/a.vim
+}}}
 
-and add to your .vimrc:
 
+{{{
+  " vimrc
   set runtimepath+=~/.vim/plugin-A
   set runtimepath+=~/.vim/plugin-B
+}}}
 
 This tells Vim that it should look for plugin files to source at startup in
 additional directories. What's wrong about this?
 Nothing except for example vim does not source plugin-A/plugin/after/*.vim
 files.
 
-Pathogen does exactly this by its pathogen#infect (and provides some more
-helper functions to run helptags etc)
+**Pathogen** does exactly this by its {{{pathogen#infect}}}
+and provides some more helper functions to run helptags etc
 
-Vundle was also written to checkout plugin from git repositories
+**Vundle** was also written to checkout plugin from git repositories
 
-Feature matrix:
+**VAM/vim-addon-manager** also tries to help you avoiding outdated plugins by
+introducing a pool of known plugins.
 
-    manipulate runtimepath: VAM, Pathogen, Vundle
-    install from git repositories: VAM, Vundle
-    install other sources: VAM
-    activate plugins at runtime: VAM
-    plugin name completion and info: VAM
-    bootstrap from .vimrc: VAM (you can write this code for the other managers easily)
-    updating plugins: VAM (what about the others?)
-    install progress bar: Vundle (is it imporant?)
+FEATURES
+rtp: manipulate the runtimepath
+get-git: install from git repositories
+get-hg: install from mercurial
+get-svn: install from svn
+get-bazaar: install from svn
+get-vim.sf.net: install from vim.sf.net
+get-vim-scripts.org: install from vim-scripts.org (git mirror of vim.sf.net)
+activate plugins at runtime:
+plugin name completion:
+bootstrap from .vimrc: you can write this code for the other managers easily
+updating plugins:
+install progress bar:
+
+MATRIX
+VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins
+Pathogen: rtp
+Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
 
 == vim-scripts.org ==
 Now it might look that being able to install from git repositories only is a major disadvantage.

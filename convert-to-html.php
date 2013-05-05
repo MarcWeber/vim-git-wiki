@@ -76,7 +76,7 @@ Then last bad links are reported
           return implode(DIRECTORY_SEPARATOR, $absolutes);
   }
 
-  function process_lists($s){
+  function process_lists($file_name, $s){
     // I'm not that happy about this code, but it'll work
     // on 1) start numbered list (item)
     // on *) start bullet list (item)
@@ -86,6 +86,9 @@ Then last bad links are reported
     $result = array();
     $state = '';
     $p_end = null;
+
+    $features = array();
+    $matrix = array();
 
     $a = function($s) use(&$result){ $result[] = $s; };
     $end_list = function() use(&$result, &$state, &$p_end){ 
@@ -110,14 +113,86 @@ Then last bad links are reported
     $code_start = function()use(&$a){ $a('<pre class="code" style="background-color:#CCC">'); };
     $code_end = function()use(&$a){ $a('</pre>'); };
 
+    $render_feature_matrix = function() use(&$a, &$features, &$matrix){
+      /*
+      $a('<table><tr><th></th>');
+      foreach ($features as $f => $f_desc) {
+        $a(sprintf('<th alt="%s">%s</th>',  quote($f_desc), quote($f)));
+      }
+      $a('</tr>');
+      foreach ($matrix as $name => $features_of_name) {
+        $a(sprintf('<tr><th>%s</th>', $name));
+        foreach ($features as $f => $f_desc) {
+          if (in_array($f, $features_of_name)){
+            $a(sprintf("<td>yes</td>"));
+          } else {
+            $a(sprintf("<td></td>"));
+          }
+        }
+        $a('</tr>');
+      }
+       */
+
+      $a(sprintf('<strong>%s comparison:</strong>', implode(', ', array_keys($matrix))));
+      $a('<table><tr><th>feature</th>');
+      foreach ($matrix as $name => $features_of_name) {
+        $a(sprintf('<th>%s</th>',  quote($name)));
+      }
+      $a('<th>feature description</th></tr>');
+      foreach ($features as $f => $f_desc) {
+        $a(sprintf('<tr><th>%s</th>', quote($f)));
+        foreach ($matrix as $name => $features_of_name) {
+          if (in_array($f, $features_of_name)){
+            $a(sprintf("<td>yes</td>"));
+          } else {
+            $a(sprintf("<td></td>"));
+          }
+        }
+        $a(sprintf('<td>%s</td>', quote($f_desc)));
+        $a('</tr>');
+      }
+      $a('</table>');
+    };
+
     foreach (explode("\n", $s) as $line) {
-       if ($state == "in_code_block"){
+        $error = function($msg) use(&$file_name, $line) {
+          die('ERROR parsing '.$file_name.' : '.$msg."\n".$line);
+        };
+
+        $line_empty = preg_match('/^[ ]*$/', $line);
+        if ($state == "feature_matrix_reading_features"){
+          // matrix: feature continuation
+
+          if (preg_match('/^MATRIX/', $line)){
+            $state = 'feature_matrix_reading_matrix';
+          } else {
+            if ($line_empty) continue;
+            if (preg_match('/^([^:]*)[ ]*:[ ]*(.*)/', $line, $m)){
+              $features[$m[1]] = $m[2];
+            } else {
+              $error('unexpected matrix feature line ');
+            }
+          }
+        } elseif ($state == "feature_matrix_reading_matrix"){
+
+          // matrix continuation
+          if ($line_empty){
+            $render_feature_matrix();
+            $state = '';
+          } else {
+            if (preg_match('/^([^ ]*)[ ]*:[ ]*(.*)/', $line, $m)){
+              $matrix[$m[1]] = preg_split('/[ ]*,[ ]*/',$m[2]);
+            } else {
+              $error('unexpected matrix line ');
+            }
+          }
+        } elseif ($state == "in_code_block"){
          // continue code block
          if (preg_match('/^}}}/', $line)){
            $code_end();
            $state = '';
          } else {
-           $a($line);
+           $a($line."\n");
          }
        } else if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
         // continue lists
@@ -137,7 +212,11 @@ Then last bad links are reported
         $l = strlen($m[1]);
         $a(sprintf("\n<h%d>%s</h%d>", $l, quote(preg_replace('/=*$/', '', $m[2])), $l));
       } else {
-        if (preg_match('/^1\)(.*)/', $line, $m)) {
+        if (preg_match('/^FEATURES/', $line, $m)) {
+          $state = 'feature_matrix_reading_features';
+          $features = array();
+          $matrix = array();
+        } else if (preg_match('/^1\)(.*)/', $line, $m)) {
           // start 1) list
           $state = "in_numbered_list";
           $p_end();
@@ -164,6 +243,9 @@ Then last bad links are reported
         }
       }
     }
+
+    if ($state == "feature_matrix_reading_matrix")
+      $render_feature_matrix();
 
     if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
       end_list();
@@ -228,10 +310,12 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
   $html_file = $target_directory.'/'.$wiki_file.'.html';
 
   $patterns = array(
+    # inline code blocks {{{ }}} 
+    '({{{)(.*?)}}}',
     # strong
     '(\*\*)(.*?)\*\*',
     # links
-    '(\[\[)([^\]]*)\]\]',
+    '(\[\[)([^\]]+)\]\]',
   );
 
   $html = preg_replace_callback(
@@ -246,6 +330,8 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
             while($m[0] == '') array_shift($m);
 
             switch ($m[0]) {
+              case '{{{':
+                return sprintf('<span class="inline_code" style="background-color:#CCC">%s</span>', $m[1]);
               case '**':
                 return sprintf('<strong>%s</strong>', $m[1]);
                 break;
@@ -266,7 +352,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
                 throw new Exception('bad replacement: '.var_export($m, true));
             };
           },
-          process_lists(file_get_contents($wiki_file))
+          process_lists($wiki_file, file_get_contents($wiki_file))
           );
 
   system('mkdir -p '. escapeshellcmd(dirname($html_file)));
