@@ -40,27 +40,30 @@ introducing a pool of known plugins.
 
 FEATURES
 rtp: manipulate the runtimepath
-get-git: install from git repositories
-get-hg: install from mercurial
-get-svn: install from svn
-get-bazaar: install from svn
-get-vim.sf.net: install from vim.sf.net
-get-vim-scripts.org: install from vim-scripts.org (git mirror of vim.sf.net)
 activate plugins at runtime:
 plugin name completion:
 bootstrap from .vimrc: you can write this code for the other managers easily
 updating plugins:
 install progress bar:
 dependencies: minimal dependency support
+get-git: install from git repositories
+get-hg: install from mercurial
+get-svn: install from svn
+get-bazaar: install from svn
+get-vim.sf.net: install from vim.sf.net
+get-vim-scripts.org: install from vim-scripts.org (git mirror of vim.sf.net)
+bisect: bisect problems by dividing the set of plugins to be activated
+
 
 MATRIX
-VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies
+VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
 Pathogen: rtp
 Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
 
-== vim-scripts.org ==
+== vim-scripts.org - is checking out from git only a problem==
 Now it might look that being able to install from git repositories only is a major disadvantage.
-Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring [[http://www.vim.org|www.vim.org]] plugins in git repositories.
+Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring
+[[http://www.vim.org|www.vim.org]] plugins in git repositories.
 
 == plugin dependencies ==
 Right now VAM is the only plugin manager which introduces a addon-info.json
@@ -74,12 +77,48 @@ style is used to reproduce the exact behaviour on a new machine. It can be used
 with any plugin manager - as long as plugins are
 checked out by git.
 
-
 == existing vim plugin collections ==
 They often hint about important plugins - however Marc Weber thinks that they
 fail it proper plugin management (cause he believes in VAM doing it the right way)
 
 See janus, vimpyre and some others
+
+== Example setups ==
+Let me compare by example ..
+
+
+**Pathogen**:
+vimrc:
+{{{
+" you can tell pathogen which directories to infect
+" this way it may also be possilbe to select "sets of plugins"
+execute pathogen#infect()
+}}}
+
+**Vundle**:
+vimrc:
+{{{
+set rtp+=~/.vim/vundle.git/ 
+" These refer to git repositories:
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+}}}
+
+
+**VAM**:
+vimrc:
+{{{
+  " recommended code checking out initial vim-addon-manager omitted here
+  
+  " plugin-name1 will be looked up from plugin pool vim-addon-manager-known-repositories
+  call vam#ActivateAddons(['plugin-name1', 'github:name/repo'], {'auto_install': 1})
+}}}
+runtime:
+{{{
+  " most useful commands supporting tab completion:
+  :ActivateAddons name1 name2 " fetch and activate at runtime (alias for vam#ActivateAddons)
+  :AddonsInfo name " show infos about name/script-id
+}}}
 
 == additional solutions and in some way related projects ==
 [[https://bitbucket.org/howlanderson/vimapt|vimapt]] (I don't know much about it yet)

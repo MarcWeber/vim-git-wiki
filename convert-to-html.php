@@ -35,6 +35,29 @@ Then last bad links are reported
   <title>%s</title>
     <meta name="robots" content="index,nofollow" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <style type="text/css" media=screen>
+
+      h1 { border-bottom: 1px dotted #03476F; }
+      h2 { border-bottom: 1px dotted #03476F; }
+      h3 { border-bottom: 1px dotted #03476F; }
+
+      span.code {
+        background-color:#CCC;
+      }
+      pre.code {
+        background-color:#CCC; 
+        padding: 10px;
+      }
+
+       td, th {
+         border: 1px dotted #03476F;
+         padding: .4em;
+         color: #222;
+       }
+
+    </style>
+
 </head>
 <body>
 %s
@@ -110,7 +133,7 @@ Then last bad links are reported
         $in_p = false;
       }
     };
-    $code_start = function()use(&$a){ $a('<pre class="code" style="background-color:#CCC">'); };
+    $code_start = function()use(&$a){ $a('<pre class="code">'); };
     $code_end = function()use(&$a){ $a('</pre>'); };
 
     $render_feature_matrix = function() use(&$a, &$features, &$matrix){
@@ -331,7 +354,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
 
             switch ($m[0]) {
               case '{{{':
-                return sprintf('<span class="inline_code" style="background-color:#CCC">%s</span>', $m[1]);
+                return sprintf('<span class="inline_code">%s</span>', $m[1]);
               case '**':
                 return sprintf('<strong>%s</strong>', $m[1]);
                 break;

@@ -8,7 +8,7 @@ most useful plugins, workflows and settings
 * [[topic/github]]
 
 = how to get help about vim =
-* :help (use vim's builtin help
+* {{{:help}}} use vim's builtin help
 * try google
 * [[topic/vim-irc-on-freenode]]
 * [[http://www.vim.org/community.php|mailinglist]]
@@ -67,5 +67,3 @@ This wiki will soon be too big for one person to maintain.
 
 Some files will be maintained by individuals, others will be patched by the
 community as needed.
-
-
