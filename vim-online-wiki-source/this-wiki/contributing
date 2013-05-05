@@ -20,17 +20,7 @@ why: [ ... ]
 email: [ ... ] (in case we want ask for details)
 
 == wiki syntax ==
-{{{
-    Reference a wiki page: [[dir/file.wiki]]
-    Supported syntax:
-
-    = This is a header =
-    == This is a smaller header ==
-
-    {{{
-    this is code
-    }}}
-}}}
+See [[this-wiki/syntax]]
 
 == plugin support: ==
 vimwiki supports this syntax

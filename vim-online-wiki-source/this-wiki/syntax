@@ -1,0 +1,27 @@
+= This wiki's syntax =
+{{{
+    Reference a wiki page: [[dir/file]] (press gf to follow a link in Vim)
+    External link: [[http(s)://domain|label]]
+
+    = H1
+    == header level 2
+
+    {{{
+    this is code
+    }}}
+
+    lists:
+
+    * Text
+      more text (at least 2 spaces)
+    * second item
+
+    1) or use numbers
+    2)
+
+    I'm thinking about adding some special syntax for feature matrixes used 
+    at topic/vim plugin managment
+
+    use **foo** to surround foo by a strong tag
+}}}
+

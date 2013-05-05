@@ -1,7 +1,13 @@
 <?php
 // PHP 5.3
 
-/* global vars */
+/* the parsing is done in two steps
+ * process_lists: line based stateful parser rewriting lists
+
+ preg_replace_callback replacing [[ and {{{
+
+Then last bad links are reported
+*/
 
 { // config
 
@@ -101,13 +107,20 @@
         $in_p = false;
       }
     };
+    $code_start = function()use(&$a){ $a('<pre class="code" style="background-color:#CCC">'); };
+    $code_end = function()use(&$a){ $a('</pre>'); };
 
     foreach (explode("\n", $s) as $line) {
-      if (preg_match('/^(=+) (.*)$/', $line, $m)){
-        $p_end();
-        $l = strlen($m[1]);
-        $a(sprintf("\n<h%d>%s</h%d>", $l, quote(preg_replace('/=*$/', '', $m[2])), $l));
-      } else if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
+       if ($state == "in_code_block"){
+         // continue code block
+         if (preg_match('/^}}}/', $line)){
+           $code_end();
+           $state = '';
+         } else {
+           $a($line);
+         }
+       } else if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
+        // continue lists
         if ($state == "in_bullet_list" && preg_match('/^\*(.*)/', $line, $m)){
           $a("<li>".$m[1]);
         } else if ($state == "in_numbered_list" && preg_match('/^[0-9]*\)(.*)/', $line,  $m)){
@@ -118,20 +131,33 @@
         } else {
           $end_list();
         }
+      } else if (preg_match('/^(=+) (.*)$/', $line, $m)){
+        // parse headers
+        $p_end();
+        $l = strlen($m[1]);
+        $a(sprintf("\n<h%d>%s</h%d>", $l, quote(preg_replace('/=*$/', '', $m[2])), $l));
       } else {
         if (preg_match('/^1\)(.*)/', $line, $m)) {
+          // start 1) list
           $state = "in_numbered_list";
           $p_end();
           $a("\n<ul><li>");
           $a($m[1]);
-        } elseif (preg_match('/^\*(.*)/', $line, $m)) {
+        } elseif (preg_match('/^\* (.*)/', $line, $m)) {
+          // start * list
           $state = "in_bullet_list";
           $p_end();
           $a("\n<ul><li>");
           $a($m[1]);
+        } elseif (preg_match('/^{{{$/', $line)) {
+          // start code block
+          $p_end();
+          $code_start();
+          $state = 'in_code_block';
         } elseif (preg_match('/^[ ]*$/', $line)) {
           $p_end();
         } else {
+          # everything else
           # keep line as is
           $p_start();
           $a($line."\n");
@@ -202,9 +228,8 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
   $html_file = $target_directory.'/'.$wiki_file.'.html';
 
   $patterns = array(
-    # code blocks:
-    '^(\{\{\{)((.|[\n])*?)\}\}\}$',
-
+    # strong
+    '(\*\*)(.*?)\*\*',
     # links
     '(\[\[)([^\]]*)\]\]',
   );
@@ -221,8 +246,8 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
             while($m[0] == '') array_shift($m);
 
             switch ($m[0]) {
-              case '{{{':
-                return $to_html['code_block']($m[1]);
+              case '**':
+                return sprintf('<strong>%s</strong>', $m[1]);
                 break;
               case '[[':
                 if (preg_match('/^([^:]+:\/\/[^|]*)(|.*)?$/', $m[1], $m2)){

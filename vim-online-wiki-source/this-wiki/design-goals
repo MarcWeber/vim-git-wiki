@@ -6,7 +6,7 @@
 
 High quality will be ensured by reviews and collaboration.
 * [[https://github.com/MarcWeber/vim-git-wiki/pulls|pull requests to be reviewed]]
-* [[topic/contributing-to-this-wiki]]
+* [[this-wiki/contributing]]
 * [[topic/github]]
 
 We keep things simple by using a plain text files, a simple convert-to-html.php
@@ -33,5 +33,4 @@ Beacuse
 * he wanted to be able to edit the wiki offline
 * he wanted to use Vim for editing, including grep etc (no compromises)
 * he wants to make it easy to review changes - because nobody today knows
-  everything - vim does not need yet another way to do the same - Vim community
-  needs a way to share the best workflows, tools, habits, ...
+  everything. github naturally forces reviews
