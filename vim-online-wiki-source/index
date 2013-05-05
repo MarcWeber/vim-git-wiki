@@ -2,9 +2,8 @@
 This wiki should become the greatest resource about Vim by telling you about
 most useful plugins, workflows and settings
 
-See [[this-wiki/design-goals]]
-
-contributing:
+**contributing**:
+* [[this-wiki/design-goals]]
 * [[this-wiki/contributing]]
 * [[topic/github]]
 
@@ -13,10 +12,6 @@ contributing:
 * try google
 * [[topic/vim-irc-on-freenode]]
 * [[http://www.vim.org/community.php|mailinglist]]
-
-
-If installing git is too much pain you can also register at github and file a bug report describing
-what you'd change on this wiki: [[http://github.com/MarcWeber/vim-git-wiki/issues|bug tracker]]
 
 = By topic: =
 [[topic/saying-thanks]]

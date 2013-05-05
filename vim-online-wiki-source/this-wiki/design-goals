@@ -27,7 +27,7 @@ Of course there are alternatives:
 If you think a different solution would serve the community much more, tell by
 [[https://github.com/MarcWeber/vim-git-wiki/issues/1||commenting]]
 
-== We Marc Weber initially didn't choose an alternative solution
+== Why Marc Weber initially didn't choose an alternative solution
 Beacuse 
 * html files cannot be hacked 
 * he wanted to be able to edit the wiki offline
