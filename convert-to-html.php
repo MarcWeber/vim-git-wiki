@@ -38,9 +38,9 @@ Then last bad links are reported
 
     <style type="text/css" media=screen>
 
-      h1 { border-bottom: 3px dotted #007f00; background-color: #EFE; }
-      h2 { border-bottom: 2px dotted #007f00; background-color: #EFE; }
-      h3 { border-bottom: 1px dotted #007f00; background-color: #EFE; }
+      h1 { border-bottom: 3px dotted #007f00; background-color: #EFE; max-width: 640px; }
+      h2 { border-bottom: 2px dotted #007f00; background-color: #EFE; max-width: 640px; }
+      h3 { border-bottom: 1px dotted #007f00; background-color: #EFE; max-width: 640px; }
 
       span.inline_code {
         background-color:#EEE;
@@ -49,6 +49,8 @@ Then last bad links are reported
         padding-right: 4px;
       }
       pre.code {
+        max-width: 600px;
+
         background-color:#EEE; 
         padding: 10px;
         margin-left: 20px;
@@ -61,11 +63,14 @@ Then last bad links are reported
       th {
         background-color: #EFE;
       }
-       td, th {
-         border: 1px dotted #03476F;
-         padding: .4em;
-         color: #222;
-       }
+      td, th {
+        border: 1px dotted #03476F;
+        padding: .4em;
+        color: #222;
+      }
+      p {
+        max-width: 400px;
+      }
 
     </style>
 
@@ -347,7 +352,7 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
     # inline code blocks {{{ }}} 
     '({{{)(.*?)}}}',
     # strong
-    '(\*\*)(.*?)\*\*',
+    '(\*\*)((.|[\n])*?)\*\*',
     # links
     '(\[\[)([^\]]+)\]\]',
   );

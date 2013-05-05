@@ -60,32 +60,7 @@ VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.
 Pathogen: rtp
 Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
 
-== supporting git only - is it a problem ? vim-scripts.org
-Now it might look that being able to install from git repositories only is a major disadvantage.
-Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring
-[[http://www.vim.org|www.vim.org]] plugins in git repositories.
-
-== plugin dependencies ==
-Right now VAM is the only plugin manager which introduces a addon-info.json
-file (which could be used by other tools) which allows to specify dependencies
-by name (without version constraints). Those plugins are installed and
-activated automatically.
-
-== git submodules ==
-They are used to embed git repositories into existing git repositories. Thus
-style is used to reproduce the exact behaviour on a new machine. It can be used
-with any plugin manager - as long as plugins are
-checked out by git.
-
-== existing vim plugin collections ==
-They often hint about important plugins - however Marc Weber thinks that they
-fail it proper plugin management (cause he believes in VAM doing it the right way)
-
-See janus, vimpyre and some others
-
-== Example setups ==
-Let me compare by example ..
-
+== Example .vimrc setups ==
 
 **Pathogen**:
 vimrc:
@@ -110,15 +85,45 @@ vimrc:
 {{{
   " recommended code checking out initial vim-addon-manager omitted here
   
-  " plugin-name1 will be looked up from plugin pool vim-addon-manager-known-repositories
-  call vam#ActivateAddons(['plugin-name1', 'github:name/repo'], {'auto_install': 1})
+  " plugin-name1 will be looked up from plugin pool
+  " vim-addon-manager-known-repositories
+  call vam#ActivateAddons(['plugin-name1', 'github:name/repo']
+                        \ , {'auto_install': 1})
 }}}
 runtime:
 {{{
   " most useful commands supporting tab completion:
-  :ActivateAddons name1 name2 " fetch and activate at runtime (alias for vam#ActivateAddons)
-  :AddonsInfo name " show infos about name/script-id
+
+  " fetch and activate at runtime (alias for vam#ActivateAddons)
+  :ActivateAddons name1 name2 
+
+  " show infos about name/script-id
+  :AddonsInfo name
 }}}
+
+
+== supporting git only - is it a problem ? vim-scripts.org
+Now it might look that being able to install from git repositories only is a major disadvantage.
+Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring
+[[http://www.vim.org|www.vim.org]] plugins in git repositories.
+
+== plugin dependencies ==
+Right now VAM is the only plugin manager which introduces a addon-info.json
+file (which could be used by other tools) which allows to specify dependencies
+by name (without version constraints). Those plugins are installed and
+activated automatically.
+
+== git submodules ==
+They are used to embed git repositories into existing git repositories. Thus
+style is used to reproduce the exact behaviour on a new machine. It can be used
+with any plugin manager - as long as plugins are
+checked out by git.
+
+== existing vim plugin collections ==
+They often hint about important plugins - however Marc Weber thinks that they
+fail it proper plugin management (cause he believes in VAM doing it the right way)
+
+See janus, vimpyre and some others
 
 == additional solutions and in some way related projects ==
 [[https://bitbucket.org/howlanderson/vimapt|vimapt]] (I don't know much about it yet)
