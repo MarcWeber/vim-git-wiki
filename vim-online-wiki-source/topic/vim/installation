@@ -1,0 +1,13 @@
+= Installing & compiling Vim =
+
+First thing to learn is that there is not one single "vim".
+
+There are many "vi" clones - and "VIM" (vi improved) which this wiki is about
+can be compiled in many different ways - eg "huge" and "small".
+
+Some linux distributions ship with a clone (nvi) or with a minimal version.
+Often its your task to install a "huge" version first.
+
+If you need help try irc [[topic/vim-irc-on-freenode]]
+
+More details to be added here

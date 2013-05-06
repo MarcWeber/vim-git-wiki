@@ -16,7 +16,11 @@ most useful plugins, workflows and settings
 = By topic: =
 [[topic/saying-thanks]]
 
-VimL related:
+About the Editor VIM:
+What Vim is, how to install it:
+* [[topic/vim/installation]] 
+
+VimL related (extending Vim):
 * [[topic/vimrc]]
 * [[topic/configuring-vim]]
 * [[topic/vim plugin managment]]
@@ -33,8 +37,6 @@ general text editing:
 * [[topic/text snippets]]
 * [[topic/tags]]
 * [[topic/opening-files]]
-
-* [[topic/vim-keybinding-implementations]]
 
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
@@ -61,6 +63,11 @@ topic. Then they can be referenced.
 * [[http://glts.github.com/VimPluginMatrix/|VimPluginMatrix]]
 * [[http://vam.mawercer.de|vam.mawercer.de]]
 * [[http://www.drchip.org/astronaut/vim/|Dr Chips Vim page]]
+
+
+= Vim like
+The modal editing found in Vim is that famous that many editors adopted at
+least some ideas: [[topic/vim-keybinding-implementations]]
 
 = maintainers =
 This wiki will soon be too big for one person to maintain.
