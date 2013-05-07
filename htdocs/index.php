@@ -77,7 +77,7 @@ function edit_form($content, $email, $comment){
   }
 
 
-  if (!isset($_GET['page'])){
+  if (!isset($_GET['page']) || empty($_GET['page'])){
 	  Header( "HTTP/1.1 301 Moved Permanently" ); 
 	  Header( "Location: http://".EDIT_DOMAIN.'/wiki/index.html' ); 
 	  exit();
