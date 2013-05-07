@@ -1,13 +1,9 @@
 = design goals of this wiki =
-
 * provide high quality content
 * keep it simple
 * editable by Vim
-
-High quality will be ensured by reviews and collaboration.
-* [[https://github.com/MarcWeber/vim-git-wiki/pulls|pull requests to be reviewed]]
-* [[this-wiki/contributing]]
-* [[topic/github]]
+* editable by Browser
+(see [[this-wiki/contributing]])
 
 We keep things simple by using a plain text files, a simple convert-to-html.php
 PHP script.

@@ -1,17 +1,21 @@
 = Contributing to this wiki =
+[[this-wiki/edit-with-vim-offline]]
+[[this-wiki/edit-online-using-web-interface]]
 
-== github ==
-Right now we use regular github workflow: fork, clone, patch, push, send
-pull request which will be pulled.
+There are two main repositories: One at the web server, on at github.
+Both are merged regularly so that it should not matter to you contribute.
 
-== if you don't know github/ are to lazy ==
-If installing git is too much pain you can also register at github and file a
-bug report describing what you'd change on this wiki:
+Of course all "github" realted features may be used:
 [[http://github.com/MarcWeber/vim-git-wiki/issues|bug tracker]]
-
-== submitting bugs ==
 [[https://github.com/MarcWeber/vim-git-wiki/issues|bug tracker (github issues)]]
 
+== checking broken links ==
+See [[this-wiki/checking-broken-links]]
+
+== you think something is missing, but don't have time to add it ==
+See [[todo]]
+
+== submitting bugs ==
 Need more help? Contact marco-oweber AT gmx.de
 
 == Alternatives ==
@@ -24,6 +28,3 @@ email: [ ... ] (in case we want ask for details)
 
 == wiki syntax ==
 See [[this-wiki/syntax]]
-
-== plugin support: ==
-vimwiki supports this syntax

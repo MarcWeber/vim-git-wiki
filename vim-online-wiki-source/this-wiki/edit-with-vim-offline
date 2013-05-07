@@ -1,0 +1,11 @@
+= Howto edit this wiki with Vim =
+Get source: [[topic/github]]
+
+Then {{{ cd vim-online-wiki-source }}} so that:
+* file completion {{{ctrl-x ctrl-f}}} completes internal files
+* gf can be used to follow such links
+
+You may want to install vim-addon-goto-thing-at-cursor, it behaves like gf, but
+is able to create new files which don't exist.
+
+This wiki also ships with minimal filetype and syntax support

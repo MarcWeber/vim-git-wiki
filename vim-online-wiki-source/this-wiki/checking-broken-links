@@ -1,0 +1,7 @@
+Right now you can only do tihs by running the php script from the top level directory:
+{{{
+php convert-to-html.php
+}}}
+This will also dump all .html files to the {{{wiki/}}} directory.
+
+(TODO: make the web system check this)
