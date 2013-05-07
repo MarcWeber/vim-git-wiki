@@ -35,3 +35,6 @@ p {
 max-width: 400px;
 }
 
+a {
+	text-decoration: none;
+}
