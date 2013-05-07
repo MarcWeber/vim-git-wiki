@@ -9,7 +9,7 @@ define('LIB',dirname(__FILE__));
 define('PROJECT_ID','MYSQL_MIGRATION_DEMO');
 
 // returns value identified by key or $default
-function d($ar, $key, $default){ return isset($ar[$key]) ? $ar[$key] : $default; }
+function d($ar, $key, $default = null){ return isset($ar[$key]) ? $ar[$key] : $default; }
 
 require_once dirname(__FILE__).'/config.php';
 

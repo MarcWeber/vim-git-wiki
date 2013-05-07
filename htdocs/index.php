@@ -102,7 +102,7 @@ function edit_form($content, $email, $comment){
 	  $html = preg_replace_callback('/commit (........................................)/', function($m){
 		return sprintf('<strong>commit <a href="%s">%s</a></strong>', commit_page_url($m[1]) , $m[1]);
 	  }, $html);
-	  echo render_page('changes of '.$_GET['page'].' '.$_GET['path'], 
+	  echo render_page('changes of '.$_GET['page'].' '.d($_GET,'path'), 
 		  $html
 	  );
 
