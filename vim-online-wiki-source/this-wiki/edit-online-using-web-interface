@@ -7,3 +7,7 @@ The JS vim like editor may be helpful. If you know a better alternative, let me
 know.
 
 Also learn why you might want to edit this wiki offline using Vim: [[this-wiki/edit-with-vim-offline]]
+
+== creating new pages ==
+Just type the url, ignore the error message, append ?vim_edit=1 to the url ...
+continue
