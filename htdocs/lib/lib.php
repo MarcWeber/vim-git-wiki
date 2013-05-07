@@ -100,7 +100,9 @@ class Git {
 		# yes, race conditions possible. TODO: use database to sync 
 		# (SELECT FOR UPDATE) or such?
 		# There are maybe 9 edits a day, very unlikely to have collisions
-		file_put_contents($this->git_dir.'/'.$path, $contents);
+		$file_path = $this->git_dir.'/'.$path;
+		$this->command(MKDIR_PATH.' -p '.escapeshellarg(dirname($file_path)));
+		file_put_contents($file_path, $contents);
 		$this->command(GIT.' add '.escapeshellarg($path)); # TODO: test this
 		$this->command(GIT.' commit -m '.escapeshellarg($comment."\nby ".$email.' - online'));
 

@@ -29,8 +29,13 @@ function edit_form($content, $email, $comment){
 	  <br/>
 	  <a href="" onclick="editor(document.forms[0].elements.content);return false;">launch vi (tested wit firefox)</a><a href="http://gpl.internetconnection.net/vi"><small>(vi\'s homepage)</small></a> 
 
+	  '.(isset($_SESSION['is_human'])
+	  ? '<input type="hidden" name="I_am_human" value="I am human">' 
+	  : '
 	  <br/>
-	  <label >Type <strong>I am human</strong></label><input type="text" name="I_am_human" value="I am a bot">
+	  <label >Type <strong>I am human</strong></label><input type="text" name="I_am_human" value="I am a bot">'
+	   )
+	  .'
 	  <br/>
 	  <label>comment</label><input type="text" name="comment" value="'.quote($comment).'">
 	  <br/>
@@ -76,6 +81,8 @@ function edit_form($content, $email, $comment){
 	  return 'http://'.EDIT_DOMAIN.'/wiki/commit?commit='.urlencode($commit_or_hash);
   }
 
+  if (isset($_POST['I_am_human']) && ($_POST['I_am_human'] == 'I am human'))
+	  $_SESSION['is_human'] = true;
 
   if (!isset($_GET['page']) || empty($_GET['page'])){
 	  Header( "HTTP/1.1 301 Moved Permanently" ); 
