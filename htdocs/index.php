@@ -19,9 +19,16 @@ try{
 
 function edit_form($content, $email, $comment){
   return '
+	  <script src="http://'.EDIT_DOMAIN.'/vi/vi.js"></script>
+	  <link rel="stylesheet" href="http://'.EDIT_DOMAIN.'/vi/vi.css" type="text/css" />
+
+	  <link rel="stylesheet" href="vi.css" type="text/css" />
 	  <a target="new" href="http://'.EDIT_DOMAIN.'/wiki/this-wiki/syntax.html">syntax of this wiki</a>
 	  <form action="?vim_preview=1" method="post" accept-charset="utf-8">
 	  <textarea name="content" rows="40" cols="80">'.quote($content).'</textarea>
+	  <br/>
+	  <a href="" onclick="editor(document.forms[0].elements.content);return false;">launch vi (tested wit firefox)</a><a href="http://gpl.internetconnection.net/vi"><small>(vi\'s homepage)</small></a> 
+
 	  <br/>
 	  <label >Type <strong>I am human</strong></label><input type="text" name="I_am_human" value="I am a bot">
 	  <br/>
