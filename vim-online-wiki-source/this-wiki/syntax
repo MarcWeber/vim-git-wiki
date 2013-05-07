@@ -10,7 +10,7 @@
     this is code
     }}}
     
-    Ther are {{{inline code snippets}}}, too
+    inline code: use {, } three times to enclose text.
 
     lists:
 
@@ -21,9 +21,9 @@
     1) or use numbers
     2)
 
-    use **foo** to surround foo by a strong tag
+    double * surrounds bold text.
 
-    feature matrices:
+    feature matrices: first define feature list, then assign features to things:
 
     FEATURES
     blue: is blue
