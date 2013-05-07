@@ -81,8 +81,8 @@ function edit_form($content, $email, $comment){
 	  return 'http://'.EDIT_DOMAIN.'/wiki/commit?commit='.urlencode($commit_or_hash);
   }
 
-  if (isset($_POST['I_am_human']) && ($_POST['I_am_human'] == 'I am human'))
-	  $_SESSION['is_human'] = true;
+  if (d($_POST,'I_am_human') == 'I am human') $_SESSION['is_human'] = true;
+  if (d($_POST,'email', '') !== '') $_SESSION['email'] = $_POST['email'];
 
   if (!isset($_GET['page']) || empty($_GET['page'])){
 	  Header( "HTTP/1.1 301 Moved Permanently" ); 
@@ -134,7 +134,7 @@ function edit_form($content, $email, $comment){
 		} catch (Exception $e){
 			$content = '';
 		}
-		echo render_page_cached('editing '.$_GET['page'], edit_form($content, '', ''));
+		echo render_page_cached('editing '.$_GET['page'], edit_form($content, d($_SESSION,'email', ''), ''));
   } elseif (isset($_GET['vim_preview'])){
 	  // PREVIEW OR SAVE
 	  if (isset($_POST['action']) && $_POST['action'] == 'save' ){
