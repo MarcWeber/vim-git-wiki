@@ -1,0 +1,4 @@
+{{{
+" open the filetype specific configuration file
+noremap \ft :exec 'e ~/.vim/ftplugin/'.&amp;filetype.'_you.vim'&lt;cr>
+}}}
