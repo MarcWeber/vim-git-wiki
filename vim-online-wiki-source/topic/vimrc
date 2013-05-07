@@ -1,16 +1,32 @@
 = vimrc =
 Your personal vim config.
+A typical minimal .vimrc looks like this:
+{{{
+set nocompatible
+filetype indent plugin on | syn on
+set hidden
+
+finish
+Put your own notes about vim here. Vim stops reading after "finish"
+}}}
+
 Samples files:
 [[http://vim.wikia.com/wiki/Example_vimrc|Example_vimrc]]
 [[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim|Vam's sample_vimrc_for_new_users.vim]]
 
+I know **you all** have many nice snippets for .vimrc, thus share them:
 
-Very notable are mappings are:
-{{{
-noremap \ft :exec 'e ~/.vim/ftplugin/'.&filetype.'_you.vim'<cr>
-}}}
+[[topic/vimrc-snippets]]
 
 I can't repeat it often enough how helpful it can be to take notes where you
 find them again, eg in a such a ftplugin/javascript.vim file. Adding a line
 containing only "finish" let's you take arbitrary notes below that so that you
 can find them fast again.
+
+
+
+
+
+
+
+
