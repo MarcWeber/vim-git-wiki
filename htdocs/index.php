@@ -69,13 +69,44 @@ function edit_form($content, $email, $comment){
   function edit_page_url($path){
 	  return 'http://'.EDIT_DOMAIN.'/wiki/edit?path='.urlencode($path);
   }
+  function log_page_url($path = ''){
+	  return 'http://'.EDIT_DOMAIN.'/wiki/log?path='.urlencode($path);
+  }
+  function commit_page_url($commit_or_hash){
+	  return 'http://'.EDIT_DOMAIN.'/wiki/commit?commit='.urlencode($commit_or_hash);
+  }
 
-  if (!isset($_GET['page'])) $_GET['page'] = 'index';
+
+  if (!isset($_GET['page'])){
+	  Header( "HTTP/1.1 301 Moved Permanently" ); 
+	  Header( "Location: http://".EDIT_DOMAIN.'/wiki/index.html' ); 
+	  exit();
+  }
 
   # sanitize path: only keep A-Z,0-9 - _ /, no spaces
   # this is also for security reasons
   $_GET['page'] = preg_replace('/\.html$/', '', $_GET['page']);
   $_GET['page'] = preg_replace('/[^A-Z_a-z0-9\/-]/', '', $_GET['page']);
+
+  if ($_GET['page'] == 'log'){
+	  $log = $git->command(GIT.' log '. (isset($_GET['path']) ? escapeshellarg('vim-online-wiki-source/'.$_GET['path']) : '') );
+	  $html = str_replace("\n", "<br/>", quote($log));
+
+	  $html = preg_replace_callback('/commit (........................................)/', function($m){
+		return sprintf('<strong>commit <a href="%s">%s</a></strong>', commit_page_url($m[1]) , $m[1]);
+	  }, $html);
+	  echo render_page('changes of '.$_GET['page'].' '.$_GET['path'], 
+		  $html
+	  );
+
+	  exit();
+  }
+  if ($_GET['page'] == 'commit'){
+	  // todo cache?
+	  header("Content-type: text/plain");
+	  echo $git->command(GIT.' show '. escapeshellarg($_GET['commit']));
+	  exit();
+  }
 
   if ($_GET['page'] == 'edit'){
 	  $editable_page = 'http://'.EDIT_DOMAIN.'/wiki/'.$_GET['path'];

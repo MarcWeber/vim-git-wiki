@@ -382,7 +382,7 @@ class WikiToHTML {
 			throw new Exception('bad replacement: '.var_export($m, true));
 		    };
 		  },
-		  process_lists($wiki_file_path, "[[index]] [[".edit_page_url($wiki_file_path)."|edit]]\n".($wiki_file_contents))
+		  process_lists($wiki_file_path, "[[index]] [[".edit_page_url($wiki_file_path)."|edit]] [[".log_page_url($wiki_file_path)."|log]]\n".($wiki_file_contents))
 		  );
 
 
