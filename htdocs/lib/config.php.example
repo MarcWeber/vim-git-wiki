@@ -1,0 +1,12 @@
+<?php
+
+define('ERROR_LOG_FILE', dirname(dirname(dirname(__FILE__))).'/errors.txt');
+define('DEBUG', true);
+define('GIT', 'path-to-git-executable');
+define("EDIT_DOMAIN", 'vim-wiki.mawercer.de');
+define("USE_CACHE", 'file');
+
+
+// for error reporting:
+define('ERROR_CONTACT_EMAIL','');
+define('CONFIG_FILE', __FILE__);
