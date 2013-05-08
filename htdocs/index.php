@@ -129,7 +129,13 @@ function edit_form($content, $email, $comment){
 		return sprintf('<strong>commit <a href="%s">%s</a></strong>', commit_page_url($m[1]) , $m[1]);
 	  }, $html);
 	  echo render_page('changes of '.$_GET['page'].' '.d($_GET,'path'), 
-		  $html
+		 ( (isset($_GET['path']))
+		 ?
+		 "<p>You're seeing changes made to [/".quote($_GET['path'])."] only. "
+	       	 .sprintf('<a href="%s">All changes</a></p>', quote(log_page_url()))
+		 ."</p>"
+		   : ''
+		 ).  $html
 	  );
 
 	  exit();
