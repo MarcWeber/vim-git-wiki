@@ -204,12 +204,11 @@ Then last bad links are reported
         $line_empty = preg_match('/^[ ]*$/', $line);
         if ($state == "feature_matrix_reading_features"){
           // matrix: feature continuation
-
           if (preg_match('/^MATRIX/', $line)){
             $state = 'feature_matrix_reading_matrix';
           } else {
             if ($line_empty) continue;
-            if (preg_match('/^([^:]*)[ ]*:[ ]*(.*)/', $line, $m)){
+            if (preg_match('/^(.*?)[ ]*::[ ]*(.*)/', $line, $m)){
               $features[$m[1]] = $m[2];
             } else {
               $error('unexpected matrix feature line ');
@@ -222,7 +221,7 @@ Then last bad links are reported
             $render_feature_matrix();
             $state = '';
           } else {
-            if (preg_match('/^([^:]*)[ ]*:[ ]*(.*)/', $line, $m)){
+            if (preg_match('/^(.*?)[ ]*::[ ]*(.*)/', $line, $m)){
               $matrix[$m[1]] = preg_split('/[ ]*,[ ]*/',$m[2]);
             } else {
               $error('unexpected matrix line ');

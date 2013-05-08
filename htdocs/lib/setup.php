@@ -82,14 +82,12 @@ require_once dirname(__FILE__).'/config.php';
 	$header = 'ERROR '.(defined('PROJECT_ID') ? constant('PROJECT_ID') : 'NO PROJECT ID').' '.$time;
 	$emails = explode(',', ERROR_CONTACT_EMAIL);
 
-	# foreach ( $emails as $email ){
-	# 	$args = array($email, $header, "$message\n$trace");
-	#   if (! call_user_func_array('mail', $args) )
-	# 	  echo "Email verschicken an Admin fehlgeschlagen\n";
-
-	#   echo var_export($args, true);
-	# }
-	# echo "<br/>notification mail with header ".$header." was sent to ".count($emails)." admins addresses\n";
+	foreach ( $emails as $email ){
+		$args = array($email, $header, "$message\n$trace");
+	  if (! call_user_func_array('mail', $args) )
+		  echo "sending email to admin failed\n";
+	}
+	echo "<br/>notification mail with header ".$header." was sent to ".count($emails)." admins addresses\n";
 	exit();
 
   }
