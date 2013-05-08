@@ -102,7 +102,7 @@ function edit_form($content, $email, $comment){
   # sanitize path: only keep A-Z,0-9 - _ /, no spaces
   # this is also for security reasons
   $_GET['page'] = preg_replace('/\.html$/', '', $_GET['page']);
-  $_GET['page'] = preg_replace('/[^A-Z_a-z0-9\/-]/', '', $_GET['page']);
+  $_GET['page'] = preg_replace('/[^A-Z_a-z0-9\/ -]/', '', $_GET['page']);
 
   if ($_GET['page'] == 'search'){
 	  $log = $git->command(PATH.GIT.' grep -e '. escapeshellarg($_GET['q']).' | sed -n -e "s@vim-online-wiki-source@@p"' );
