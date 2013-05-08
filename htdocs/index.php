@@ -175,7 +175,9 @@ function edit_form($content, $email, $comment){
 		  } else {
 			  // should verify email once !!
 			$page = new Page($git, $_GET['page']);
-			$page->store($_POST['content'], $_POST['email'], $_POST['comment']);
+
+			// normalize \r\n to \n
+			$page->store(str_replace("\r\n","\n", $_POST['content']), $_POST['email'], $_POST['comment']);
 
 			// render, output
 			$page = new Page($git, $_GET['page']);
