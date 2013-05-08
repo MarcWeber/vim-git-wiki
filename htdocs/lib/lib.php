@@ -20,6 +20,10 @@ class NO_CACHE {
 	function fetch_or_set($key, $set, $ttl = 0){
 		return $set();
 	}
+
+	function store($key, $content, $ttl = 0){
+		/* NOP */
+	}
 }
 
 // memory cached, thread safe, see PHP
