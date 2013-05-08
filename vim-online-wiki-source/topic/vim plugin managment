@@ -39,26 +39,33 @@ why they are referenced often.
 introducing a pool of known plugins.
 
 FEATURES
-rtp: manipulate the runtimepath
-activate plugins at runtime: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
-plugin name completion:
-bootstrap from .vimrc: you can write this code for the other managers easily
-updating plugins:
-install progress bar:
-dependencies: minimal dependency support
-get-git: install from git repositories
-get-hg: install from mercurial
-get-svn: install from svn
-get-bazaar: install from svn
-get-vim.sf.net: install from vim.sf.net
-get-vim-scripts.org: install from vim-scripts.org (git mirror of vim.sf.net)
-bisect: bisect problems by dividing the set of plugins to be activated
+rtp:: manipulate the runtimepath
+activate plugins at runtime:: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
+plugin name completion::
+bootstrap from .vimrc:: you can write this code for the other managers easily
+updating plugins::
+install progress bar::
+dependencies:: minimal dependency support
+get-git:: install from git repositories
+get-hg:: install from mercurial
+get-svn:: install from svn
+get-bazaar:: install from svn
+get-vim.sf.net:: install from vim.sf.net
+get-vim-scripts.org:: install from vim-scripts.org (git mirror of vim.sf.net)
+bisect:: bisect problems by dividing the set of plugins to be activated
+?:: don't know it well enough, help fill in information
 
 
 MATRIX
-VAM: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
-Pathogen: rtp
-Vundle: rtp, get-git, get-vim-scripts.org, install progress bar
+VAM:: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
+Pathogen:: rtp
+Vundle:: rtp, get-git, get-vim-scripts.org, install progress bar
+GetLatestVimScripts:: get-vim.sf.net
+[[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
+[[http://github.com/c9s/Vimana|Vimana]]:: ?
+[[http://github.com/vimjolts/jolt|jolt]]:: ?
+[[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
+[[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
 
 == Example .vimrc setups ==
 

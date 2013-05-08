@@ -19,22 +19,22 @@ many different snippet solutions. So let's compare them:
 = Features: =
 
 FEATURES
-manual-reload: you have to reload snippet files
-automatic-reload: Its enough to write a snippet file, it'll be reloaded automatically
-runtimepath-support: Pick snippets by looking at &runtimepath
-space-abstraction: Some projects require for(a; b; c) others require for ( a; b; c; )
-can-read-snippets-files: snipmate is very popular. Comprehensive snippet collection can be found at [[http://github.com/honza/vim-snippets|vim-snippets]]
-requires-python:
-nested placeholders:
+manual-reload:: you have to reload snippet files
+automatic-reload:: Its enough to write a snippet file, it'll be reloaded automatically
+runtimepath-support:: Pick snippets by looking at &runtimepath
+space-abstraction:: Some projects require for(a; b; c) others require for ( a; b; c; )
+can-read-snippets-files:: snipmate is very popular. Comprehensive snippet collection can be found at [[http://github.com/honza/vim-snippets|vim-snippets]]
+requires-python::
+nested placeholders::
 
 
 MATRIX
-XPTemplate: manual-reload, space-abstraction
-Sander's snipmate: manual-reload, can-read-snippets-files
-snipmate: automatic-reload, runtimepath-support, can-read-snippets-files
-UltiSnips: manual-reload
-UltiSnipsF: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders
-neo snippets: can-read-snippets-files
+XPTemplate:: manual-reload, space-abstraction
+Sander's snipmate:: manual-reload, can-read-snippets-files
+snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files
+UltiSnips:: manual-reload
+UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders
+neo snippets:: can-read-snippets-files
 
 == Additional notes ==
 
