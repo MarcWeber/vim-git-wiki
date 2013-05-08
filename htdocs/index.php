@@ -93,6 +93,10 @@ function edit_form($content, $email, $comment){
   if (d($_POST,'I_am_human') == 'I am human') $_SESSION['is_human'] = true;
   if (d($_POST,'email', '') !== '') $_SESSION['email'] = $_POST['email'];
 
+  if (isset($_GET['test_exception'])){
+	  throw new Exception('test exception');
+  }
+
   if (!isset($_GET['page']) || empty($_GET['page'])){
 	  Header( "HTTP/1.1 301 Moved Permanently" ); 
 	  Header( "Location: http://".EDIT_DOMAIN.'/wiki/index.html' ); 
@@ -187,9 +191,20 @@ function edit_form($content, $email, $comment){
 		  );
 	  }
   } else {
-	  // show page
-	  $page = new Page($git, $_GET['page']);
-	  echo render_page_cached($page->title(), $page->html_content());
+	  if (file_exists($git->git_dir.'/vim-online-wiki-source/'.$_GET['page'])){
+		  // show page
+		  $page = new Page($git, $_GET['page']);
+		  echo render_page_cached($page->title(), $page->html_content());
+	  } else  {
+		  // 404
+		  header("HTTP/1.0 404 Not Found");
+		  echo render_page('Page '.$_GET['page'].' missing, create it?',
+			  sprintf(
+			  '<p>Sorry, [404], This page does not exist yet.</p>
+			  <p>You can <a href="%s">create it</a>.</p>', edit_page_url($_GET['page'])
+		  )
+		  );
+	  }
   }
 
 
