@@ -81,6 +81,15 @@ function edit_form($content, $email, $comment){
 	  return 'http://'.EDIT_DOMAIN.'/wiki/commit?commit='.urlencode($commit_or_hash);
   }
 
+  function vim_wiki_search_form(){
+    return '
+	  <form action="http://'.EDIT_DOMAIN.'/wiki/search" method="get" accept-charset="utf-8" style="display:inline">
+	  <input alt="regular expression on source files" type="text" name="q"/>
+	  <input type="submit" name="action" value="search"/>
+	  </form>
+	  ';
+  }
+
   if (d($_POST,'I_am_human') == 'I am human') $_SESSION['is_human'] = true;
   if (d($_POST,'email', '') !== '') $_SESSION['email'] = $_POST['email'];
 
@@ -95,6 +104,19 @@ function edit_form($content, $email, $comment){
   $_GET['page'] = preg_replace('/\.html$/', '', $_GET['page']);
   $_GET['page'] = preg_replace('/[^A-Z_a-z0-9\/-]/', '', $_GET['page']);
 
+  if ($_GET['page'] == 'search'){
+	  $log = $git->command(PATH.GIT.' grep -e '. escapeshellarg($_GET['q']).' | sed -n -e "s@vim-online-wiki-source@@p"' );
+	  $html = '';
+	  foreach(explode("\n", $log) as $line){
+		  $l = explode(":", $line, 2);
+		  if (count($l) == 2){
+			  list($file, $line) = $l;
+			  $html .= sprintf('<br/><a href="http://%s/wiki/%s.html">%s</a> %s', EDIT_DOMAIN, quote($file), quote($file) ,quote($line) );
+		  }
+	  }
+	  echo render_page('search for regex '.$_GET['q'], $html);
+	  exit();
+  }
   if ($_GET['page'] == 'log'){
 	  $log = $git->command(GIT.' log '. (isset($_GET['path']) ? escapeshellarg('vim-online-wiki-source/'.$_GET['path']) : '') );
 	  $html = str_replace("\n", "<br/>", quote($log));

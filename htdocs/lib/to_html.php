@@ -348,44 +348,52 @@ class WikiToHTML {
 	  );
 
 
-	  $html = preg_replace_callback(
-		  '/'.implode('|', $patterns).'/m',
-		  function($m) use(&$to_html, $wiki_file_path, $wiki_file_contents, $this_obj){
-		    global $reference_pages;
+	  $process_inline_elements = function($text)use(&$patterns, &$wiki_file_path, &$wiki_file_contents, &$this_obj, &$to_html){
+		  return preg_replace_callback(
+				  '/'.implode('|', $patterns).'/m',
+				  function($m) use(&$to_html, $wiki_file_path, &$wiki_file_contents, &$this_obj){
+					  global $reference_pages;
 
-		    // each pattern starts at later index, so drop all empty items, so 
-		    // that 0 always is the identifying string
+					  // each pattern starts at later index, so drop all empty items, so 
+					  // that 0 always is the identifying string
 
-		    $s = $m[0]; array_shift($m);
-		    while($m[0] == '') array_shift($m);
+					  $s = $m[0]; array_shift($m);
+					  while($m[0] == '') array_shift($m);
 
-		    switch ($m[0]) {
-		      case '{{{':
-			return sprintf('<span class="inline_code">%s</span>', $m[1]);
-		      case '**':
-			return sprintf('<strong>%s</strong>', $m[1]);
-			break;
-		      case '[[':
-			if (preg_match('/^([^:]+:\/\/[^|]*)(|.*)?$/', $m[1], $m2)){
-			  // external url
-			  $href = $m2[1];
-			  $alt = '';
-			  $label = empty($m2[2]) ? $href : substr($m2[2], 1);
-			  return sprintf('<a href="%s" alt="%s">%s</a>', $href, $alt, $label);
-			} else {
-			  // internal url
-			  $reference_pages[] = $m[1];
-			  return $to_html['wikilink']($m[1], rel_path('./'.$m[1], dirname($wiki_file_path)));
-			}
-			break;
-		      default:
-			throw new Exception('bad replacement: '.var_export($m, true));
-		    };
-		  },
-		  process_lists($wiki_file_path, "[[index]] [[".edit_page_url($wiki_file_path)."|edit]] [[".log_page_url($wiki_file_path)."|log]]\n".($wiki_file_contents))
-		  );
-
-
+					  switch ($m[0]) {
+					  case '{{{':
+						  return sprintf('<span class="inline_code">%s</span>', $m[1]);
+					  case '**':
+						  return sprintf('<strong>%s</strong>', $m[1]);
+						  break;
+					  case '[[':
+						  if (preg_match('/^([^:]+:\/\/[^|]*)(|.*)?$/', $m[1], $m2)){
+							  // external url
+							  $href = $m2[1];
+							  $alt = '';
+							  $label = empty($m2[2]) ? $href : substr($m2[2], 1);
+							  return sprintf('<a href="%s" alt="%s">%s</a>', $href, $alt, $label);
+						  } else {
+							  // internal url
+							  $reference_pages[] = $m[1];
+							  return $to_html['wikilink']($m[1], rel_path('./'.$m[1], dirname($wiki_file_path)));
+						  }
+						  break;
+					  default:
+						  throw new Exception('bad replacement: '.var_export($m, true));
+					  };
+				  },
+				  $text
+			  );
+	  };
+	  $html = $process_inline_elements(process_lists($wiki_file_path, $wiki_file_contents));
+	  $html = 
+		  '<div class="header">'
+		  .$process_inline_elements("[[index]] [[".edit_page_url($wiki_file_path)."|edit]] [[".log_page_url($wiki_file_path)."|log]]")
+		  .vim_wiki_search_form()
+		  .'</div>'
+		  .$html;
+		
 	  return $html;
 
 	}

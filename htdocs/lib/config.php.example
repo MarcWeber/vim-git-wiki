@@ -3,6 +3,9 @@
 define('ERROR_LOG_FILE', dirname(dirname(dirname(__FILE__))).'/errors.txt');
 define('DEBUG', true);
 define('GIT', 'path-to-git-executable');
+// PATH command executed to make sure that git, grep, sed, mkdir are in PATH
+define('PATH', 'PATH=/run/current-system/sw/bin;');
+
 define('MKDIR_PATH', 'path-to-mkdir');
 define("EDIT_DOMAIN", 'vim-wiki.mawercer.de');
 define("USE_CACHE", 'file');
