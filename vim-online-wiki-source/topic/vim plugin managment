@@ -136,11 +136,8 @@ style is used to reproduce the exact behaviour on a new machine. It can be used
 with any plugin manager - as long as plugins are
 checked out by git.
 
-== existing vim plugin collections ==
-They often hint about important plugins - however Marc Weber thinks that they
-fail it proper plugin management (cause he believes in VAM doing it the right way)
-
-See janus, vimpyre and some others
+== collections ==
+[[topic/plugin-collections]]
 
 == additional solutions and in some way related projects ==
 [[https://bitbucket.org/howlanderson/vimapt|vimapt]] (I don't know much about it yet)
