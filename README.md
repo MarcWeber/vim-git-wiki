@@ -1,6 +1,14 @@
 vim-git-wiki
 ============
 
+The wiki can be edited online now:
+[vim-wiki](http://vim-wiki.mawercer.de/wiki/index.html)
+
+I'm no longer using custom syntax only is the best way.
+Maybe we should use moin-moin (as wikia vim wiki does) or markdown and add
+features we need.
+
+
 design-goals: See vim-online-wiki-source/topic/this-wiki-design-goals
 contribute:   See vim-online-wiki-source/topic/contributing-to-this-wiki.wiki
 feedback:     See vim-online-wiki-source/topic/contributing-to-this-wiki.wiki -> submitting bugs
