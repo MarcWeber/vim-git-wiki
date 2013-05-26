@@ -1,5 +1,7 @@
 == problem: when diffing and using :diffoff Vim forgets about the previous foldmethod
 
+outdated: there is a patch on the vim-dev mailinglist
+
 Gary Johnson posted this solution on the mailinglist to vim_dev on May 25 2013  7:45PM:
 
 This autocommand remembers the foldmethod of each buffer.
@@ -24,3 +26,5 @@ such as 'foldmethod'.
         \ <bar> windo exe 'if exists("b:syn") <bar> let &l:syn = b:syn <bar> endif'
         \ <bar> exe wn . 'wincmd w'
 }}}
+
+

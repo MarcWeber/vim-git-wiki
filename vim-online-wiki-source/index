@@ -19,7 +19,6 @@ create an todo item: [[todo]]
 = By topic: =
 [[license]]
 
-
 [[topic/saying-thanks]]
 
 About the Editor VIM:
@@ -27,6 +26,7 @@ What Vim is, how to install it:
 * [[topic/vim/installation]] 
 
 VimL related (extending Vim):
+* [[topic/resources-for-beginners]]
 * [[topic/vimrc]]
 * [[topic/configuring-vim]]
 * [[topic/vim plugin managment]]
