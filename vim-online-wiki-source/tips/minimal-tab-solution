@@ -1,0 +1,7 @@
+= minimal tab solution
+Code see [[http://github.com/MarcWeber/vim-addon-manager]]
+
+* {{{<m-1>, <m-2>, ..}}} mappings to select the nth tab fast
+reminder : you can <c-w> T to move a buffer to a new tab
+
+Note: tabs were not meant to be used that way, but it works for me.

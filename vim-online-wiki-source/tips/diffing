@@ -1,0 +1,26 @@
+== problem: when diffing and using :diffoff Vim forgets about the previous foldmethod
+
+Gary Johnson posted this solution on the mailinglist to vim_dev on May 25 2013  7:45PM:
+
+This autocommand remembers the foldmethod of each buffer.
+
+{{{
+    " Remember the current 'foldmethod' so that it can be restored
+    " after a diff by the Nodiff or Undiff command.
+    "
+    au BufWinEnter * if &fdm != "diff" | let b:fdm = &fdm | endif
+}}}
+
+Rather than use :diffoff, I use my own commands such as the
+following Undiff to exit diff mode and clean up related settings
+such as 'foldmethod'.
+
+{{{
+    command! -bar -bang Undiff let wn=winnr()
+        \ <bar> diffoff!
+        \ <bar> windo set foldlevel=99
+        \ <bar> set virtualedit=
+        \ <bar> windo exe 'if exists("b:fdm") <bar> let &fdm = b:fdm <bar> endif'
+        \ <bar> windo exe 'if exists("b:syn") <bar> let &l:syn = b:syn <bar> endif'
+        \ <bar> exe wn . 'wincmd w'
+}}}

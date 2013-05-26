@@ -1,0 +1,6 @@
+{{{
+augroup CREATE_MISSING_DIR_ON_BUF_WRITE
+  au!
+  autocmd BufWritePre * if !isdirectory(expand('%:h')) | call mkdir(expand('%:h'),'p') | endif
+augroup end
+}}}

@@ -1,6 +1,7 @@
 = design goals of this wiki =
 * provide high quality content
 * keep it simple
+* simpler solutions first
 * editable by Vim
 * editable by Browser
 (see [[this-wiki/contributing]])

@@ -17,6 +17,9 @@ create an todo item: [[todo]]
 * [[http://www.vim.org/community.php|mailinglist]]
 
 = By topic: =
+[[license]]
+
+
 [[topic/saying-thanks]]
 
 About the Editor VIM:
@@ -39,7 +42,13 @@ for programmers:
 general text editing:
 * [[topic/text snippets]]
 * [[topic/tags]]
-* [[topic/opening-files]]
+* [[topic/opening-switching-files]]
+
+* [[topic/compiling-vim-from-source]]
+
+= random tips =
+
+* [[tips/about/index]]
 
 = By language: =
 Here you'll find short introductions about which tools are most valuable. Tools
