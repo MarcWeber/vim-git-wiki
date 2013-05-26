@@ -1,0 +1,59 @@
+= text snippets and skeletons =
+When editing any kind of text often you have to type the same over and over again.
+An example is a footer in an email or a conditional statement in a programming
+language. The most simple way to automate this is using the 
+{{{
+  :abbrev command.
+}}}
+The next simple thing is create a mapping such as 
+{{{
+imap \insert Hello<space>World
+# more advanced example:
+imap \eemail_header <c-r>="Dear ".input("name: ")."\n"<cr>
+}}}
+
+This is all managable, however for longer texts it becomse tiresome. For that
+reason special "snippet" or "template" plugins have been written. There are
+many different snippet solutions. So let's compare them:
+
+= Features: =
+
+FEATURES
+manual-reload:: you have to reload snippet files
+automatic-reload:: Its enough to write a snippet file, it'll be reloaded automatically
+runtimepath-support:: Pick snippets by looking at &runtimepath
+space-abstraction:: Some projects require for(a; b; c) others require for ( a; b; c; )
+can-read-snippets-files:: snipmate is very popular. Comprehensive snippet collection can be found at [[http://github.com/honza/vim-snippets|vim-snippets]]
+requires-python::
+nested placeholders::
+info-missing::
+
+
+MATRIX
+XPTemplate:: manual-reload, space-abstraction
+Sander's snipmate:: manual-reload, can-read-snippets-files
+snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files
+UltiSnips:: manual-reload
+UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders
+neo snippets:: can-read-snippets-files
+vim-template:: info-missing
+
+== Additional notes ==
+
+**XPTemplate**: mature engine, advanced features. Creating snippets takes some effort
+
+**Sander's snipmate**: original snipmate version.
+
+**snipmate**: adds some features, therefore depends on additional libraries
+
+**UltiSnipsF**:
+  forked version of UltiSnips. Its goal is to merge communities of snipmate and
+  UltiSnips by providing most important features to both communities.
+  However the test suite is not up to date and maybe will never be updated,
+  because everything Marc Weber cares about works
+
+**neo snippets**:
+  I don't know much about it - help fill in more information. This feature list is incomplete
+
+**vim-template**:
+  I don't know much about it - help fill in more information. This feature list is incomplete
