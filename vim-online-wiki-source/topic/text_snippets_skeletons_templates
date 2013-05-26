@@ -1,4 +1,4 @@
-= text snippets and skeletons =
+= text snippets, skeletons, templates =
 When editing any kind of text often you have to type the same over and over again.
 An example is a footer in an email or a conditional statement in a programming
 language. The most simple way to automate this is using the 
@@ -51,6 +51,8 @@ vim-template:: info-missing
   UltiSnips by providing most important features to both communities.
   However the test suite is not up to date and maybe will never be updated,
   because everything Marc Weber cares about works
+  
+  UltiSnips will soon have a new release containing most of these changes
 
 **neo snippets**:
   I don't know much about it - help fill in more information. This feature list is incomplete
