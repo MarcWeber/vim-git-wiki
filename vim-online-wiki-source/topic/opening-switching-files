@@ -18,9 +18,9 @@ map lhs :b<space>
 }}}
 
 == tab like solutions: ==
-[[tips/minimal-tab-solution]]
-[[https://github.com/fholgado/minibufexpl.vim|minibufexpl tab like plugin]]
-[[http://vim.wikia.com/wiki/Category:Tabs|wikia Category:Tabs]]
+* [[tips/minimal-tab-solution]]
+* [[https://github.com/fholgado/minibufexpl.vim|minibufexpl tab like plugin]]
+* [[http://vim.wikia.com/wiki/Category:Tabs|wikia Category:Tabs]]
 
 == using additional plugins ==
 [[https://github.com/scrooloose/nerdtree|The_NERD_tree]] is popular, because it has a tree view.
@@ -28,9 +28,9 @@ map lhs :b<space>
 [[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/sample_vimrc_for_new_users.vim|sample_vimrc_for_new_users.vim]]
 has a very simple glob open implementation. Many famous alternatives exist:
 
-Command-T plugin (requires ruby, thus you may have little trouble setting it up)
-ctrlp.vim
-FuzzyFinder
+* Command-T plugin (requires ruby, thus you may have little trouble setting it up)
+* ctrlp.vim
+* FuzzyFinder
 (How do they compare, which plugin do people prefer for what reason?)
 
 (TODO)
