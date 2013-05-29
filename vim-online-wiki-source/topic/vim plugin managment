@@ -66,7 +66,7 @@ GetLatestVimScripts:: get-vim.sf.net
 [[http://github.com/vimjolts/jolt|jolt]]:: ?
 [[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
-[[https://code.google.com/p/windows-package-manager|Npackd]]:: ?
+[[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, updating plugins, dependencies?
 
 == Example .vimrc setups ==
 
