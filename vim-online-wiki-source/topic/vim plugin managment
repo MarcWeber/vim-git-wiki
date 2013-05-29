@@ -120,7 +120,12 @@ runtime:
 }}}
 
 **Npackd**:
-Its a package manager for Windows which happens to contain some Vim plugins.
+Its a package manager for Windows which happens to contain some Vim plugins. It uses Pathogen for actual plugin integration.
+vimrc:
+{{{
+exec ':source ' . $ALLUSERSPROFILE . '/Npackd/VimPlugins/vim-pathogen/autoload/pathogen.vim'
+execute pathogen#infect($ALLUSERSPROFILE . '/Npackd/VimPlugins/{}')
+}}}
 
 
 
