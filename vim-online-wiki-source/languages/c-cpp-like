@@ -1,6 +1,11 @@
 = vim & C C++ like =
 
 [[plugins/youcompleteme]]
-[[plugins/eclim]]
+[[plugins/ecim]]
+[[tips/echo-nesting-level-of-proprocessor-directives]]
+
+More useful plugins:
+* taglist
+* [[plugins/vim-addon-actions]]
 
 and many more (TODO)
