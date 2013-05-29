@@ -119,6 +119,10 @@ runtime:
   :AddonsInfo name
 }}}
 
+**Npackd**:
+Its a package manager for Windows which happens to contain some Vim plugins.
+
+
 
 == supporting git only - is it a problem ? vim-scripts.org
 Now it might look that being able to install from git repositories only is a major disadvantage.
