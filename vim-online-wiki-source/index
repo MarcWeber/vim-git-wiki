@@ -1,31 +1,38 @@
 = Introduction =
+
 This wiki should become the greatest resource about Vim by telling you about
 most useful plugins, workflows and settings
 
 **contributing**:
+
 * [[this-wiki/design-goals]]
 * [[this-wiki/contributing]]
 * [[topic/github]]
 
 **missing something ?**
+
 create an todo item: [[todo]]
 
 = how to get help about vim =
+
 * {{{:help}}} use vim's builtin help
 * try google
 * [[topic/vim-irc-on-freenode]]
 * [[http://www.vim.org/community.php|mailinglist]]
 
 = By topic: =
+
 [[license]]
 
 [[topic/saying-thanks]]
 
 About the Editor VIM:
 What Vim is, how to install it:
+
 * [[topic/vim/installation]] 
 
 VimL related (extending Vim):
+
 * [[topic/resources-for-beginners]]
 * [[topic/vimrc]]
 * [[topic/configuring-vim]]
@@ -33,13 +40,16 @@ VimL related (extending Vim):
 * [[topic/designing-a-vim-plugin]]
 
 for programmers:
+
 * [[topic/debugging-with-vim]]
 * [[topic/syntax-checking]]
+* [[topic/autocompletion]]
 * [[topic/autoclosing]]
 * [[topic/running-tools-or-compilers]]
 * [[topic/repl]]
 
 general text editing:
+
 * [[topic/text-snippets-skeletons-templates]]
 * [[topic/tags]]
 * [[topic/opening-switching-files]]
@@ -52,40 +62,42 @@ general text editing:
 * [[tips/about/index]]
 
 = By language: =
+
 Here you'll find short introductions about which tools are most valuable. Tools
 (like tagging, snippets) which are useful for many languages should be added as
 topic. Then they can be referenced.
 
 * [[languages/c-cpp-like]]
+* [[languages/csharp]]
 * [[languages/haxe]]
 * [[languages/haskell]]
+* [[languages/html]]
 * [[languages/java]]
-* [[languages/scala]]
 * [[languages/javascript]]
 * [[languages/php]]
 * [[languages/python]]
 * [[languages/ruby]]
+* [[languages/scala]]
 * [[languages/tcl]]
 * [[languages/urweb]]
 * [[languages/viml]]
-* [[languages/html]]
-* [[languages/csharp]]
 ...
 
-
 = additional vim related sites (random order) =
+
 * [[http://vim.wikia.com|vim wikia wiki]]
 * [[http://glts.github.com/VimPluginMatrix/|VimPluginMatrix]]
 * [[http://vam.mawercer.de|vam.mawercer.de]]
 * [[http://www.drchip.org/astronaut/vim/|Dr Chips Vim page]]
 * [[http://vimhelp.appspot.com/]] (vim help faq ..)
 
+= Vim-a-likes =
 
-= Vim like
 The modal editing found in Vim is that famous that many editors adopted at
 least some ideas: [[topic/vim-keybinding-implementations]]
 
 = maintainers =
+
 This wiki will soon be too big for one person to maintain.
 
 Some files will be maintained by individuals, others will be patched by the
