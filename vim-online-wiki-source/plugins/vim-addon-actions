@@ -1,0 +1,8 @@
+== vim-addon-actions ==
+[[http://github.com/MarcWeber/vim-addon-actions|vim-addon-actions]]
+predefines many ways to run common compilers.
+
+Its your task to bind actions to keys or events such as (buf write).
+This way you can bind multiple actions in one vim sessions easily.
+
+Of course you can easily provid your omn actions to be run.

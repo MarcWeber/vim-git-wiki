@@ -1,0 +1,40 @@
+Sometimes you're lost - not knowing how much {{{#if ... #endif }}} blocks
+surround the current cursor location. This will tell you.
+{{{
+fun! GetCPPNestingLevel()
+  let p = getpos('.')
+  let level = 0
+  let ignore = 0
+  let nesting = []
+  let l = line('.')
+  let r = '^\s*#\s*\%(if\|endif\)'
+  while 1
+    let line = search(r, 'bW')
+    if line > 1
+      if getline('.') =~ '^\s*#\s*\%(if\)'
+        if (ignore == 0)
+          call add(nesting, [getline('.'), l])
+        endif
+        let level += 1
+        let ignore -= 1
+        if (ignore < 0) | let ignore = 0 |endif
+      else
+        let ignore += 1
+        let level -= 1
+      endif
+    else
+      break
+    endif
+  endwhile
+  call setpos('.', p)
+  return "level is ".level." ".string(nesting)
+endf
+
+command! -nargs=0 CPPNestingLevel echo GetCPPNestingLevel()
+}}}
+
+**Alternative ways**:
+* use markers and set foldmethod to marker, but they don't allow regex, so
+  {{{#if space defined(xxx)}}} wowld be missed
+* write your own folding (could be slow?)
+* write your own indent script indenting only #ifdef ..

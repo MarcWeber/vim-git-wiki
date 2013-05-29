@@ -2,5 +2,6 @@
 [[tips/auto-create-directories-before-writing]]
 [[tips/goto-line-by-last-digits]]
 [[tips/smart-search-patterns]]
+[[tips/echo-nesting-level-of-proprocessor-directives]]
 
 If there are more tips I'll automate this index on PHP side
