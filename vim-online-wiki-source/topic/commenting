@@ -1,0 +1,33 @@
+== commenting text ==
+
+Most programming languages have special characters such as
+{{{
+# PHP, cmake, (endless more langugaes)
+// C/C++, (endless more)
+-- SQL
+
+or multiline comments
+{- Haskell -}
+/* C++ C etc */
+}}}
+
+== How to remove comments ? ==
+{{{
+" dorp # at the beginning (jj being a up/down movement)
+  " <c-v>jjd
+  " or by regex:
+  %s@^#@@
+}}}
+
+== How to add comments ? ==
+{{{
+" drop # at the beginning
+  " <c-v>jjI#<esc>
+  " or by regex:
+  %s@^#@@
+}}}
+
+== plugins ==
+There are many plugins. One of the most simple yet powerful ones is
+[[http://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]]
+Its Readme references alternative solutions
