@@ -15,10 +15,18 @@ create an todo item: [[todo]]
 
 = how to get help about vim =
 
-* {{{:help}}} use vim's builtin help
+* {{{:help}}} ({{{:h}}}) use vim's builtin help
 * try google
 * [[topic/vim-irc-on-freenode]]
 * [[http://www.vim.org/community.php|mailinglist]]
+
+**Learning vim**
+
+Some most useful resources:
+
+* Run {{{vimtutor}}} first!
+* Watch Derek Wyatt's [[http://www.derekwyatt.org/vim/vim-tutorial-videos/|awesome videos]]!
+* Learn how to use the [[topic/help]] command
 
 = By topic: =
 
