@@ -60,3 +60,5 @@ random ideas / scripts / plugins:
   "patterns such".
 * [[http://vim.wikia.com/wiki/Move_to_next/previous_line_with_same_indentation|move to next/previous line having same indentation]]
 * many more
+* relative line mubers
+  There are plugins at vim.sf.net which eventually lead to the newer vim option 'relativenumber'
