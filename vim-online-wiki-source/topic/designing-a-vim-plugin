@@ -46,13 +46,17 @@ let g:your_plugin_name.command_x_lhs = '\bar'
 and everything belonging to that plugin can be put into the dictionary which
 can be accessed from everywhere. (config, caches, etc)
 
+== plugin dependencies ==
+VAM (vim-addon-manager) introduced a addon-info.json file which let's you
+specify dependencies. Using VAM they'll be installed automatically.
+
+== enoug, just show me a small example ==
+[[https://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]] 
+which is minimal, separates user interface and implementation.
+
 == completions ==
 Well - hot topic. Sometimes you may want to have multiple completion implementations at the same time.
 My personal recommendation is bind them all to different keys so that you always know exactly what your
 completing.
 [[https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt|vim-addon-completion]]
 has some helper functions
-
-== plugin dependencies ==
-VAM (vim-addon-manager) introduced a addon-info.json file which let's you
-specify dependencies. Using VAM they'll be installed automatically.
