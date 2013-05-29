@@ -1,5 +1,8 @@
 = designing a vim plugin =
 
+Note: Vim 7.4 will have improved python support. So this file should be updated
+also telling about how to write the perfect Python plugin.
+
 This is my (Marc Weber's) recommendation:
 
 == Why are you writing the plugin ? ==

@@ -1,0 +1,32 @@
+= TODO how to compile from source =
+
+[[http://vimhelp.appspot.com/vim_faq.txt.html#faq-35|vimhelp.appspot.com -> faq-35.10]]
+has quite a lot of info.
+
+== installing dependencies ==
+Quoting from  [[http://vimhelp.appspot.com/vim_faq.txt.html#faq-35|vimhelp.appspot.com -> faq-35.10]]
+
+
+Depending on your linux distro such may be fastest
+{{{
+  apt-get build-dep vim-gtk
+  zypper source-install --build-deps-only vim
+  yum-builddep PACKAGE_NAME
+}}}
+
+== nixos linux ==
+vim_configurable is quite sophisticated, there is no need to build from source
+yourself.
+
+install {{{ (vim_configurable.override { pythonSupport = true; ...})) }}} and you should be done
+
+There are many additional ways
+
+== how to build multiple configurations from the same source
+{{{
+      for i in $(seq 2); do make -C src shadow SHADOWDIR=case$i; done
+      (cd src/case1 && ./configure ... && make)
+      (cd src/case2 && ./configure ... && make
+}}}
+
+James McCoy @ vim-dev May 27 2013

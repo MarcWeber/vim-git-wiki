@@ -43,6 +43,7 @@ general text editing:
 * [[topic/text-snippets-skeletons-templates]]
 * [[topic/tags]]
 * [[topic/opening-switching-files]]
+* [[topic/cursor-movement]]
 
 * [[topic/compiling-vim-from-source]]
 
@@ -68,6 +69,7 @@ topic. Then they can be referenced.
 * [[languages/urweb]]
 * [[languages/viml]]
 * [[languages/html]]
+* [[languages/csharp]]
 ...
 
 

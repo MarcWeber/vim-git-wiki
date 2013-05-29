@@ -1,0 +1,62 @@
+Well {{{:h motion.txt}}} should be your first try. Most imoprtant keys:
+
+{{{
+hjkl - as experienced user you'll notice that you don't use them that often.
+So you should at least know about the following and have a look at :h motion.txt
+and create your own by mappings
+
+how to reach insert mode:
+| is cursor location
+
+    O
+I  i|a  A
+    o
+
+important movements and their relation:
+
+       gg                       
+     <c-u>                      H (top line window)
+
+-      k                        
+0    h | l   $                  M
+<cr>   j
+     <c-v>
+                                L
+       G
+
+N G or :N : goto line number N
+
+movements:
+
+use search / ? to place cursor. Remember that typing a word is not always the
+              most efficient way. Eg try /ys t this. And you'll get excatly
+              one match in the whole document.
+
+c-o c-i : jump list history
+
+g;      : where did I edit last (current buffer) - you can repeat it
+
+Learn about w vs W. Try it CURSOR_HERE.then.type.it (same for e,E)
+
+f,F,t,T : move to char or just before it forward / backward current line. (A
+          must)
+
+be faster: delete then goto insert mode:
+C: deletes till end of line
+c a-movement-action: deletes characters visited while moving
+
+more movements:
+(, ): move by sentence
+[[, ]], {, } : more blockwise movements which are often helpful
+...
+}}}
+
+However a lot of additional needs and solutions are there.
+
+random ideas / scripts / plugins:
+* [[tips/goto-line-by-last-digits]]
+* [[http://www.vim.org/scripts/script.php?script_id=3437|PreciseJump]],
+  The alternative is to use smart seacrh patterns such as "s s" to match
+  "patterns such".
+* [[http://vim.wikia.com/wiki/Move_to_next/previous_line_with_same_indentation|move to next/previous line having same indentation]]
+* many more

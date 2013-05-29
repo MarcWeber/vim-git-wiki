@@ -66,6 +66,7 @@ GetLatestVimScripts:: get-vim.sf.net
 [[http://github.com/vimjolts/jolt|jolt]]:: ?
 [[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
+[[https://code.google.com/p/windows-package-manager|Npackd]]:: ?
 
 == Example .vimrc setups ==
 
@@ -135,6 +136,14 @@ They are used to embed git repositories into existing git repositories. Thus
 style is used to reproduce the exact behaviour on a new machine. It can be used
 with any plugin manager - as long as plugins are
 checked out by git.
+
+
+== windows support ==
+Well, must plugins should work fine - however installing all dependencies (git,
+mercurial, unzip, ...) can be tedious (VAM case). 
+See [[vam.mawercer.de]], [[https://github.com/MarcWeber/vim-addon-manager/blob/master/doc/vim-addon-manager-additional-documentation.txt|VAM docs, section 10]]
+
+This could be simplified - there was no need to do so yet.
 
 == collections ==
 [[topic/plugin-collections]]
