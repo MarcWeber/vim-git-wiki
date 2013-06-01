@@ -2,6 +2,7 @@
 * threading support
 * a way to write your plugins using python only. See startup dir below
 * a way to halt python execution, eg by pressing ctrl-c (TODO)
+* what about pip integration? See below
 
 == startup dir ==
 We cannot put .py plugins into plugin, because some older plugins may have
@@ -64,3 +65,28 @@ notify_me_on_plugin_load(lambda (name)
 
 Less problems would happen if rtp would be used to populate sys.path. Then
 order of loading python plugins would matter less ?
+
+
+== pip integration
+I feel bad about forcing support for any solution. It should be optional
+always. The same way we could provide ways to install exuberant-ctags for all
+oses.
+Also using pip to check for packages is much more time consuming (untested)
+than vam's test "does directory exist" to find out wether a plugin is there?
+Am I right about this?
+Startup should be fast always.
+
+Could we introduce a vim only solutions or hook into python to allow providing
+your own solution to fetch dependencies?
+{{{
+  vim.ensurep_python_library_exists('pip', 'foo')
+  import foo
+}}}
+
+then users could decide on how how to install a library?
+
+Also pip is the successor of easy_install. So even in the python community
+things may change faster than Vim which could make it hard /impossible for Vim
+maintainers to maintain such, too.
+
+For those reasons I vote for such a feature being optional.
