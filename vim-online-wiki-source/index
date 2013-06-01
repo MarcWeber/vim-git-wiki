@@ -28,6 +28,9 @@ Some most useful resources:
 * Watch Derek Wyatt's [[http://www.derekwyatt.org/vim/vim-tutorial-videos/|awesome videos]]!
 * Learn how to use the [[topic/help]] command
 
+= HOT : =
+[[vim74/discussing-ideas]]
+
 = By topic: =
 
 [[license]]
@@ -56,6 +59,7 @@ for programmers:
 * [[topic/running-tools-or-compilers]]
 * [[topic/repl]]
 * [[topic/commenting]]
+* [[topic/sql]]
 
 general text editing:
 

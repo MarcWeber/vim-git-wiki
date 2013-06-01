@@ -1,0 +1,30 @@
+== SQL & Vim ==
+= plugins =
+
+* [[github.com/MarcWeber/vim-addon-sql|vim-addon-sql]]
+* dbext
+
+
+FEATURES
+mysql-support::
+postgresql-support::
+sqlite-support::
+firebird-support::
+information-missing::
+
+MATRIX
+vim-addon-sql:: mysq-support, postgresql-support, sqlite-support, firebird-support
+dbext:: information-missing
+
+== details
+
+**vim-addon-sql**
+* using external executables to reconnect for each query
+* supports alias aware table and field completion for all supported databases
+* completes mysql builtin functions
+* can detect statements automatically based on empty lines or ';'. If this
+  doesn't work you can still visually select a statement and run it
+* bad formatting of sql results
+
+**dbext**
+* much more sophisticated ..
