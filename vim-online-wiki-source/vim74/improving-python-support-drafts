@@ -1,3 +1,5 @@
+ZyX's [[https://gist.github.com/ZyX-I/5561409|description]] for changes
+
 = How would perfect python support look like for Vim?
 * threading support
 * a way to write your plugins using python only. See startup dir below
