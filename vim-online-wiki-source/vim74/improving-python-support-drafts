@@ -28,7 +28,7 @@ loadpugins = vim,python2,python3 # load vim,python2,python3 plugins
 A related implementation can be found in the pythonx patch (vim-dev
 mailinglist).
  
-== how to hide one plugins implementation from the other ?
+== how to hide one plugins implementation from each other ?
 Polluting global name space is not really an option.
 
 Putting each plugin into a module explicitely would be perfect:
@@ -41,6 +41,14 @@ def load_or_reload_plugin(path)
   # tell all plugins that a plugin was loaded, they may want extend it
   notify(module_name)
 }}}
+
+How does a plugin access settings from user?
+{{{
+  import __main__
+  if hasattr(__main__, 'user_setting'):
+    # use user setting
+}}}
+
 
 == one plugin using features of another? (open issue)
 See previous example load_or_reload_plugin
