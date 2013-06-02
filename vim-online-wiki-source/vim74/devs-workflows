@@ -1,0 +1,104 @@
+= Perfect dev workflow for Vim
+
+== Bram's view:
+Bram likes people sending patches to the mailinglist because
+* it works for him
+* he knows which cheanges should be included
+* legal reasons [1]
+* Marc Weber guesses he'll continue to submit patches the way he did,
+  upload them to vim.sf.net, and commit them to mercurial, then
+  push mercurial.
+
+  I don't want to discuss this. I want to talk about how contributors can share
+  their patches and help each other making them perfect before Bram gets/picks
+  the final patch
+
+[1]
+Marc Weber thinks that legal reasons are not valid, because you can fake
+origin of emails. But he's not a lawyer
+
+== current solution using mercurial
+Currently vim is using mercurial.
+
+Bram is picking up patches from the mailinglist,
+then distributing them via mercurial repository and the homepatch (as
+patch-number-XX)
+
+Google code is used. Google code does track "clones". But there is no nice way
+te send change requests - or I didn't find it
+
+== What would git/github provide ?
+Advantages of git I haven't found equivalent tools using mercurial:
+
+* staging area (git ammend --patch) (that's not a big issue)
+
+* remotes: 
+  {{{
+  git remote add other-dev other-repo-url
+  }}}
+  Then the branches of other-dev will be accessible by
+  {{{
+  other-dev/master
+  other-dev/new-feature
+  }}
+  And you can merge them into your own branch easily and keep track of it
+
+  Comparison to mercurial: If you hg pull from another url, it will get hard to
+  distinguish your own branches and foreign branches, name collisions may
+  happen and whatnot
+
+* github: pull requests just work. People can clone, download, commit, push a
+  new branch and submit a pull requests. Others will see those pull requests
+  and can comment on them - even on individual lines
+
+  And whetever a patch gets outdated (eg because new patches got included
+  upstream) - the patch author can easily submit a new version by {{{push
+  --force}}}, github will keep track of the older version and show notes.
+
+  I agree that patches should still be announced on the mailinglist.
+
+* legal stuff, see {{{man git-commit}}} -> /gpg - does mercurial have something
+  similar?
+
+* weakness: Using git its easier to change history - eg "rebasing commits" etc.
+
+
+=== Example how to use git to track multiple upstreams
+{{{
+git checkout master
+
+git remote add author-A github://git-url-A
+git remote add author-B github://git-url-B
+
+# note that branches will be prefixed by repository name !
+git fetch author-A
+git fetch author-B
+
+# it does make sense to use local branches, so that you are under control when
+# which upstream should be updated:
+git checkout -tb author-A-feature-1 author-A/feature-1
+git checkout -tb author-A-feature-2 author-A/feature-2
+git checkout -tb author-B-feature-1 author-B/feature-1
+
+
+# manage following 3 upstreams:
+
+top git create merging-3-important-changes-people-work-on
+top git add author-A-feature-1
+top git add author-A-feature-2
+top git add author-B-feature-1
+}}}
+How to do such using mercurial? Its not perfect, but often gets the job done.
+
+
+== what would moving to bitbucket provide ?
+According to ZyX bitbucket also has a way to send "pull requests" and to
+discuss changes.
+
+Marc Weber still doesn't understand how to create his own vim based on multiple
+other upstreams without pulluting his local branch namespace.
+
+= community votes
+People prefering github:
+* Marc Weber
+
