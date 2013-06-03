@@ -120,13 +120,17 @@ runtime:
 }}}
 
 **Npackd**:
-Its a package manager for Windows which happens to contain some Vim plugins. It uses Pathogen for actual plugin integration.
+Its a package manager for Windows which happens to contain some Vim plugins.
+Pathogen, VAM etc can be used to load the plugins.
+
 vimrc:
 {{{
 exec ':source ' . $ALLUSERSPROFILE . '/Npackd/VimPlugins/vim-pathogen/autoload/pathogen.vim'
 execute pathogen#infect($ALLUSERSPROFILE . '/Npackd/VimPlugins/{}')
 }}}
 
+VAM will provide a xml source file for all plugins. Npackd support .bat files which
+can be used to git/mercurial/... on Windows in the future in some way.
 
 
 == supporting git only - is it a problem ? vim-scripts.org
