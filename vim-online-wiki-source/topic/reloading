@@ -3,5 +3,4 @@
 [[languages/urweb]]
 
 == HTML / CSS / SASS ==
-There is autoreload, which can be used together with ruby's guard.
-Whenever a file changes 
+[[tips/browser-livereload]]
