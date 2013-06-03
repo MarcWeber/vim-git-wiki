@@ -44,9 +44,13 @@ There are two known ways: {{{execfile}}} and {{{imp.load_source}}}
 
 [[vim74/comparing-execfile-vs-load_source]]
 
-Summary: load_source does put variables and functions in both locals() and globals() whereas
+**Summary**: load_source does put variables and functions in both locals() and globals() whereas
 execfile puts assigments into globals() and functions into locals()
 
+**How to interactively debug/introspect your own python code?**
+Using load_source you can just {{{:py import your_plugin; print your_plugin.counter}}}
+Using {{{execfile}}} I don't know how to do it. That's why Marc Weber votes for
+{{{imp.load_source}}}
 
 When hiding plugins from each other, **how to access user settings** assigned in
 .vimrc ?
