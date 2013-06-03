@@ -1,0 +1,193 @@
+== comparing execfile with loadsource
+Summary: load_source does put variables and functions in both locals() and globals() whereas
+execfile puts assigments into globals() and functions into locals()
+
+Eventually execfile is less common, so python devs are more used to the "module" case.
+
+**test.py**
+{{{
+#!/usr/bin/env python
+
+print "XXXXXXXXXXXXXXXX case execfile"
+test_globals = {'is_globals_dict': True}
+test_locals = {'is_locals_dict': True}
+
+print ""
+print("====== execfile first time:")
+execfile("module.py", test_globals, test_locals)
+# ZyX proposes resetting test_globals and test_locals when reloading a plugin,
+# why?
+print ""
+print("====== execfile second time:")
+execfile("module.py", test_globals, test_locals)
+
+print ""
+print ""
+print "XXXXXXXXXXXXXXXX case imp"
+import imp
+
+print ""
+print("====== load_source first time:")
+imp.load_source("plugin_name", "module.py")
+
+print ""
+print("====== load_source second time:")
+imp.load_source("plugin_name", "module.py")
+
+import plugin_name
+}}}
+
+**module.py**
+{{{
+#!/usr/bin/env python
+
+def show_dict(name, x):
+    print "= items of ", name
+    for y in x:
+        if y == "__builtins__":
+            print " ", y
+        else:
+            print " ", y, x[y]
+
+print "BEFORE"
+show_dict("globals", globals())
+show_dict("locals", locals())
+
+if not 'counter' in globals():
+    print "resetting counter"
+    counter = 0
+
+counter += 1
+def do_thing_with_counter():
+    global counter
+    print counter
+
+print "AFTER"
+show_dict("globals", globals())
+show_dict("locals", locals())
+}}}
+
+
+**output**:
+{{{
+  XXXXXXXXXXXXXXXX case execfile
+
+  ====== execfile first time:
+  BEFORE
+  = items of  globals
+    __builtins__
+    is_globals_dict True
+  = items of  locals
+    show_dict <function show_dict at 0x7f36753e5938>
+    is_locals_dict True
+  resetting counter
+  AFTER
+  = items of  globals
+    __builtins__
+    counter 1
+    is_globals_dict True
+  = items of  locals
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753e5c80>
+    show_dict <function show_dict at 0x7f36753e5938>
+    is_locals_dict True
+
+  ====== execfile second time:
+  BEFORE
+  = items of  globals
+    __builtins__
+    counter 1
+    is_globals_dict True
+  = items of  locals
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753e5c80>
+    show_dict <function show_dict at 0x7f36753f82a8>
+    is_locals_dict True
+  AFTER
+  = items of  globals
+    __builtins__
+    counter 2
+    is_globals_dict True
+  = items of  locals
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753e5938>
+    show_dict <function show_dict at 0x7f36753f82a8>
+    is_locals_dict True
+
+
+  XXXXXXXXXXXXXXXX case imp
+
+  ====== load_source first time:
+  BEFORE
+  = items of  globals
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753e5c80>
+    __package__ None
+    __name__ plugin_name
+    __doc__ None
+  = items of  locals
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753e5c80>
+    __package__ None
+    __name__ plugin_name
+    __doc__ None
+  resetting counter
+  AFTER
+  = items of  globals
+    counter 1
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753e5c80>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753f8aa0>
+    __name__ plugin_name
+    __doc__ None
+  = items of  locals
+    counter 1
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753e5c80>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753f8aa0>
+    __name__ plugin_name
+    __doc__ None
+
+  ====== load_source second time:
+  BEFORE
+  = items of  globals
+    counter 1
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753ff230>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753f8aa0>
+    __name__ plugin_name
+    __doc__ None
+  = items of  locals
+    counter 1
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753ff230>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753f8aa0>
+    __name__ plugin_name
+    __doc__ None
+  AFTER
+  = items of  globals
+    counter 2
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753ff230>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753e5c80>
+    __name__ plugin_name
+    __doc__ None
+  = items of  locals
+    counter 2
+    __builtins__
+    __file__ module.pyc
+    show_dict <function show_dict at 0x7f36753ff230>
+    __package__ None
+    do_thing_with_counter <function do_thing_with_counter at 0x7f36753e5c80>
+    __name__ plugin_name
+    __doc__ None
+}}}

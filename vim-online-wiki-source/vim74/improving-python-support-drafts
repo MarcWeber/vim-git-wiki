@@ -1,10 +1,18 @@
-ZyX's [[https://gist.github.com/ZyX-I/5561409|description]] for changes
 
 = How would perfect python support look like for Vim?
 * threading support
 * a way to write your plugins using python only. See startup dir below
 * a way to halt python execution, eg by pressing ctrl-c (TODO)
+* a nice API, See ZyX's description about changes below
 * what about pip integration? See below
+
+== api changes
+[[https://gist.github.com/ZyX-I/5561409|ZyX's description about changes]]
+
+Another crazy idea would be providing a gobject introspection like api.
+This could be picked up by almost all scripting languages easily.
+I've no idea whether this is possible or not. So extending the current API
+seems to be the way to go for now.
 
 == startup dir ==
 We cannot put .py plugins into plugin, because some older plugins may have
@@ -27,76 +35,47 @@ loadplugins = 1 # be backward compatible: load vim only
 loadpugins = vim,python2,python3 # load vim,python2,python3 plugins
 }}}
 
-A related implementation can be found in the pythonx patch (vim-dev
-mailinglist).
+This would scale well, because 'ruby' or 'perl' could be added later.
  
 == how to hide one plugins implementation from each other ?
-Polluting global name space is not really an option.
+Polluting global name space is not really an option. I agree with ZyX.
 
-Putting each plugin into a module explicitely would be perfect:
-{{{
+There are two known ways: {{{execfile}}} and {{{imp.load_source}}}
 
-def load_or_reload_plugin(path)
-  module_name = 'vim.plugin.%s' % basename(path).replace('.py','')
-  imp.load_source(module_name, path)
-  from vim.plugin_loaded_notifications import notify
-  # tell all plugins that a plugin was loaded, they may want extend it
-  notify(module_name)
-}}}
+[[vim74/comparing-execfile-vs-load_source]]
 
-How does a plugin access settings from user?
+Summary: load_source does put variables and functions in both locals() and globals() whereas
+execfile puts assigments into globals() and functions into locals()
+
+
+When hiding plugins from each other, **how to access user settings** assigned in
+.vimrc ?
 {{{
   import __main__
   if hasattr(__main__, 'user_setting'):
     # use user setting
 }}}
 
-
-== one plugin using features of another? (open issue)
-See previous example load_or_reload_plugin
-
-
-Your plugin can try:
-
+How can plugins **access each other**?
 {{{
-try
-  from vim.plugin.file_name import
-catch:
-  message "plugin does not exist"
-
-from vim.plugin_loaded_notifications notify_me
-
-plugin may be loaded later:
-notify_me_on_plugin_load(lambda (name)
-  if name == 'xxx':
-    ..
-)
+import other_plugin
+other_plugin.add_listener(whatsoever)
 }}}
+If you use execfile this would require either accessing the globals/locals
+dictionary or writing an additional .py file, so that you can import something.
 
-Less problems would happen if rtp would be used to populate sys.path. Then
-order of loading python plugins would matter less ?
-
+If rtp would be known by python, eg using import hooks and searching in
+{{{
+  [ join(p, "python-lib") for p in vim.eval(&rtp) ]
+}}}
+importing other plugins would be easy
 
 == pip integration
-I feel bad about forcing support for any solution. It should be optional
-always. The same way we could provide ways to install exuberant-ctags for all
-oses.
-Also using pip to check for packages is much more time consuming (untested)
-than vam's test "does directory exist" to find out wether a plugin is there?
-Am I right about this?
-Startup should be fast always.
+Marc Weber thinks pip is great. But he is not sure that forcing pip is the way
+to go. Today its pip, tomorrow it might be pip-next.
 
-Could we introduce a vim only solutions or hook into python to allow providing
-your own solution to fetch dependencies?
-{{{
-  vim.ensurep_python_library_exists('pip', 'foo')
-  import foo
-}}}
+That's why I'd like to find a solution which we can recommend as "best
+practises" without forcing it on users.
+Should it be built into Vim?
 
-then users could decide on how how to install a library?
-
-Also pip is the successor of easy_install. So even in the python community
-things may change faster than Vim which could make it hard /impossible for Vim
-maintainers to maintain such, too.
-
-For those reasons I vote for such a feature being optional.
+If I understood ZyX correctly he'd like that.
