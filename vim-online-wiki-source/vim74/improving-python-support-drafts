@@ -11,8 +11,8 @@
 
 Another crazy idea would be providing a gobject introspection like api.
 This could be picked up by almost all scripting languages easily.
-I've no idea whether this is possible or not. So extending the current API
-seems to be the way to go for now.
+Marc Weber has no idea whether this is possible or not. So extending the
+current API seems to be the way to go for now.
 
 == startup dir ==
 We cannot put .py plugins into plugin, because some older plugins may have
@@ -38,7 +38,8 @@ loadpugins = vim,python2,python3 # load vim,python2,python3 plugins
 This would scale well, because 'ruby' or 'perl' could be added later.
  
 == how to hide one plugins implementation from each other ?
-Polluting global name space is not really an option. I agree with ZyX.
+Polluting global name space is not really an option. Marc Weber agrees with
+ZyX.
 
 There are two known ways: {{{execfile}}} and {{{imp.load_source}}}
 
@@ -49,8 +50,9 @@ execfile puts assigments into globals() and functions into locals()
 
 **How to interactively debug/introspect your own python code?**
 Using load_source you can just {{{:py import your_plugin; print your_plugin.counter}}}
-Using {{{execfile}}} I don't know how to do it. That's why Marc Weber votes for
-{{{imp.load_source}}}
+Using {{{execfile}}} Marc Weber doesn't know how to do it. That's why Marc Weber votes for
+{{{imp.load_source}}}. Of course if your plugin is using additional modules you
+can import them all easily.
 
 When hiding plugins from each other, **how to access user settings** assigned in
 .vimrc ?
@@ -74,12 +76,28 @@ If rtp would be known by python, eg using import hooks and searching in
 }}}
 importing other plugins would be easy
 
+
+== py2 vs py3
+Well - both work. There ares some differences in syntax which you may be able
+to workaround by taking little care. Eg use {{{STDOUT.write}}} instead of
+{{{print "foo"}}}/{{{print("foo")}}}. Also conditional importing can help to
+write to move code which only runs on a particular version into separate files.
+
+Users may not want to load both, because this can only be done with dynamic
+loading, and that's taking more time. Marc Weber guesses that all want Vim
+startup time to be as short as possible.
+
+The experimental pythonx introduces x versions of all {{{:py*}}}
+commands - and the user can choose which python to prefer if his python
+supports both. However this setting should only be set early in {{{.vimrc}}}
+
+The pythonx patch is obsolute, because {{{execfile}}} or {{{load_source}}}
+should be used.
+
 == pip integration
 Marc Weber thinks pip is great. But he is not sure that forcing pip is the way
 to go. Today its pip, tomorrow it might be pip-next.
 
-That's why I'd like to find a solution which we can recommend as "best
-practises" without forcing it on users.
-Should it be built into Vim?
-
-If I understood ZyX correctly he'd like that.
+That's why Marc Weberlikes to find a solution which we can recommend as "best
+practises" without forcing it on users. Marc Weber is not sure about whether this should
+be integrated into Vim.
