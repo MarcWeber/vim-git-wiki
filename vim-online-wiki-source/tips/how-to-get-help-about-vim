@@ -1,0 +1,7 @@
+= how to get help about Vim
+* {{{:help}}} ({{{:h}}}) use vim's builtin help
+* try google
+* [[topic/vim-irc-on-freenode]]
+* [[http://www.vim.org/community.php|mailinglist]]
+* [[http://vim.sf.net|official vim website]]
+

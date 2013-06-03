@@ -15,11 +15,7 @@ create an todo item: [[todo]]
 
 = how to get help about vim =
 
-* {{{:help}}} ({{{:h}}}) use vim's builtin help
-* try google
-* [[topic/vim-irc-on-freenode]]
-* [[http://www.vim.org/community.php|mailinglist]]
-* [[http://vim.sf.net|official vim website]]
+[[tips/how-to-get-help-about-vim]]
 
 **Learning vim**
 
@@ -61,6 +57,10 @@ for programmers:
 * [[topic/repl]]
 * [[topic/commenting]]
 * [[topic/sql]]
+
+
+how to find a plugin?
+* [[topic/finding-a-vim-plugin]]
 
 general text editing:
 

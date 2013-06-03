@@ -1,0 +1,11 @@
+= finding a Vim plugin
+Traditionally use [[http://vim.sourceforge.net/search.php||search on vim.sf.net]].
+Don't care too much about the ratings. They have been spoofed many times. Eg Dr
+Chip even removed his plugins from vim.sf.net for that reason.
+
+However today no longer all plugins can be found on vim.sf.net. You also want
+to try code hosting sites developpers use to put their code on:
+  * github
+  * bitbucket
+  * gitorious
+  * code.google.com
