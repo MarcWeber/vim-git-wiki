@@ -1,0 +1,31 @@
+= Vim and indentation
+
+Tab: default behavior of vim is: add {{{&tabstop}}} spaces unless {{{expandtab}}} is not
+set. You can always insert real tabs by {{{<c-v><tab>}}}. However {{{tabstob}}} should be
+treated as display setting. Use {{{sw}}} setting and {{{c-t}}}, {{{c-d}}} instead.
+
+{{{
+  c-t: increase indentation
+  c-d: decrease indentation
+  c-f: auto indent current line (requires indentation setup)
+  :setlocal sw=4: use 4 spacse for indentation
+  :setlocal expandtab: expand tab to spaces (default)
+  :setlocal tabstop: a tab is viewed as how many spaces in a file?
+
+  :set list  : displays spaces and tabs
+}}}
+
+== how to make vim reindent lines ? ==
+
+The {{{:h =}}} is the command which is commonly used for using the Vim's
+indentation features. Some use cases:
+
+{{{
+gg=G: reindent whole file
+>3j . .  increase indentation of 3 lines and repeat two times
+V/ABC<cr>=  :select everything till ABC then reindent this block
+}}}
+
+
+See
+[[topic/configuring-vim]]

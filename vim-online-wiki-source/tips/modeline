@@ -1,0 +1,8 @@
+= vim modeline
+
+Also modeline can be used (the :vim line you'll find at every :help page) which looks like this:
+{{{
+vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
+}}}
+
+Details see {{{:h modeline}}}

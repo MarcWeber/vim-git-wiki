@@ -1,4 +1,5 @@
-See [[topic/syntax-checking]],
+See 
+[[topic/syntax-checking]],
 [[topic/autoclosing]],
 [[topic/reloading]]
 
@@ -18,4 +19,5 @@ which you can then expand to HTML
 }}}
 
 == alternatives & additional tools ==
-Don't type html, use a DSL such as haml-lang.org or similar
+* Don't type html, use a DSL such as haml-lang.org or similar
+* [[tips/browser-livereload]]

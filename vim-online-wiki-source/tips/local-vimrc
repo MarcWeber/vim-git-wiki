@@ -1,0 +1,7 @@
+== project local vimrcs
+[[http://github.com/MarcWeber/vim-addon-local-vimrc|vim-addon-local-vimrc]]
+
+Yes, local vimrcs are built into vim. The plugin above however asks you before
+it starts sourcing such a file.
+
+See [[topic/configuring-vim]]

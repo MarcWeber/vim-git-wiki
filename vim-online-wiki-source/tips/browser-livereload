@@ -1,0 +1,5 @@
+= browser livereload
+
+For at least chrome and Firefox there are livereload plugins
+Eg ruby has a configurable "recompile" called [[tips/ruby-guard]] system also
+supporting livereload: [[https://github.com/guard/guard-livereload|guard-livereload]].

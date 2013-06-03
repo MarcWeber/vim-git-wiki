@@ -1,0 +1,6 @@
+Example for [[tips/browser-livereload]]
+{{{
+guard 'livereload' do
+  watch(%r{.*\.(php|css|js|html)})
+end
+}}}
