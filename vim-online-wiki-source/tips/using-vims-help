@@ -1,0 +1,7 @@
+= using Vim's help
+Searching for
+* getting started {{{:h}}}
+* for any string: {{{:helpgrep string}}}.
+* for an option:  {{{:h '*chars*<c-d>}}} (All options start by ')
+
+Howto follow a link in Vim's help? Press {{{g <ctrl-]>}}}

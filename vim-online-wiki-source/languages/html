@@ -17,6 +17,8 @@ which you can then expand to HTML
 {{{
     command! -buffer FormatHTML %!xmllint --format --html %
 }}}
+You can create a similar command for htmltidy executable easily.
+(Do you want to contribute it?)
 
 == alternatives & additional tools ==
 * Don't type html, use a DSL such as haml-lang.org or similar

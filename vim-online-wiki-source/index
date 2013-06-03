@@ -19,14 +19,15 @@ create an todo item: [[todo]]
 * try google
 * [[topic/vim-irc-on-freenode]]
 * [[http://www.vim.org/community.php|mailinglist]]
+* [[http://vim.sf.net|official vim website]]
 
 **Learning vim**
 
 Some most useful resources:
 
-* Run {{{vimtutor}}} first!
+* Run [[tips/vimtutor]] first!
 * Watch Derek Wyatt's [[http://www.derekwyatt.org/vim/vim-tutorial-videos/|awesome videos]]!
-* Learn how to use the [[topic/help]] command
+* Learn how to use the [[tips/using-vims-help]] command
 
 = HOT : =
 [[vim74/discussing-ideas]]

@@ -1,0 +1,6 @@
+= vimtutor
+vimtutor is shipping with Vim. 
+
+It's a shell/bat script launching vim with a file telling you some Vim
+basics. Reading it takes about 20-30 min and will prepare you for further
+investigations.
