@@ -1,0 +1,78 @@
+= how development of Vim is taking place
+Bram is reviewing patches and applying them upstream. The last patch state can always be
+found at the [[https://code.google.com/p/vim|mercurial repository at code.google.com]]
+
+When does a new release happen?
+* whenever the patch count gets close to 1000
+* whenever huge new features happens
+* other reasons
+
+However code.google.com is lacking some social features which is why we want to
+provide official bitbucket and github mirrors
+
+== how to submit patches - ask for review?
+Sent the patch or a pull request link to the
+[[http://www.vim.org/community.php|vim-dev]] mailinglist.
+
+== which features do people work on ?
+See [[vim-development/recent-work]]
+
+== which patches do people work on?
+Have a look at the mirrors or document your ideas here:
+[[vim74/
+
+== code formatting
+Yes, this should be documented in the repo (TODO)
+{{{
+:set sts=4 sw=4 ts=8
+}}}
+However its not consistent
+
+== details github mirror:
+Adding {{{.patch}}} to a pull request yields the diff file
+
+Currently two exist:
+* [[https://github.com/vim-jp/vim]]     (very current, only master branch)
+* [[https://github.com/b4winckler/vim]] (lacks behind 2 days - on 5. Juni 2013, all brannches)
+
+TODO: Which one should we prefer making pull requests against for what reasons?
+
+== details bitbucket:
+It does not exist yet ? (TODO)
+
+== why github and bitbucket mirrors?
+Because both features which are of interest to the community such as being able
+to submit "pull requests", comment on individual lines of commits etc.
+
+== why git & mercurial mirrors only?
+* github supports the SVN protocol
+* It looks like git and mercurial are the two version control systems being used
+  most be the community.
+If you want to support yet another mirror document it here.
+
+== syncing mirrors with each other
+Not supported (yet). I don't know about existing solutions. Eventually "hg-git"
+extension or such could be tried.
+
+== mercurial vs git ? which one is better?
+Both provide advanced features. Marc Weber slightly prefers git because it has
+the "remotes" feature. Example:
+{{{
+git remote add other-developer git-url
+git fetch other-developer
+# list all branches, the branches from other-developer will be prefixed by the
+# remote name "other-developer"
+git branch -a
+}}}
+
+== keeping your own work up to date
+[[http://mercurial.selenic.com/wiki/PatchBranchExtension|PatchBranchExtension]] (hg)
+and [[http://repo.or.cz/w/topgit.git|topgit]] (git) both allow to keep hacking
+on multiple branches which may depend on each other and keeping them up to
+date. Finally you can export one patch easily
+
+Marc Weber has written a [[https://nixos.org/wiki/Nixpkgs_and_TopGit|top git introduction]].
+The PatchBranchExtension is documented at the link above very well.
+
+== last but not least
+Do whatever works for you

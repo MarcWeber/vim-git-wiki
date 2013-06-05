@@ -1,0 +1,18 @@
+= Which features do people work on?
+Note: Most small thing will be sent to the vim-dev mailinglist. Subscribing is
+a good idea :)
+
+== Have a look at the main repository and its mirrors
+See [[vim-development/development]]
+
+== Marc Weber wants
+* improve async support
+* make scripting languages like python interruptable
+* in the long run support other scripting languages equally well - so that they
+  could replace VimL. Currently community is focusing on Python improvements
+* Eventually wants to find out whether gobjectIntrospcetion like apis could be
+  used to provide the same bindings for almost all scripting languages easily.
+
+== ZyX
+Is heavily working on improving the Python API. His description about the changes:
+[[https://code.google.com/p/vim/]]
