@@ -3,19 +3,22 @@ Note: Most small thing will be sent to the vim-dev mailinglist. Subscribing is
 a good idea :)
 
 == unfinished patches
-**[[https://code.google.com/r/yukihironakadaira-vim-cmdsrv-nox/|Vim-Nox patch, branch cmdsrv-nox]]**:
+**Vim-Nox**:
+[[https://code.google.com/r/yukihironakadaira-vim-cmdsrv-nox/|Vim-Nox patch, branch cmdsrv-nox]]:
 It implements client-server communication using sockets. Using sockets you may
 also have more control about who can connect to your vim, if you use proper
 access rights for the socket file.
 
-**[[http://github.com/bartman/vim|async]]**:
+**async**:
+[[http://github.com/bartman/vim|async]]:
 async patch. vim-addon-async provide similar features - however its based on
 client-server. For Vim it works. gui implementations are missing
 
 If python gets implemented proberly, so that even python threads can call back
 into Vim then this patch may be obsolete.
 
-**[[http://repo.or.cz/w/vim_extended.git/shortlog/refs/heads/feat/tagfunc|tagfunc patch]]**:
+**tagfnuc**:
+[[http://repo.or.cz/w/vim_extended.git/shortlog/refs/heads/feat/tagfunc|tagfunc patch]]:
 I don't know much about it. Its used by
 [[https://github.com/MarcWeber/SmartTag/blob/master/doc/SmartTag.txt|SmartTag]]
 
