@@ -10,6 +10,12 @@ When does a new release happen?
 However code.google.com is lacking some social features which is why we want to
 provide official bitbucket and github mirrors
 
+== official bug tracker (?):
+[[https://code.google.com/p/vim/issues/list|issues @ vim @ code.google.com]]
+I don't think there is a need to change that
+
+Thus if you want to help and don't know what to do pick an item and solve it :)
+
 == how to submit patches - ask for review?
 Sent the patch or a pull request link to the
 [[http://www.vim.org/community.php|vim-dev]] mailinglist.
