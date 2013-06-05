@@ -13,6 +13,10 @@ See [[vim-development/development]]
 * Eventually wants to find out whether gobjectIntrospcetion like apis could be
   used to provide the same bindings for almost all scripting languages easily.
 
+* Marc Weber eventually wants to set up a mirror for all scripts - especially
+  the ones having a mercurial and git url only. Submitting an url should be all
+  you need. This is unrelated to vim-dev. Not enough time the moment
+
 == ZyX
 Is heavily working on improving the Python API. His description about the changes:
 [[https://code.google.com/p/vim/]]
