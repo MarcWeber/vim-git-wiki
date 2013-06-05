@@ -17,10 +17,6 @@ Sent the patch or a pull request link to the
 == which features do people work on ?
 See [[vim-development/recent-work]]
 
-== which patches do people work on?
-Have a look at the mirrors or document your ideas here:
-[[vim74/
-
 == code formatting
 Yes, this should be documented in the repo (TODO)
 {{{
