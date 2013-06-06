@@ -1,0 +1,18 @@
+== lazy loading of plugins
+Today Marc Weber recommends vim-addon-manager for "lazy loading", because it
+even triggers VimEnter for plugins you load at runtimes. Some plugins such as
+"the nerd tree" use that. I think its most easy and complete solution.
+
+An example configuration automatically loading plugins whenever you edit a specific file type can be found its
+[[https://github.com/MarcWeber/vim-addon-manager/blob/master/doc/vim-addon-manager-getting-started.txt#L229|documentation]]
+(line 229)
+
+== custom & alternative solutions
+There are many other solutions. Eg the
+[[http://vim.sourceforge.net/scripts/script.php?script_id=915|asneeded]]
+plugin. In fact you can replace all "commands" by fake commands which load the
+plugin, and then call the command again.
+
+Eg Vim also has the {{{FuncUndefined}}} au group event.
+
+... I may have missed some options

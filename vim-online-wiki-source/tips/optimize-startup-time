@@ -1,0 +1,21 @@
+= optimizing startup time
+== measuring startup time
+Linux:
+{{{
+time vim -e -c :quit
+}}}
+
+== What is making Vim slow?
+* usually plugins loading many code, even if you seldomly use them
+
+== The fix(es)
+* Don't activate plugins always. See [[tips/lazy-loading-of-plugins]]
+* Make a plugin run only initialization code at startup, make it delay
+  loading code its using when the feature is requested.
+
+  This big difference can be seen by [[http://github.com/MarcWeber/vim-addon-commenting]]
+  vs "The nerd commenter". The plugin file of vim-addon-commenting is about 26 lines,
+  "The nerd commenter" always loads 2700 lines (last tested June 2013).
+
+  Basically the fix here is: Use a different plugin or provide patches moving most code
+  which is not always used into {{{autoload/*}}} files.
