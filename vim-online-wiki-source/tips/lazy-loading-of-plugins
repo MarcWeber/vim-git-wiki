@@ -7,6 +7,9 @@ An example configuration automatically loading plugins whenever you edit a speci
 [[https://github.com/MarcWeber/vim-addon-manager/blob/master/doc/vim-addon-manager-getting-started.txt#L229|documentation]]
 (line 229)
 
+Eg have a look at the "Example .vimrc setups" for VAM and Vundle at [[topic/vim plugin managment]].
+Using multiple directories also Pathogen can be used, sure.
+
 == custom & alternative solutions
 There are many other solutions. Eg the
 [[http://vim.sourceforge.net/scripts/script.php?script_id=915|asneeded]]

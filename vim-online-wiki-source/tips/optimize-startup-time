@@ -9,7 +9,9 @@ time vim -e -c :quit
 * usually plugins loading many code, even if you seldomly use them
 
 == The fix(es)
+
 * Don't activate plugins always. See [[tips/lazy-loading-of-plugins]]
+
 * Make a plugin run only initialization code at startup, make it delay
   loading code its using when the feature is requested.
 
@@ -19,3 +21,6 @@ time vim -e -c :quit
 
   Basically the fix here is: Use a different plugin or provide patches moving most code
   which is not always used into {{{autoload/*}}} files.
+
+* don't use python2.x and 3.x at the same time. This requires loading two
+  shared libraries
