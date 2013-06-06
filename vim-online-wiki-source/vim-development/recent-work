@@ -48,3 +48,9 @@ I don't know much about it. Its used by
 
 == finished patches / why haven't they been merged ?
 [[http://pyclewn.sourceforge.net/|pyclewn]] debugger integration into Vim?
+
+**completeselect**
+I and Nayuri Aohime([[http://www.vim.org/account/profile.php?user_id=66623]])
+developed for changing candidates selection behavior pa
+[[https://groups.google.com/forum/?hl=ja&fromgroups#!topic/vim_dev/tVsk0pdOGvs]]
+[[https://gist.github.com/Shougo/5654189]] (Latest patch address)
