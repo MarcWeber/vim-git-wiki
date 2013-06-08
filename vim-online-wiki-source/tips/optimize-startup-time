@@ -4,6 +4,7 @@ Linux:
 {{{
 time vim -e -c :quit
 }}}
+Eg on my system total time is less than 200ms even though I use quite a lot of plugins.
 
 == What is making Vim slow?
 * usually plugins loading many code, even if you seldomly use them
