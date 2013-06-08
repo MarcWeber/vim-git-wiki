@@ -12,7 +12,7 @@ different today, if you could  start from scratch?
   and allow continuing editing
 * make the command line behave like vi buffer? (modes), allow multiline
   commands?
+* provide a sane scripting language (VimL comes close, despite its age).
 
 Is there much more? Except those features "we want to edit text", and Vim is
 already very good at it. Thus Marc Weber thinks fixing is better than rewriting
-
