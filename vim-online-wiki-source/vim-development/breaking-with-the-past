@@ -1,0 +1,18 @@
+= Why could / should this be done?
+
+Currently Vim trieas to be copmatible as much as possible. What would you do
+different today, if you could  start from scratch?
+
+* enable nocompatible, enable set hidden
+* implement proper threading support, so that you can use python threads etc to
+  write interface code like "netbeans, sniff, async feature"
+* web enable (is this feasable at all?)
+* get rid of the complicated errorformat (use simple regex)
+* make the quickfix cycle sane, eg while the process run update a real buffer,
+  and allow continuing editing
+* make the command line behave like vi buffer? (modes), allow multiline
+  commands?
+
+Is there much more? Except those features "we want to edit text", and Vim is
+already very good at it. Thus Marc Weber thinks fixing is better than rewriting
+

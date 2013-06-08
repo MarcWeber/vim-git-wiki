@@ -1,0 +1,53 @@
+= improving upon C?
+Problem: Even the most basic "collections" are not supported that well by **C**. Eg
+to have a simple "array" of pointers you have to mess with realloc - and do
+book keeping about how many empty "items" you reserved for futur grow.
+
+**C++** provides Vector like base classes. Historically it has been used
+often as "update path" for many projects. However using all features makes any
+code that complicated that its hard to contribute. That's why Marc Weber think
+that **C++** would be a nice fit if deciding upon which features to allow
+would take place. Because **C++** works that well I doubt there are any other
+"similar" approaches
+
+== collection problem, solutions
+* switch to **C++**, but only use a nice subset of its features
+* use a template library written in **CPP**, but in the end that's how **C++**
+  started. That time they didn't even grasp themselves which powerful tool they
+  created. However Today
+
+== template libraries
+**BSD example**:
+[[http://ivoras.sharanet.org/freebsd/usetree.html|usetree]]
+
+**python example**: (by  Nikolay Pavlov)
+  quote:
+  {{{
+  1. Use fixed offset in structure: i.e. pointers to next and previous items
+  are always the first one and list-manipulating functions just cast the
+  buf_T* to linked_list_T* which is a structure that has nothing but next and
+  previous poin
+  }}}
+
+== switching languages
+I'm not sure this is an option, because it may require rewriting at least
+complete files "at once". So the update path is hard
+
+* zimbu (maintained/developped by Bram), so this is likely to make the
+  community depend on him even more.
+* go
+* vala (dependency on glib). Nice: gobjectIntrospection allows interfacing with
+  many languages easily
+* haskell (-> continue yi, I'm not user its an option, Haskell has many pitfalls)
+* Java (too bloated for a nice small unix editor, then you could use jedit, Netbeans, Eclipse, IDEA, ..)
+* ...
+
+Basically using another languages would make us get rid of having to maintain
+low level details **if** underlying languages supports them.
+
+This also means that people having custom patches can rewrite them.
+
+This would allow to [[vim-development/breaking-with-the-past]].
+
+== keep in mind
+That future will be longer than the history (which is already **awesome**).
