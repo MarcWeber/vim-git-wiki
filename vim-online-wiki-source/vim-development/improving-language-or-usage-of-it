@@ -49,5 +49,10 @@ This also means that people having custom patches can rewrite them.
 
 This would allow to [[vim-development/breaking-with-the-past]].
 
+== switching editor
+* yzis (rewrite of Vim using C++, using lua as scripting language)
+* Yi (rewrite of Emacs/Vim like editors using Haskell). Haskell has its own pitfalls. Currently does not open large files fast. I think quite a lot features are still experimental
+... I don't think its really an option, because we all depend on VimL code we wrote in the past.
+
 == keep in mind
 That future will be longer than the history (which is already **awesome**).

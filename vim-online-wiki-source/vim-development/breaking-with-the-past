@@ -17,3 +17,17 @@ different today, if you could  start from scratch?
 
 Is there much more? Except those features "we want to edit text", and Vim is
 already very good at it. Thus Marc Weber thinks fixing is better than rewriting
+
+
+== how could breaking with the past be done?
+There is already {{{set nocompatible}}}, the only wrong thing about it is that you cannot "redo" such a breakage of compatibility (as in vi vs vim).
+So a "compatibility level" could be introduced:
+
+{{{
+set compatibility_level = "vim-7.3-patch-660"
+}}}
+
+which would mean: Set to what devs thought are most sane defaults that time.
+Then there might be a chance to change defaults for the future without breaking
+with 'users who are used to vims older behaviour'.
+This may not be doable with everything. But at least it introduces an option to move forward.
