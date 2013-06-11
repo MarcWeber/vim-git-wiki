@@ -2,10 +2,22 @@
 See also:
 [[topic/tags]]
 
+== which features are worth supporting?
+* ghci
+* cabal
+* haddock
+* searches Hoogle and Hayoo
 
-[[http://projects.haskell.org/haskellmode-vim/|haskellmode-vim]]
-vim-addon-haskell (run cabal using vim-addon-actions, has some more magic to
-add -X compiler flags by parsing compiler errors)
+== which plugins exist
 
-[[https://github.com/travitch/hasksyn|hasksyn]]
-which is a rewrite of [[https://github.com/dag/vim2hs|dag/vim2hs]]
+* [[http://projects.haskell.org/haskellmode-vim/|haskellmode-vim]]
+
+* [[http://github.com/MarcWeber/vim-addon-haskell|vim-addon-haskel]]: 
+  (run cabal using vim-addon-actions, has some more magic to
+  add -X compiler flags by parsing compiler errors, reconfigures your cabal
+  project, allows you to choose a build configuration)
+
+* [[https://github.com/travitch/hasksyn|hasksyn]]
+  which is a rewrite of [[https://github.com/dag/vim2hs|dag/vim2hs]]
+
+(Maybe more)

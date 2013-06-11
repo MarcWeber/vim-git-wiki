@@ -1,7 +1,9 @@
 = syntax checking =
 
-Syntastic seems to be the most widely used plugin - however be careful because
-for some languages it runs the interpreter (eg tcl) - instead of doing syntax
-checking only.
+[[http://github.com/scrooloose/syntastic|Syntastic]] seems to be the most
+widely used plugin - however be careful because for some languages it runs the
+interpreter (eg tcl) - instead of doing syntax checking only.
 
-vim-addon-syntax-checker does only syntax checking and never runs code
+[[http://github.com/MarcWeber/vim-addon-syntax-checker|vim-addon-syntax-checker]]
+does only syntax checking and never runs code. It also provides a nice {{{SyntaxCheckerDebug}}}
+command which makes you aware about what checkers are available, which ones of those can be used

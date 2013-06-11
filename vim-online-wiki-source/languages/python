@@ -1,3 +1,10 @@
 = vim & python =
 
-[[topic/repl]]
+Which features could be supported?
+
+* syntax (builtin)
+* debugging (vdebug?)
+* repl [[topic/repl]]
+* syntax checking [[topic/syntax-checking]]
+* [[topic/running-tools-or-compilers]]
+* [[topic/tags]]
