@@ -27,14 +27,15 @@ can-read-snippets-files:: snipmate is very popular. Comprehensive snippet collec
 requires-python::
 nested placeholders::
 info-missing::
+completion-menu:: When typing only part of a snippet trigger Vim shows a completion menu with all triggers matching. For some snippets this may not make sense, eg if the trigger itself contains input to for the snippet. Eg UltiSnips can use regular expression matching on triggers
 
 
 MATRIX
 XPTemplate:: manual-reload, space-abstraction
-Sander's snipmate:: manual-reload, can-read-snippets-files
-snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files
+Sander's snipmate:: manual-reload, can-read-snippets-files, completion-menu
+snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files, completion-menu
 UltiSnips:: automatic-reload, requires-python, nested placeholders
-UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders
+UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders, completion-menu
 neo snippets:: can-read-snippets-files
 vim-template:: info-missing
 
