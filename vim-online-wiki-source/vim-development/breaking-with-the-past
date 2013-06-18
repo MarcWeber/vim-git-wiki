@@ -14,6 +14,7 @@ different today, if you could  start from scratch?
   commands?
 * allow proper usage of alt key in terminal, some terminals support it
 * provide a sane scripting language (VimL comes close, despite its age).
+* think about providing an api so that plugins can be written for many editors. Eg sublime has python support, even Emacs has python bindings
 
 Is there much more? Except those features "we want to edit text", and Vim is
 already very good at it. Thus Marc Weber thinks fixing is better than rewriting
