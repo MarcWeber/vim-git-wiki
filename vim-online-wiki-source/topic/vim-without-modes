@@ -1,0 +1,11 @@
+== Vim without modes
+Well, of course Vim users think the modes of Vim ore the most powerful feature
+of Vim. However there are some cases where people use Vim only once in a while,
+and then learning and remembering all the keys is overkill. In those cases you can
+make Vim behave almost like a regular editor: 
+
+{{{
+" put into your ~/.vimrc
+" details see :h 'insertmode'
+set insertmode
+}}}

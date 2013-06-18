@@ -1,0 +1,44 @@
+= debugging viml related stuff
+
+**which viml lines get executed?**:
+{{{
+vim -V20/tmp/log
+}}}
+Then have a look at the log
+
+**debugging viml**:
+{{{
+debug expr
+}}}
+Then use c(ontinue) s(tep) n(ext) q(uit) i(nterrupt) f(inish), see {{{:h debug}}}
+Also see {{{:h :breakadd}}}
+
+
+**tracing***:
+{{{
+  echom string(thing)
+  echoe string(thing)
+}}}
+Then you have the traces in {{{:messages}}} log always
+
+**debugging syntax scripts**:
+Note: echo lines are ignored by Vim. However you can run an indentation
+function manually and read them:
+
+{{{
+fun MyIndent(lnum)
+  echo 'debug ..'
+  return 1
+endfun
+set indentexpr=MyIndent(v:lnum)
+" debug indentation of current line:
+echo MyIndent(line('.'))
+}}}
+
+**error messages like 23.34.23 line 3**:
+This mean that the methods 23 34 23 are memebers of dictionaries.
+You can view the code by :function{23}
+
+
+== tips ==
+[[tips/viml-goto-last-error]]

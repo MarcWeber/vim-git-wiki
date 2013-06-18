@@ -1,0 +1,7 @@
+= Vim & haxe
+
+plugins: 
+* [[github.com/MarcWeber/vim-haxe]] - tries to be modular, haxe completion, tag based completion
+* [[vaxe]] - uses python, tries to be an ide, integrates with neocomplcache, haxe completion
+
+dedicated page on [[http://haxe.org/com/ide/vim|haxe.org]]

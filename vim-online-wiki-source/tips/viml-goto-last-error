@@ -1,0 +1,3 @@
+[[https://github.com/c9s/vim-dev-plugin]] implements a VimLGotoLastError
+command which reads the trace from :messages and moves to the last error
+location. It often works

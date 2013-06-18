@@ -25,6 +25,8 @@ Some most useful resources:
 * Watch Derek Wyatt's [[http://www.derekwyatt.org/vim/vim-tutorial-videos/|awesome videos]]!
 * Learn how to use the [[tips/using-vims-help]] command
 
+[[topic/vim-without-modes]]
+
 = HOT : =
 ** development of Vim **:
 * [[vim-development/development]]
@@ -50,6 +52,7 @@ VimL related (extending Vim):
 * [[topic/configuring-vim]]
 * [[topic/vim plugin managment]]
 * [[topic/designing-a-vim-plugin]]
+* [[topic/debugging-viml]]
 
 for programmers:
 
