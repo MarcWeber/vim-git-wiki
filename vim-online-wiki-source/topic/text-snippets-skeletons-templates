@@ -30,6 +30,7 @@ info-missing::
 completion-menu:: When typing only part of a snippet trigger Vim shows a completion menu with all triggers matching. For some snippets this may not make sense, eg if the trigger itself contains input to for the snippet. Eg UltiSnips can use regular expression matching on triggers
 regular-expression-as-trigger::
 dynamic-snippets:: can the snippet engine add snippets on the fly in some way?
+snippet-header:: has a nice (extendable) header which can be used to attach additional (future) information to snippets.
 
 
 MATRIX
@@ -38,7 +39,7 @@ Sander's snipmate:: manual-reload, can-read-snippets-files, completion-menu
 snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files, completion-menu, dynamic-snippets
 UltiSnips:: automatic-reload, requires-python, nested placeholders, regular-expression-as-trigger
 UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders, completion-menu, regular-expression-as-trigger
-neo snippets:: can-read-snippets-files
+neo snippets:: can-read-snippets-files, snippet-header
 vim-template:: info-missing
 
 == Additional notes ==
@@ -47,14 +48,17 @@ vim-template:: info-missing
 
 **Sander's snipmate**: original snipmate version.
 
-**snipmate**: adds some features, therefore depends on additional libraries
+**snipmate**: adds some features, therefore depends on additional libraries.
+  **dynamic-snippets** implementation: You can add a new function as source
+returning snippets depending on anything (cursor pos, current line, whatever
+you want)
 
 **UltiSnipsF**:
   forked version of UltiSnips. Its goal is to merge communities of snipmate and
   UltiSnips by providing most important features to both communities.
   However the test suite is not up to date and maybe will never be updated,
   because everything Marc Weber cares about works
-  
+
   UltiSnips will soon have a new release containing most of these changes
 
 **neo snippets**:
