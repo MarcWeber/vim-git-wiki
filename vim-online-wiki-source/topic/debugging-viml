@@ -13,6 +13,8 @@ debug expr
 Then use c(ontinue) s(tep) n(ext) q(uit) i(nterrupt) f(inish), see {{{:h debug}}}
 Also see {{{:h :breakadd}}}
 
+Note: After starting the debugger you can run arbitrary viml code in the
+command line shown by the debugger
 
 **tracing***:
 {{{

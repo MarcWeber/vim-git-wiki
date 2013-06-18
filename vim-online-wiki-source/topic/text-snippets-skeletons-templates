@@ -33,7 +33,7 @@ MATRIX
 XPTemplate:: manual-reload, space-abstraction
 Sander's snipmate:: manual-reload, can-read-snippets-files
 snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files
-UltiSnips:: automatic-reload
+UltiSnips:: automatic-reload, requires-python, nested placeholders
 UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders
 neo snippets:: can-read-snippets-files
 vim-template:: info-missing
