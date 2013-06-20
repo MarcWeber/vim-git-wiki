@@ -66,3 +66,84 @@ you want)
 
 **vim-template**:
   I don't know much about it - help fill in more information. This feature list is incomplete
+
+
+
+== snippet engine features by examples ==
+This section exists to illustrate the differcent features you may want to have
+which some engines implement, others do not. Thus add future ideas, too.
+
+Let's start with a **typical intermediate snippet** taken from snipmate:
+{{{
+snippet for
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+		${4:/* code */}
+	}${5}
+}}}
+
+When typing {{{for}}} then expanding the snippet[{{{ ${1:count} }}} will be
+selected as "count" only so that you can change the stop condition of the loop.
+
+Then when hitting the "jump to next placeholder" key the {{{ ${2:i} }}} will be
+hit defaulting to value "i". If you edit it the {{{ $2 }}} will change in
+multiple places and so on.
+
+**run arbitrary code**:
+{{{
+snippet git_version
+	`system('git rev-parse HEAD')`
+}}}
+The {{{`viml code`}}} will be run, and its result will be inserted into the snippet.
+Different engines have slightly different syntax for this eventually.
+
+
+**nested placeholders** (UltiSnips feature):
+{{{
+snippet input
+<input type="${1:text}" value="${2}" name="${3}"${4: id="${5:$3}}/>${7}
+endsnippet
+}}}
+This snippet basically behaves like the first example, however pay attention 
+to {{{ ${4: id="${5:$3}} }}}. WHen the 4th placeholder gets selected you can
+remove it by hitting backspace, therefore the 5th placeholder is gone, too.
+This way you can omit blocks of code.
+
+**regular expression trigger** (UltiSnips feature):
+{{{
+}}}
+
+
+**modifying snippets on the fly**. Snippet / UltiSnips allows to register your own sources
+of snippets. Therefore you can modify or add snippets before snipmate chooses
+the matching one. One use case is adding folding markers. Example taken from
+snipmate documentation:
+{{{
+  let g:commentChar = { \ 'vim': '"', \ 'c': '//', \ 'cpp': '//', \ 'sh': '#', \ 'python': '#' \}
+  fun! AddFolding(text)
+          return substitute(a:text,'\n'," ".g:commentChar[&ft]." {{{\n",1)."\n".g:commentChar[&ft]." }}}"
+  endf
+
+  fun! SnippetsWithFolding(scopes, trigger, result)
+    " hacky: temporarely remove this function to prevent infinite recursion:
+    call remove(g:snipMateSources, 'with_folding')
+    " get list of snippets:
+    let result = snipMate#GetSnippets(a:scopes, substitute(a:trigger,'_\(\*\)\?$','\1',''))
+    let g:snipMateSources['with_folding'] = funcref#Function('SnippetsWithFolding')
+
+    " add folding:
+    for k in keys(result)
+      let a:result[k.'_'] = map(result[k],'AddFolding(v:val)')
+    endfor
+  endf
+
+  " force setting default:
+  runtime plugin/snipMate.vim
+  " add our own source
+  let g:snipMateSources['with_folding'] = funcref#Function('SnippetsWithFolding')
+}}}
+
+The SnippetsWithFolding is of interest: It runs the default source to get a
+list of snippets, then adds folding markers and returns them with '_' suffixed
+to the trigger. This feature can be "abused" to create snippets for functions
+defined in the current file. Then snippets serve a similar purpose as
+completion does - which is why neosnippets integrates well with neocomplcache.
