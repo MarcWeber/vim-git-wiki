@@ -219,7 +219,7 @@ Then last bad links are reported
            $code_end();
            $state = '';
          } else {
-           $a($line."\n");
+           $a(quote($line)."\n");
          }
        } else if (in_array($state, array( "in_numbered_list", "in_bullet_list"))){
         // continue lists
