@@ -147,3 +147,32 @@ list of snippets, then adds folding markers and returns them with '_' suffixed
 to the trigger. This feature can be "abused" to create snippets for functions
 defined in the current file. Then snippets serve a similar purpose as
 completion does - which is why neosnippets integrates well with neocomplcache.
+
+
+**tags**:
+Idea.
+You don't want the snippet engine ask you "found this snippet twice, which one"
+- if there is a way to prefer one always. Idea to solve this:
+
+{{{
+" snippets file
+snippet n
+tag: for_tag
+	for="$1"
+}}}
+
+{{{
+" UltiSnips file
+snipept n
+tag: for_tag
+for="$1"
+endsnippet
+}}}
+
+Now you should be able to say
+{{{
+prio: ["UltiSnips", "snipmate"]
+only-first-snippet-for-each-tag?
+}}}
+
+Then a "foreach" snippet would still be shown.
