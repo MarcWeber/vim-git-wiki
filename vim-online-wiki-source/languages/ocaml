@@ -1,6 +1,15 @@
 = vim & ocaml
 
 Useful plugins:
+* https://github.com/def-lkb/merlin
 * github.com/MarcWebervim-addon-async
 * github.com/MarcWebervim-addon-ocamldebug
 * github.com/MarcWebervim-addon-ocaml
+
+Note: you use .annot files to find out about type at location and goto
+definition. $VIMRUNTIME/ftplugin/ocaml.vim has an implementation.
+A similar (the same?) can be found in github.com/MarcWebervim-addon-ocaml
+
+eventually useful tools
+* ocamlspot
+* merlin

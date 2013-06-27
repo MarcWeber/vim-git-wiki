@@ -104,7 +104,7 @@ snippet input
 endsnippet
 }}}
 This snippet basically behaves like the first example, however pay attention 
-to {{{ ${4: id="${5:$3}} }}}. WHen the 4th placeholder gets selected you can
+to {{{ ${4: id="${5:$3}} }}}. When the 4th placeholder gets selected you can
 remove it by hitting backspace, therefore the 5th placeholder is gone, too.
 This way you can omit blocks of code.
 

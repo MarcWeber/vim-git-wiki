@@ -5,7 +5,10 @@ Chip even removed his plugins from vim.sf.net for that reason.
 
 However today no longer all plugins can be found on vim.sf.net. You also want
 to try code hosting sites developpers use to put their code on:
-  * github
-  * bitbucket
-  * gitorious
-  * code.google.com
+
+* github
+* bitbucket
+* gitorious
+* code.google.com
+* you also want to check http://vim.wikia.com/wiki/Vim_Tips_Wiki for solutions
+* also consider asking on irc
