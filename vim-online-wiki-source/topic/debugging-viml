@@ -41,6 +41,10 @@ echo MyIndent(line('.'))
 This mean that the methods 23 34 23 are memebers of dictionaries.
 You can view the code by :function{23}
 
+**where has a mapping been defined?**:
+{{{
+  :verbose map
+}}}
 
 == tips ==
 [[tips/viml-goto-last-error]]

@@ -148,6 +148,9 @@ to the trigger. This feature can be "abused" to create snippets for functions
 defined in the current file. Then snippets serve a similar purpose as
 completion does - which is why neosnippets integrates well with neocomplcache.
 
+**spaces**:
+should empty lines be prefixed by indenting spaces?
+
 
 **tags**:
 Idea.
