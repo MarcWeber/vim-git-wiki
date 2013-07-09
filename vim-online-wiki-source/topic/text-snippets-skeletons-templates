@@ -39,7 +39,7 @@ Sander's snipmate:: manual-reload, can-read-snippets-files, completion-menu
 snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files, completion-menu, dynamic-snippets
 UltiSnips:: automatic-reload, requires-python, nested placeholders, regular-expression-as-trigger
 UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders, completion-menu, regular-expression-as-trigger
-neo snippets:: can-read-snippets-files, snippet-header
+neo snippet:: automatic-reload, can-read-snippets-files, completion-menu, nested placeholders, regular-expression-as-trigger, snippet-header
 vim-template:: info-missing
 
 == Additional notes ==
@@ -61,8 +61,11 @@ you want)
 
   UltiSnips will soon have a new release containing most of these changes
 
-**neo snippets**:
-  I don't know much about it - help fill in more information. This feature list is incomplete
+**neo snippet**:
+  It uses marker to implement snippet features instead of snipMate and
+  Ultisnips.  It integrates with neocomplcache/neocomplete for completion. The
+  snippet files are compatible with snipMate. And can read snipMate snippet
+  files.
 
 **vim-template**:
   I don't know much about it - help fill in more information. This feature list is incomplete
