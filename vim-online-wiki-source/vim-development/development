@@ -76,7 +76,7 @@ date. Finally you can export one patch easily
 Marc Weber has written a [[https://nixos.org/wiki/Nixpkgs_and_TopGit|top git introduction]].
 The PatchBranchExtension is documented at the link above very well.
 
-Of course for mercurial there is the well known "mq" extension, too.
+Of course for mercurial there is the well known   [[http://mercurial.selenic.com/wiki/MqExtension|mq]] extension, too.
 mq allows to reorder patches from a stack of patches and apply/unapply them easily.
 topgit and PatchBranchExtension are good at managing topic branches which depend on each other.
 
