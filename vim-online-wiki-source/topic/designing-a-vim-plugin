@@ -52,7 +52,7 @@ can be accessed from everywhere. (config, caches, etc)
 VAM (vim-addon-manager) introduced a addon-info.json file which let's you
 specify dependencies. Using VAM they'll be installed automatically.
 
-== enoug, just show me a small example ==
+== enough, just show me a small example ==
 [[https://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]] 
 which is minimal, separates user interface and implementation.
 

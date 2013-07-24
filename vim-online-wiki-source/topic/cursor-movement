@@ -39,7 +39,7 @@ g;      : where did I edit last (current buffer) - you can repeat it
 Learn about w vs W. Try it CURSOR_HERE.then.type.it (same for e,E)
 
 f,F,t,T : move to char or just before it forward / backward current line. (A
-          must)
+          must), the two keys ; and , repeats that movement in both directions
 
 be faster: delete then goto insert mode:
 C: deletes till end of line
