@@ -2,6 +2,7 @@
 Searching for
 * getting started {{{:h}}}
 * for any string: {{{:helpgrep string}}}.
-* for an option:  {{{:h '*chars*<c-d>}}} (All options start by ')
+* for an option/command/mapping:  {{{:h *chars*<c-d>}}}, options are surrounded
+  by {{{'}}}, so you can use {{{'*chars*'}}} as pattern
 
 Howto follow a link in Vim's help? Press {{{g <ctrl-]>}}}
