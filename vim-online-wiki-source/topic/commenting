@@ -12,22 +12,26 @@ or multiline comments
 }}}
 
 == How to remove comments ? ==
+**drop #** at the beginning: (jj representing any up/down movement):
 {{{
-" dorp # at the beginning (jj being a up/down movement)
-  " <c-v>jjd
-  " or by regex:
+  <c-v>jjd
+}}}
+or by regex:
+{{{
   %s@^#@@
 }}}
 
 == How to add comments ? ==
+**add #** at the beginning: (jj representing any up/down movement)
 {{{
-" drop # at the beginning
-  " <c-v>jjI#<esc>
-  " or by regex:
+  <c-v>jjI#<esc>
+}}}
+or by regex:
+{{{
   %s@^#@@
 }}}
 
 == plugins ==
 There are many plugins. One of the most simple yet powerful ones is
-[[http://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]]
-Its Readme references alternative solutions
+[[http://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]].
+Its Readme references alternative solutions.

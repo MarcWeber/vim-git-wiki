@@ -49,6 +49,9 @@ more movements:
 (, ): move by sentence
 [[, ]], {, } : more blockwise movements which are often helpful
 ...
+
+Of course you can define your own movements easily, such as the well known <c-e>:
+inoremap <c-e> <esc>A
 }}}
 
 However a lot of additional needs and solutions are there.

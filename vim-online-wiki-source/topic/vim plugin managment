@@ -154,7 +154,7 @@ checked out by git.
 == windows support ==
 Well, must plugins should work fine - however installing all dependencies (git,
 mercurial, unzip, ...) can be tedious (VAM case). 
-See [[vam.mawercer.de]], [[https://github.com/MarcWeber/vim-addon-manager/blob/master/doc/vim-addon-manager-additional-documentation.txt|VAM docs, section 10]]
+See [[http://vam.mawercer.de]], [[https://github.com/MarcWeber/vim-addon-manager/blob/master/doc/vim-addon-manager-additional-documentation.txt|VAM docs, section 10]]
 
 This could be simplified - there was no need to do so yet.
 
