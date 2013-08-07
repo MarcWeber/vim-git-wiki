@@ -361,7 +361,7 @@ class WikiToHTML {
 
 					  switch ($m[0]) {
 					  case '{{{':
-						  return sprintf('<span class="inline_code">%s</span>', $m[1]);
+						  return sprintf('<span class="inline_code">%s</span>', quote($m[1]));
 					  case '**':
 						  return sprintf('<strong>%s</strong>', $m[1]);
 						  break;
