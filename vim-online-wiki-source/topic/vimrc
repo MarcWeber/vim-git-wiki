@@ -6,6 +6,8 @@ set nocompatible
 filetype indent plugin on | syn on
 set hidden
 
+" here comes your Vim setup ...
+
 finish
 Put your own notes about vim here. Vim stops reading after "finish"
 }}}
