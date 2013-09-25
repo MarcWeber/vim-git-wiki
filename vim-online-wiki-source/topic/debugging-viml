@@ -46,5 +46,21 @@ You can view the code by :function{23}
   :verbose map
 }}}
 
+
+**Has a plugin been loaded?**:
+Check {{{:scriptnames}}}
+
+**A mapping does not work the way it should?**:
+Has it been (re)mapped?
+{{{:verbose map {lhs} }}}
+shows where a mapping has been set last. Maybe a second plugin is overriding a
+mapping.
+
 == tips ==
 [[tips/viml-goto-last-error]]
+
+
+== bisecting ==
+**.vimrc:** Add {{{finish}}} to make vim skip rest of file. {{{if 0 ...
+Also see [[topic/commenting]].
+

@@ -31,6 +31,10 @@ or by regex:
   %s@^#@@
 }}}
 
+== VimL special case
+You can use "finish" make Vim ignore rest of the file. (Nice for keeping your own memories etc).
+You're missing {{{/* .. */}}} ? try {{{if 0 ... endif }}}
+
 == plugins ==
 There are many plugins. One of the most simple yet powerful ones is
 [[http://github.com/MarcWeber/vim-addon-commenting|vim-addon-commenting]].
