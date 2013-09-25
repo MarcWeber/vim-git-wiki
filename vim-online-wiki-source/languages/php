@@ -8,7 +8,10 @@ Also see
 
 debugging: vdebug, vim-addon-xdebug
 
-completion: based on tag files
+completion: based on tag files, so make sure you use ctags
+
+manual in text form: [[https://github.com/MarcWeber/vim-addon-php-manual]]
+This might be outdated, you can update it and sent pull requests
 
 syntax highlighting is known to be slow. By tweaking synmaxcol etc you can take
 some control.
