@@ -1,0 +1,27 @@
+Vim as bad at async communication. Still some workarounds exist.
+You may want to look at github.com/MarcWeber/vim-addon-async which is
+using github.com/MarcWeber/vim-addon-background-cmd which is running a
+background shell which calls back into Vim to tell it "job is ready"
+by using client-server feature which in turn requires X (or use vim nox
+patch)
+
+Alternative solutions exist which use Vim's idle event to poll for
+updates. See list of related projects in github.com/MarcWeber/vim-addon-async
+which also lists yet another Vim patch (terminal version only).
+The async implementation provides a similar API for VimL plugins, but is
+also using the vim-addon-background-cmd way calling back into Vim using
+client-server. For quickfix I don't use -async because its causing a
+noticable delay IMHO.
+
+There is still one difference: Emacs updates a grep /compile list while
+you can continue editing. vim-addon-async, vimproc, .. are vim like
+solutions.
+
+For an older version of Vim there is als a thread patch which allows to
+run a terminal in vim, or see ConqueTerm.
+
+While the order of projects listed here might be biased (cause I'm the
+author), I still hope that the overall overview is kind of complete.
+
+
+TODO: tidy this up

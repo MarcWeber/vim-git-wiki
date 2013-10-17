@@ -17,3 +17,5 @@ https://github.com/troydm/shellasync.vim
 http://github.com/Shougo/vimproc
 
 There may be more implementations
+
+Also see [topic/asynchronous-communication]
