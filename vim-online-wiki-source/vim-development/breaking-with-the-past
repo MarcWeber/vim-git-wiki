@@ -1,6 +1,6 @@
 = Why could / should this be done?
 
-Currently Vim trieas to be copmatible as much as possible. What would you do
+Currently Vim tries to be copmatible as much as possible. What would you do
 different today, if you could  start from scratch?
 
 * enable nocompatible, enable set hidden

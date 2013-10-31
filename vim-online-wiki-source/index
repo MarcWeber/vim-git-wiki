@@ -79,6 +79,9 @@ general text editing:
 
 * [[topic/compiling-vim-from-source]]
 
+other:
+* [[topic/asynchronous-communication]]
+
 = random tips =
 
 * [[tips]]
