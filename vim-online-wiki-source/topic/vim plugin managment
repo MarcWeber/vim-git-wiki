@@ -53,6 +53,7 @@ get-bazaar:: install from svn
 get-vim.sf.net:: install from vim.sf.net
 get-vim-scripts.org:: install from vim-scripts.org (git mirror of vim.sf.net)
 bisect:: bisect problems by dividing the set of plugins to be activated
+ships-with-vim:: Does the Vim distribution contain it?
 ?:: don't know it well enough, help fill in information
 
 
@@ -60,7 +61,7 @@ MATRIX
 VAM:: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
 Pathogen:: rtp
 Vundle:: rtp, get-git, get-vim-scripts.org, install progress bar
-GetLatestVimScripts:: get-vim.sf.net
+GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
 [[http://github.com/vimjolts/jolt|jolt]]:: ?
@@ -117,6 +118,28 @@ runtime:
 
   " show infos about name/script-id
   :AddonsInfo name
+}}}
+
+**GetLatestVimScripts**:
+
+GetLatestVimScripts.dat:
+{{{
+    ScriptID SourceID Filename
+    --------------------------
+    294 1 :AutoInstall: Align.vim
+    120 2 Decho.vim
+     40 3 DrawIt.tar.gz
+    451 4 EasyAccents.vim
+    195 5 engspchk.vim
+    642 6 GetLatestVimScripts.vim
+    489 7 Manpageview.vim
+}}}
+
+.vimrc
+{{{
+  " optional
+  let g:GetLatestVimScripts_allowautoinstall=1
+  " or run :GLVS
 }}}
 
 **Npackd**:
