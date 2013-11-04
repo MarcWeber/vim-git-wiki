@@ -82,6 +82,11 @@ general text editing:
 other:
 * [[topic/asynchronous-communication]]
 
+= Vim sucks ? =
+Yes - its still productive. Anyway, let's collect things about Vim which
+should be improved (by someone somewhen ..)
+* [[topic/in-which-way-does-vim-suck]]
+
 = random tips =
 
 * [[tips]]

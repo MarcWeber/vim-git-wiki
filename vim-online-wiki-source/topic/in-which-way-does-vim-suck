@@ -1,0 +1,43 @@
+== In which way does Vim also suck? ==
+You all know it: I love Vim. If you look at my github page
+(github.com/MarcWeber) you'll undersand that.
+
+**What sucks?**
+
+* plugin system: vim.sf.net is old, authors have to write 3 introductions: One
+  for vim.sf.net, one for README.md (due to github) and one in doc/*
+* Vim is written in C, and C sucks (Yes, you may think differently. But its a
+  fact that other programming languages prevent some errors and are more
+  productive)
+* VimL is limited, and Vim only.
+* Python/Ruby/... support lacks. Eg you can't abort python ruby scripts by
+  {{{ctrl-c}}} the way  you can abort VimL. And the VimL implementation of this
+  is that hacky that it may even happen that your VimL for loop gets
+  interrupted to run some "vim window got resized code" in between
+  [[https://groups.google.com/forum/#!searchin/vim_dev/Ruby$20abort$20vim$20marc/vim_dev/irITPpKnTP8/Osl0AHJUH60J|thread illustrating the problem]]
+  **Conclusion:** The community builds uppon a crappy core and calls this a
+  feature. 30 years ago this was "fantastic". But today we should find a way to
+  move into the future.
+* missing async support. There are many many hacks (See vim-addon-async's
+  documentation). Eg Vim is very bad at this simple task:
+  Have a look at the first 5 grep results while grep is still running.
+* zero bytes are not supported. If you need them (eg for PHP xdebug integration)
+  you have to find hacky "workarounds".
+* Even "text editors" only need features like "snippets" and the like today.
+  At the core you need "file handling tools". And there is no standard way
+  This leads to insane code bloat such as in many ways
+  [[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/vam/utils.vim#L364|VAM implementing rm -fr]]
+  and introducing its own "run external command" abstraction and such.
+
+Yes - I agree on "Vim should be a text editor only" - but I also want it to be
+smart enough to let me do what I want. And at some point you hit a borde.
+Some people work around it to get close to there goals, but often its about
+adding yet another hack.
+
+In the end a project is as healthy as its community is. Emacs has a bigger
+community, why?
+
+If you wan this to be fixed and if you can afford spending resources (time/money)
+on this let me know.
+
+
