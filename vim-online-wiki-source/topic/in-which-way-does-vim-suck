@@ -1,6 +1,8 @@
 == In which way does Vim also suck? ==
 You all know it: I love Vim. If you look at my github page
-(github.com/MarcWeber) you'll undersand that.
+(github.com/MarcWeber) you'll undersand that. Because I do love Vim I also have
+to worry about its future and at least list some issues I've been faced with in
+the past. Some could be fixed easily, others are much harder
 
 **What sucks?**
 
@@ -28,6 +30,21 @@ You all know it: I love Vim. If you look at my github page
   This leads to insane code bloat such as in many ways
   [[https://github.com/MarcWeber/vim-addon-manager/blob/master/autoload/vam/utils.vim#L364|VAM implementing rm -fr]]
   and introducing its own "run external command" abstraction and such.
+* The sign api is broken by design, because two different plugins can have sign
+  number collisions by accident. A possible work around is to use a plugin such as
+  [[http://github.com/MarcWeber/vim-addon-signs|vim-addon-signs]]
+* :compiler is not perfect, eg if you use a ruby build system to build a
+  haskell application you want to have both error formats
+  [[http://github.com/MarcWeber/vim-addon-errorformats|vim-addon-errorformats]]
+  tries to allow this
+* the dev cycle of Vim could be improved (patches only, no branches, its unclear which
+  patches get accepted for what reason, ...)
+* multiple therading implementations or such, eg the if_mzsch has threading
+  support and locking or such as well as one of the features provides its own
+  threading.
+* Different if_ implementations have different sets of features/apis
+* Community tends to reinvent the wheel even though you try hard to serve
+  everybody with some plugins (I don't think this is Vim specific)
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
 smart enough to let me do what I want. And at some point you hit a border.
