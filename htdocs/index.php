@@ -33,7 +33,7 @@ function edit_form($content, $email, $comment){
 	  ? '<input type="hidden" name="I_am_human" value="I am human">' 
 	  : '
 	  <br/>
-	  <label >Type <strong>I am human</strong></label><input type="text" name="I_am_human" value="I am a bot">'
+	  <label >Type <strong>I am human</strong></label><input type="text" name="I_am_human" value="I am robotic">'
 	   )
 	  .'
 	  <br/>

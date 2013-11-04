@@ -30,14 +30,12 @@ You all know it: I love Vim. If you look at my github page
   and introducing its own "run external command" abstraction and such.
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
-smart enough to let me do what I want. And at some point you hit a borde.
+smart enough to let me do what I want. And at some point you hit a border.
 Some people work around it to get close to there goals, but often its about
 adding yet another hack.
 
 In the end a project is as healthy as its community is. Emacs has a bigger
 community, why?
 
-If you wan this to be fixed and if you can afford spending resources (time/money)
+If you want this to be fixed and if you can afford spending resources (time/money)
 on this let me know.
-
-
