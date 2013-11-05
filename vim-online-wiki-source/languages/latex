@@ -1,0 +1,19 @@
+= latex =
+[[https://launchpad.net/rubber/|rubber]] can be used to preprocess error output
+of latex. Then its easy to parse by Vim
+
+More useful plugins:
+* [[plugins/vim-addon-actions]]
+* [[http://vim-latex.sourceforge.net/|vim-latex]]
+* [[http://vim-latex.sourceforge.net/|vim-latex]]
+* [[topic/text-snippets-skeletons-templates]]
+* [[http://atp-vim.sourceforge.net/features.shtml|AutomaticLaTexPlugin]]
+
+There are probably more
+
+
+= alternatives / related =
+* Emacs (can preview mathematic formulars)
+* Lyx (WYSIWYG for latex like documents)
+* Texmacs
+* OpenOffice Math / Microsoft Office math have simple math formular editors built in

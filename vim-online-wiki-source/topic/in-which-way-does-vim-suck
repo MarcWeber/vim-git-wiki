@@ -37,14 +37,20 @@ the past. Some could be fixed easily, others are much harder
   haskell application you want to have both error formats
   [[http://github.com/MarcWeber/vim-addon-errorformats|vim-addon-errorformats]]
   tries to allow this
-* the dev cycle of Vim could be improved (patches only, no branches, its unclear which
-  patches get accepted for what reason, ...)
+* The dev cycle of Vim could be improved (patches only, no branches, its
+  unclear which patches get accepted for what reason, ...)
+  Eg Silex has been waiting for 2 years to get a patch merged. His patch is in
+  a TODO list. On vim-dev there are some additional stories.
 * multiple therading implementations or such, eg the if_mzsch has threading
   support and locking or such as well as one of the features provides its own
   threading.
 * Different if_ implementations have different sets of features/apis
 * Community tends to reinvent the wheel even though you try hard to serve
   everybody with some plugins (I don't think this is Vim specific)
+* On the one hand its nice to have "vim" always do what it should, eg
+  separating user and builtin namespaces. But that also makes it very very hard
+  to implement some features or be backward compatible without rewriting bigger
+  parts
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
 smart enough to let me do what I want. And at some point you hit a border.
@@ -56,3 +62,30 @@ community, why?
 
 If you want this to be fixed and if you can afford spending resources (time/money)
 on this let me know.
+
+== How to escape from this ==
+Options:
+* Fork Vim (and spend a lot of time fixing this all) ?
+* switch to Emacs
+* switch to Yzis
+* switch to Yi
+* switch to .. ?
+* start crowd funding?
+
+So I guess we should start with a comparison about what we want so that we can
+choose one or muliple ways to continue.
+
+== I'd help getting this fixed by doing anything ==
+* joining #vim-mutiny on irc.freenode.net
+* supporting crowd funding (if it was started)
+* spending time on patching/testing
+* spending money for devs
+
+Who would eventually join?
+  * Marc Weber
+  * fobius
+
+If you want to get added send me an email: marco-oweber AT gmx.de
+
+What's the main problem? its nontrivial to understand which is the best way to
+continue.
