@@ -6,7 +6,7 @@ session_start();
 
 /* load this in each php file .. */
 define('LIB',dirname(__FILE__));
-define('PROJECT_ID','MYSQL_MIGRATION_DEMO');
+define('PROJECT_ID','VIM_WIKI');
 
 // returns value identified by key or $default
 function d($ar, $key, $default = null){ return isset($ar[$key]) ? $ar[$key] : $default; }
