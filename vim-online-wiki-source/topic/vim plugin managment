@@ -40,6 +40,7 @@ introducing a pool of known plugins.
 
 FEATURES
 rtp:: manipulate the runtimepath
+rtp-after:: takes care about after/* files
 activate plugins at runtime:: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
 plugin name completion::
 bootstrap from .vimrc:: you can write this code for the other managers easily
@@ -58,9 +59,9 @@ ships-with-vim:: Does the Vim distribution contain it?
 
 
 MATRIX
-VAM:: rtp, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
-Pathogen:: rtp
-Vundle:: rtp, get-git, get-vim-scripts.org, install progress bar
+VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
+Pathogen:: rtp, rtp-after
+Vundle:: rtp, rtp-after, get-git, get-vim-scripts.org, install progress bar
 GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
