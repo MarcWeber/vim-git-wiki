@@ -122,23 +122,24 @@ function edit_form($content, $email, $comment){
 	  exit();
   }
   if ($_GET['page'] == 'log'){
-	  $log = $git->command(GIT.' log '. (isset($_GET['path']) ? escapeshellarg('vim-online-wiki-source/'.$_GET['path']) : '') );
-	  $html = str_replace("\n", "<br/>", quote($log));
-
-	  $html = preg_replace_callback('/commit (........................................)/', function($m){
-		return sprintf('<strong>commit <a href="%s">%s</a></strong>', commit_page_url($m[1]) , $m[1]);
-	  }, $html);
-	  echo render_page('changes of '.$_GET['page'].' '.d($_GET,'path'), 
-		 ( (isset($_GET['path']))
-		 ?
-		 "<p>You're seeing changes made to [/".quote($_GET['path'])."] only. "
-	       	 .sprintf('<a href="%s">All changes</a></p>', quote(log_page_url()))
-		 ."</p>"
-		   : ''
-		 ).  $html
-	  );
-
-	  exit();
+	$path = d($_GET, 'path', '');
+	$log = $git->command(GIT.' log '. ($path != '' ? escapeshellarg('vim-online-wiki-source/'.$_GET['path']) : '') );
+	$html = str_replace("\n", "<br/>", quote($log));
+	                                                                                                                  
+	$html = preg_replace_callback('/commit (........................................)/', function($m){
+	      return sprintf('<strong>commit <a href="%s">%s</a></strong>', commit_page_url($m[1]) , $m[1]);
+	}, $html);
+	echo render_page('changes of '.$_GET['page'].' '.$path, 
+	       ( $path != ''
+	       ?
+	       "<p>You're seeing changes made to [/".quote($path)."] only. "
+	     	 .sprintf('<a href="%s">All changes</a></p>', quote(log_page_url()))
+	       ."</p>"
+	         : ''
+	       ).$html
+	);
+	                                                                                                                  
+	exit();
   }
   if ($_GET['page'] == 'commit'){
 	  // todo cache?
@@ -200,13 +201,23 @@ function edit_form($content, $email, $comment){
 	  }
   } else {
 	  if (file_exists($git->git_dir.'/vim-online-wiki-source/'.$_GET['page'])){
-		  // show page
-		  $page = new Page($git, $_GET['page']);
-                  $html =
-                    (defined('USE_FILE_ON_DISK')
-                     ? Page::text_to_html($page->path, file_get_contents($git->git_dir.'/vim-online-wiki-source/'.$page->path))
-                     : $page->html_content());
-		  echo render_page_cached($page->title(), $html);
+		  if (is_dir($git->git_dir.'/vim-online-wiki-source/'.$_GET['page'])){
+			if (!preg_match('/\/$/', $_GET['page'])){
+				redirect_permanently('http://'.EDIT_DOMAIN.'/wiki/'.$_GET['page'].'/');
+			}
+			$links = '';
+			foreach (glob($git->git_dir.'/vim-online-wiki-source/'.$_GET['page'].'/*') as $file){
+				$links .= sprintf('<a href="%s">%s</a><br/>', quote(basename($file)), quote(basename($file)));
+			}
+			$title = 'conents of '.$_GET['page'];
+			echo render_page_cached($title, 
+				sprintf('<h1>%s</h1>', quote($title))
+				.$links);
+		  } else {
+			 // show page
+			$page = new Page($git, $_GET['page']);
+			echo render_page_cached($page->title(), $page->html_content());
+		  }
 	  } else  {
 		  // 404
 		  header("HTTP/1.0 404 Not Found");
