@@ -13,7 +13,7 @@ try{
   }
 
 
-  $git = new Git('/home/vim-wiki/vim-git-wiki', $cache);
+  $git = new Git(GIT_REPOSITORY, $cache);
 
   function quote($s){ return htmlentities($s); }
 

@@ -14,3 +14,4 @@ define("USE_CACHE", 'file');
 // for error reporting:
 define('ERROR_CONTACT_EMAIL','');
 define('CONFIG_FILE', __FILE__);
+define('GIT_REPOSITORY','REPO_DIRECTORY_WITHOUT_TRAILING_SLASH');

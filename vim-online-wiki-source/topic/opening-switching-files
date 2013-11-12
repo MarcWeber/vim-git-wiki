@@ -51,4 +51,4 @@ endfun
 noremap \go :exec 'e '. fnameescape(tlib#input#List('s','select file', split(FastGlob(input('glob pattern, curr dir:','**/*')),"\n") ))<cr>
 }}}
 
-also [topics/tags] like features can be used.
+also [[topic/tags]] like features can be used.
