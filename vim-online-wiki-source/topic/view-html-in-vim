@@ -1,0 +1,11 @@
+Well - due to Vim's design you cannot view "images". There are different solutions.
+
+HTML to text converters:
+  * links/elinks (should have dump options)
+
+
+plugins:
+* [[https://github.com/yuratomo/w3m.vim]]
+* there is another one based on perl on vim.sf.net (but it felt slow, 4025 ?)
+
+(TODO: add missing info ..)

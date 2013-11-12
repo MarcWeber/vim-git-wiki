@@ -15,3 +15,7 @@ define("USE_CACHE", 'file');
 define('ERROR_CONTACT_EMAIL','');
 define('CONFIG_FILE', __FILE__);
 define('GIT_REPOSITORY','REPO_DIRECTORY_WITHOUT_TRAILING_SLASH');
+
+// read contents from file instead of using git status hash:path :
+// define('USE_FILE_ON_DISK',true);
+
