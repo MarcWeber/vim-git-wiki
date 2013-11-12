@@ -1,0 +1,19 @@
+= Pasting text in Vim =
+Vim sees input as coming from a terminal (even gui Vim implements kind of terminal internally).
+Thus it cannot make a **difference** between you **typing** and you **pasting**.
+
+You tell Vim that you want to paste verbatim as is you {{{:set paste}}}.
+You can create a mapping like this:
+{{{
+  map \ip :set invpaste
+}}}
+
+On linux {{{:r!cat}}} then paste then {{{<c-d>}}} to end is a fast alternative.
+
+Also see {{{:h 'clipboard'}}} to make Vim use or not use various linux clipboards.
+Use {{{p/P}}} to paste text before/after the cursor and {{{y}}} to yank text.
+Vim supports multiple registers, eg {{{"ay}}} / {{{"ap}}} yanks/pasts into the a register.
+See {{{:h registers}}}
+
+Pasting registers can also be done by {{{<c-r>a}}} in insert mode, a being any
+register.
