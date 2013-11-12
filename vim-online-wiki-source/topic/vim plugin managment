@@ -87,6 +87,7 @@ set rtp+=~/.vim/vundle.git/
 " These refer to git repositories:
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 }}}
 
 
