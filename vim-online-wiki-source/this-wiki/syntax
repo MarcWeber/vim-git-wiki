@@ -1,38 +1,100 @@
 = This wiki's syntax =
+
+== links/ references
 {{{
+Reference a wiki page: \\91[dir/file]] (press gf to follow a link in Vim)
+External link: \\91[http(s)://domain|label]]
+}}}
+looks like:
+
     Reference a wiki page: [[dir/file]] (press gf to follow a link in Vim)
     External link: [[http(s)://domain|label]]
 
-    = H1
-    == header level 2
+== headlines
+{{{
+= H1
+== header level 2
+}}}
+(Looks like omitted, would be confusing)
 
-    {{{
-    this is code
-    }}}
-    
-    inline code: use {, } three times to enclose text.
 
-    lists:
+== code blocks inline/multi line
+{{{
+A \\123{{ inline block }}\\125
+\\123{{
+A multiline
+block
+}}\\125
+}}}
+looks like:
 
-    * Text
-      more text (at least 2 spaces)
-    * second item
 
-    1) or use numbers
-    2)
+A {{{ inline block }}}
+{{{
+A multiline
+block
+}}}
 
-    double * surrounds bold text.
+== lists
+{{{
+* Text
+  more text (at least 2 spaces)
+* second item
 
-    feature matrices: first define feature list, then assign features to things:
+1) or use numbers
+2)
+}}}
+looks like:
 
-    FEATURES
-    blue: is blue
-    fast: is fast
-    loved_by_us: we use it
-    eventually_loved_by_us: we may use it also
+* Text
+  more text (at least 2 spaces)
+* second item
 
-    MATRIX
-    emacs: blue, fast, eventually_loved_by_us
-    vim: blue, fast, loved_by_us
+1) or use numbers
+2)
 
+
+== bold, strong text
+{{{
+\\42* bold text \\42*
+}}}
+looks like:
+
+** bold text **
+
+== feature matrices
+first define feature list, then assign features to things:
+
+{{{
+FEATURES
+blue:: is blue
+fast:: is fast
+loved_by_us:: we use it
+eventually_loved_by_us:: we may use it also
+
+MATRIX
+emacs:: blue, fast, eventually_loved_by_us
+vim:: blue, fast, loved_by_us
+}}}
+
+looks like:
+
+FEATURES
+blue:: is blue
+fast:: is fast
+loved_by_us:: we use it
+eventually_loved_by_us:: we may use it also
+
+MATRIX
+emacs:: blue, fast, eventually_loved_by_us
+vim:: blue, fast, loved_by_us
+
+== quoting
+
+Just use {{{<c-r>='\\'.nrtochar('{')}}} to quote the **{** character.
+Eg that's useful to encode \\123{{ without starting a inline code block.
+The wiki source will look like this then:
+
+{{{
+  \\92\\92\\49\\50\\51{{
 }}}

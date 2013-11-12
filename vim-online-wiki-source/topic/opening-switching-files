@@ -9,7 +9,7 @@ opened it. There are many ways to help with it
 == using vim only tools ==
 {{{
 typing ctrl-o: open last file (after restarting vim)
-:e/n **/*foo.txt<c-d> or <tab> to find a file
+:e/n \\42*/*foo.txt<c-d> or <tab> to find a file
 
 :enew|r!find<cr> then gf/gF on a file
 

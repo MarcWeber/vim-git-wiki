@@ -357,6 +357,8 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
     '(\*\*)((.|[\n])*?)\*\*',
     # links
     '(\[\[)([^\]]+)\]\]',
+    # chars (quoting)
+    '(\\\\\\)([0-9]+)',
   );
 
   $html = preg_replace_callback(
@@ -389,6 +391,8 @@ function wiki_to_html($target_directory, $wiki_file, array $to_html){
                   return $to_html['wikilink']($m[1], rel_path('./'.$m[1], dirname($wiki_file)));
                 }
                 break;
+              case '\\\\':
+                return chr($m[1]);
               default:
                 throw new Exception('bad replacement: '.var_export($m, true));
             };

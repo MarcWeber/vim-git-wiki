@@ -202,7 +202,11 @@ function edit_form($content, $email, $comment){
 	  if (file_exists($git->git_dir.'/vim-online-wiki-source/'.$_GET['page'])){
 		  // show page
 		  $page = new Page($git, $_GET['page']);
-		  echo render_page_cached($page->title(), $page->html_content());
+                  $html =
+                    (defined('USE_FILE_ON_DISK')
+                     ? Page::text_to_html($page->path, file_get_contents($git->git_dir.'/vim-online-wiki-source/'.$page->path))
+                     : $page->html_content());
+		  echo render_page_cached($page->title(), $html);
 	  } else  {
 		  // 404
 		  header("HTTP/1.0 404 Not Found");
