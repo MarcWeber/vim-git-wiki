@@ -90,6 +90,12 @@ function edit_form($content, $email, $comment){
 	  ';
   }
 
+  function redirect_permanently($url){
+	  Header( "HTTP/1.1 301 Moved Permanently" ); 
+	  Header( "Location:  ".$url); 
+	  exit();
+  }
+
   if (d($_POST,'I_am_human') == 'I am human') $_SESSION['is_human'] = true;
   if (d($_POST,'email', '') !== '') $_SESSION['email'] = $_POST['email'];
 
