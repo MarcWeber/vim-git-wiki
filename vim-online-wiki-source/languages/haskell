@@ -12,7 +12,7 @@ See also:
 
 * [[http://projects.haskell.org/haskellmode-vim/|haskellmode-vim]]
 
-* [[http://github.com/MarcWeber/vim-addon-haskell|vim-addon-haskel]]: 
+* [[http://github.com/MarcWeber/vim-addon-haskell|vim-addon-haskell]]: 
   (run cabal using vim-addon-actions, has some more magic to
   add -X compiler flags by parsing compiler errors, reconfigures your cabal
   project, allows you to choose a build configuration)
