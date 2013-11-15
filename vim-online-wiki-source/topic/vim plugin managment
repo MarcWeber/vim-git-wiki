@@ -198,3 +198,8 @@ another list: [[http://vim-scripts.org/tools.html]]
 
 There is another project called vim-addon-manager for debian, see
 [[http://packages.debian.org/sid/vim-addon-manager|debian's vim-addon-manager]]
+
+== links
+[[http://glts.github.io/2013/07/13/how-to-support-all-plugin-managers.html|How to support all plugin managers]]
+While "giving freedom" is nice its not how the world works.
+We should join efforts to address the real problems of Vim rather then asking users and authors to compare 10 plugin managers IMHO.
