@@ -69,6 +69,7 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies, ships-with
 [[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
 [[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, updating plugins, dependencies, install progress bar
+[[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
 
 == Example .vimrc setups ==
 
@@ -121,6 +122,23 @@ runtime:
   " show infos about name/script-id
   :AddonsInfo name
 }}}
+
+VAM does not implement "versioning" yet because the author does not get payed for
+working impleminting such features. It tries to provide 80% of a perfect result
+by spending only 20% of effort. Marc Weber doubts that versioning is worth it
+given that the amount of ways you can combine packages is much larger than the
+Vim community can test which is why VAM propagates "use latest" versions.
+You could implement "git submodule" support yourself or talk to the VAM team
+to make them add some post/processing features for install/updates managing git
+submodules. However this would also require allowing VAM to install git based
+repositories only?
+
+**Vim Flavor**
+I've contacted the author to see how VAM and that project can collaborate
+(eventually only no the pool of plugins?).
+
+This mainly wants to use the existing ruby gem packaging system to manage Vim
+plugins in some way.
 
 **GetLatestVimScripts**:
 
