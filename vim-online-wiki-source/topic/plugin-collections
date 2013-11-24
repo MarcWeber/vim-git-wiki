@@ -1,5 +1,5 @@
 == existing vim plugin collections ==
 They often hint about important plugins - however Marc Weber thinks that they
-fail it proper plugin management (cause he believes in VAM doing it the right way)
+fail it proper plugin management (cause he believes in VAM doing at the right way)
 
-See janus, vimpyre and some others
+See janus, vimpyre, spf13 and some others

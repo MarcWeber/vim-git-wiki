@@ -1,12 +1,22 @@
 = vim & ruby =
 
 Also see 
-[[topic/syntax-checking]]
-[[topic/repl]]
+* [[topic/syntax-checking]]
+* [[topic/repl]] (Also have a look at pry which also supports completion and the like)
 
-debugging:
-  vim-addon-rdebug
-  vim-addon-ruby-debug-ide
-  vdebug
-  
-completion vim-ruby
+== debugging
+* vim-addon-rdebug (This seems to always work in some way for all ruby versions because it only depends on {{{require 'debug'}}})
+* vim-addon-ruby-debug-ide
+* vdebug
+* vim-ruby-debugger (The last time I tried this it failed stepping even 10
+  times, please correct me if I did something wrong)
+
+
+Debugging libraries:
+* ruby-debug-ide (linecache, ruby-debug-base) (only works nicely up to ruby 1.9.2 or older?)
+* debugger (1.9.3/ 2.0?)
+* byebug (eg use  https://github.com/astashov/debugger-xml which providesr rdebug-ide to talk to Vim?)
+
+
+== completion
+* vim-ruby
