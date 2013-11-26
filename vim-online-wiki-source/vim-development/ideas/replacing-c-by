@@ -17,3 +17,13 @@ pros / cons
 
 == Zimbu
 [[http://www.zimbu.org/|Zimbu]] Bram might join when Zimbu would was used.
+
+== C++
+{{{
+    I used D for a project and I quickly went back to C++. When it works
+    fine it is probably better than C++, but in my experience it is rare.
+    I my opinion all the reason to dislike C++ disappeared with C++11.
+}}}
+- N  Paolo Bolzoni
+
+comment: Yzis is written in C++, its only missing "viml" eventually?
