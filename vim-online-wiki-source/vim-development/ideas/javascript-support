@@ -1,0 +1,22 @@
+= javascript support in Vim?
+
+== Why?
+* Most devs are faced with JS due to Web, its jitting engine is fast.
+
+== why not?
+* continuation passing style for many IO operations
+
+== If how?
+v8 is masked in gentoo (Nikolay Pavlov's talked about this)
+
+{{{
+  > This has to be a low priority, especially considering v8: Gentoo
+  > maintainers have masked it for removal as it "does not have stable API
+  > resulting in compile breakages in reverse dependencies". There is no way
+  > you can refactor vim and fight with this at the same time, and I guess not
+  > only Gentoo maintainers will not be willing to deal with it.
+  > 
+  > Especially considering that there are no plugins written in javascript for
+  > an obvious reason and javascript is not the best language you can pick for
+  > embedding.
+}}}

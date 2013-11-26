@@ -1,0 +1,19 @@
+= replace C by
+
+The following topics could be of interest deciding upon which language to use
+  * side effect tracing, eg see D,Haskell, Zimbu does not have that
+  * nice and short clean syntax like ruby/haskell
+  * statically typed (there will be a lot of code), this will reduce bugs
+
+nice to have:
+* continuation passing style transformation (then you could go JS)
+
+open questions:
+* everything is data / type classes vs everything is an object?
+
+== D?
+pros / cons
+  http://lambda-the-ultimate.org/node/4338
+
+== Zimbu
+[[http://www.zimbu.org/|Zimbu]] Bram might join when Zimbu would was used.
