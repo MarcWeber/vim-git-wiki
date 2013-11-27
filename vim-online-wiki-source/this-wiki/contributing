@@ -1,6 +1,6 @@
 = Contributing to this wiki =
-[[this-wiki/edit-with-vim-offline]]
-[[this-wiki/edit-online-using-web-interface]]
+Follow [[this-wiki/edit-with-vim-offline]] OR
+ [[this-wiki/edit-online-using-web-interface]]
 
 There are two main repositories: One at the web server, on at github.
 Both are merged regularly so that it should not matter to you contribute.
