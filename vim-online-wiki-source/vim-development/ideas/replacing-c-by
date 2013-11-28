@@ -26,4 +26,17 @@ pros / cons
 }}}
 - N  Paolo Bolzoni
 
-comment: Yzis is written in C++, its only missing "viml" eventually?
+comment: Yzis is written in C++, but maintainers have given up because it got
+too complicated.
+
+== pypy.org
+http://doc.pypy.org/en/latest/translation.html#how-it-fits-together
+
+
+== by something new
+pypy serves as an example how such a tool could look like. It already
+implements many backends.
+
+@MarcWeber
+
+
