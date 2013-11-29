@@ -42,7 +42,7 @@ FEATURES
 rtp:: manipulate the runtimepath
 rtp-after:: takes care about after/* files
 activate plugins at runtime:: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
-plugin name completion::
+plugin name completion:: completes plugin names in .vim files
 bootstrap from .vimrc:: you can write this code for the other managers easily
 updating plugins::
 install progress bar::
@@ -106,9 +106,9 @@ vimrc:
   " eg when opening a .c file activate plugin-for-c-development lazily
   let ft_addons = {
       \ '^\%(c\|cpp\)$': [ 'plugin-for-c-development' ],
-      \ 'javascript': [ 'plugin-for-javascript' ]
+      \ 'javascript$': [ 'plugin-for-javascript' ]
     \ }
-  au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) 
+  au BufRead,BufNew * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) 
                   \ | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) 
                   \ | endfor
 }}}
