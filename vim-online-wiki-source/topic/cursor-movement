@@ -65,3 +65,5 @@ random ideas / scripts / plugins:
 * many more
 * relative line mubers
   There are plugins at vim.sf.net which eventually lead to the newer vim option 'relativenumber'
+
+* [[https://github.com/bruno-/vim-vertical-move|vertical move]] (moves up/down till a shorter line is hit)

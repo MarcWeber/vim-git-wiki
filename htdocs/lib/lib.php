@@ -161,7 +161,10 @@ class Page {
 
 	function content(){
 		// to be edited by user
-		return $this->git->retrieve_cached('vim-online-wiki-source/'.$this->path);
+                return  (defined('USE_FILE_ON_DISK') && USE_FILE_ON_DISK === true)
+                        ? file_get_contents($this->git->git_dir.'/vim-online-wiki-source/'.$this->path)
+                        : $this->git->retrieve_cached('vim-online-wiki-source/'.$this->path);
+		
 	}
 
 	function html_content(){

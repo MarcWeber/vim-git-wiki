@@ -1,0 +1,41 @@
+== unfinished work - how to fix Vim - which order - next steps? ==
+
+* Threading.
+
+* Making vim embeddable (making it second point since it is even more
+  refactoring). (Comment, Yzis failed on this, see [[http://www.freehackers.org/VimIntegration]])
+  
+* Input (I mean this constantly popping out discussion with vim not
+  supporting certain keys).
+* Zero byte handling. Low priority since this is uncommon to have in text
+  files, but in the current state you have to write ugly hacks to make it
+  work. Should probably be the third as it implies refactoring string
+  implementation. Possible solutions I see: escaping like in zsh (note that
+  it is done the way you never notice) or struct {size_t len; char str[1];}
+  (where you allocate string using usual alloc(sizeof(str_T) + len) hack).
+* More input (iminsert and keymaps are not good at all at handling people
+  using more then one keyboard layout: gvim needs a way to get actual keys
+  pressed and process them as if they were user English layout (not hardcoded
+  us keymap) regardless of actual layout when not in insert or command(?)
+  modes).
+* Stripping requirement to use VimL in Python/Ruby/Lua/etc interface. I.e.
+  finishing what I started (I guess I can do this) for python and doing the
+  similar thing for other languages.
+  (Comment: Nikolay, please explain)
+
+* Unicode support in regular expressions.
+  (Comment: Nikolay, please explain, add a simple use case)
+
+* Possibly sane unicode indexing (may require further string refactoring to
+  be efficient).
+  (Comment: Nikolay, please explain, add a simple use case)
+
+* Non-string funcrefs (i.e. inclusion of my patch (without lambda part)).
+  It contains fixes for some problems.
+  (Comment: Nikolay, please explain, add a simple use case, also consider
+  adding this to [[vim-development/recent-work]]) if you already have a patch
+
+* Stripping requirement to use shell to run applications.
+  (Comment: Nikolay, please explain, add a simple use case)
+
+Problems to be fixed see [[topic/in-which-way-does-vim-suck]]

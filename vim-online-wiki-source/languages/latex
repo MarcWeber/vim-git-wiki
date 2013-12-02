@@ -11,6 +11,13 @@ More useful plugins:
 
 There are probably more
 
+== known issues ==
+slow syntax highlighting, see 
+{{{
+ :he g:tex_fast
+ :he tex-slow
+}}}
+Tip by C Campbell from mailinglist
 
 = alternatives / related =
 * Emacs (can preview mathematic formulars)

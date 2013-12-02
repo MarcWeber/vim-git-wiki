@@ -42,7 +42,7 @@ the past. Some could be fixed easily, others are much harder
   unclear which patches get accepted for what reason, ...)
   Eg Silex has been waiting for 2 years to get a patch merged. His patch is in
   a TODO list. On vim-dev there are some additional stories.
-* multiple therading implementations or such, eg the if_mzsch has threading
+* multiple threading implementations or such, eg the if_mzsch has threading
   support and locking or such as well as one of the features provides its own
   threading.
 * Different if_ implementations have different sets of features/apis
@@ -53,6 +53,11 @@ the past. Some could be fixed easily, others are much harder
   to implement some features or be backward compatible without rewriting bigger
   parts
 * completion does not allow querying extended information lazily
+* Vim should have a mode "try to guess indentation settings"
+* Vim being backward compatible just sucks. I don't want to "touch ~/.vimrc"
+  and set nocompatible over and over again. Who the hell is still depending on
+  that behaviour? Having {{{:e *<tab>}}} completion is more important than being
+  compatible for ever!
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
 smart enough to let me do what I want. And at some point you hit a border.
@@ -67,7 +72,7 @@ on this let me know.
 
 == How to escape from this ==
 Options:
-* Fork Vim (and spend a lot of time fixing this all) ?
+* Fork Vim (and spend a lot of time fixing this all) ? See [[vim-development/fixing-vim-next-steps]]
 * switch to Emacs & Evil [[topic/vim-minus-emacs-whats-missing]]
 * switch to Yzis
 * switch to Yi
