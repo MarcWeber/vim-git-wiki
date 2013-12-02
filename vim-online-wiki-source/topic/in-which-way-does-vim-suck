@@ -58,6 +58,7 @@ the past. Some could be fixed easily, others are much harder
   and set nocompatible over and over again. Who the hell is still depending on
   that behaviour? Having {{{:e *<tab>}}} completion is more important than being
   compatible for ever!
+* pipes instead of temporary files (eg for :make like stuff)
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
 smart enough to let me do what I want. And at some point you hit a border.

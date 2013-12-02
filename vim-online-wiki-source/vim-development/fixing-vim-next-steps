@@ -21,14 +21,43 @@
 * Stripping requirement to use VimL in Python/Ruby/Lua/etc interface. I.e.
   finishing what I started (I guess I can do this) for python and doing the
   similar thing for other languages.
-  (Comment: Nikolay, please explain)
+  Currently such interfaces are pretty much useless without using vim.eval or
+  vim.command (or equivalents in your language of choice). I started creating
+  wrappers around various C structures (like that vim.options thingie
+  wrapping functions that manipulate options array) that strip out
+  requirement for vim.eval/vim.command.
+  => gobjectIntrospection, is this of any help?
+
 
 * Unicode support in regular expressions.
-  (Comment: Nikolay, please explain, add a simple use case)
+  Eg how do you match a Russian word? This will be /\b\p{Cyrillic}+\b/ in Perl.
+  What about allowing to use PCRE
 
 * Possibly sane unicode indexing (may require further string refactoring to
   be efficient).
   (Comment: Nikolay, please explain, add a simple use case)
+
+
+{{{
+> You are at the column N and want to get character before the cursor to
+> decide the behavior of Tab. Assuming you are writing text in LaTeX in
+> Russian and want to detect whether it is Russian letter just before the
+> cursor to do something special. The best idea would be using indexing, but
+> it is wrong, so you have to use matchstr().
+> matchstr(getline('.')[:col('.')-2], '.$') vs getline('.')[col('.')-2].
+> 
+> This can be worked around, but workarounds are ugly. And there is big bunch
+> of plugin developers who do not care about unicode and thus do not have
+> such workarounds (consider the relatively recent issue where one Russian
+> man wanted to use IMAP() to map some Russian letters and was unable to for
+> this very reason). Good language is not about "care about things or they
+> will not work". It is about "you see how many things work without you
+> actually caring about them".
+> 
+> I have yet to see a language which is not going to bother me with encoding
+> issues.
+maybe JS, string characters are unicode only ..
+}}}
 
 * Non-string funcrefs (i.e. inclusion of my patch (without lambda part)).
   It contains fixes for some problems.
@@ -37,5 +66,9 @@
 
 * Stripping requirement to use shell to run applications.
   (Comment: Nikolay, please explain, add a simple use case)
+
+== Can be done with current Vim by patching runtime or the like (not much work)
+* VAM's shell DSL
+* vim-addon-error-formats
 
 Problems to be fixed see [[topic/in-which-way-does-vim-suck]]
