@@ -72,3 +72,6 @@ maybe JS, string characters are unicode only ..
 * vim-addon-error-formats
 
 Problems to be fixed see [[topic/in-which-way-does-vim-suck]]
+
+== random ideas
+* evaluatelibuv (because it abstracts many system tasks) according to Thiago Padilha.
