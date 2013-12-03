@@ -67,6 +67,8 @@ maybe JS, string characters are unicode only ..
 * Stripping requirement to use shell to run applications.
   (Comment: Nikolay, please explain, add a simple use case)
 
+* Think about which guis to maintain well and which to maintain less
+
 == Can be done with current Vim by patching runtime or the like (not much work)
 * VAM's shell DSL
 * vim-addon-error-formats
