@@ -10,8 +10,7 @@ the past. Some could be fixed easily, others are much harder
   for vim.sf.net, one for README.md (due to github) and one in doc/*
 * Vim is written in C, and C sucks (Yes, you may think differently. But its a
   fact that other programming languages prevent some errors and are more
-  productive). I've documented at the end of the page in which way I think that
-    C sucks.
+  productive).  See [[vim-development/language-pro-cons]].
 * VimL is limited, and Vim only.
 * Python/Ruby/... support lacks. Eg you can't abort python ruby scripts by
   {{{ctrl-c}}} the way  you can abort VimL. And the VimL implementation of this
@@ -99,36 +98,3 @@ If you want to get added send me an email: marco-oweber AT gmx.de
 What's the main problem? its nontrivial to understand which is the best way to
 continue.
 
-== Why does C suck? ==
-
-Yes - I know that a lot of code I depend on is written in C (kernel, Vim, gimp,
-..).
-
-Try rewriting these two examples in C, and you'll understand:
-{{{
-  // RUBY sample code
-  File.open('foo.txt') do |file_handle|
-    file_handle.write(user_input())
-  end
-  // even if user_input() throws an exception the file handle will be closed
-}}}
-{{{
-  // Haskell/ocaml sample code:
-  // polymorphic function.
-  add :: (Numeric n) => n -> n -> n
-  add = (+)
-
-  -- use with floats
-  print (add 2.0 4.0)
-  -- use with ints
-  print (add 2 4)
-  -- haskell will compile two versions of add for each type.
-  -- you write the add implementation only once.
-  -- Yes C++ can do so, too. The problem with C++ is that some C programmers
-  -- think its too easy to shoot yourself into the foot using C++
-  -- example: gnome/gtk/gimp  and Vim
-}}}
-
-The first example is about sane error handling about things like "file cannot
-be opened" for whatever OS reason. The second example is about having simple
-maps associating keys and values (such as global lists, mappings, ..)

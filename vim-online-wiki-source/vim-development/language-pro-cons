@@ -1,0 +1,61 @@
+= Improving Vim also means replacing C
+So let's collect which features are desirable.
+Which style is to be avoided for what reasons etc.
+
+This is meant to understand which features we care about.
+Whether such a language is a real choice is another topic..
+But let's collect wisdom
+
+== own language ==
+Goal: Focus on reusable code, eg think about how to translate to
+C/C++/Elisp/Haskell so that some code eventually can be shared with other
+editors if it makes sense.
+
+== C++ ==
+If choosing C++, what would be nice coding standards?
+
+When using Exceptions take much care, otherwise inconsistent state might happen.
+Example case: [[http://stackoverflow.com/questions/1736146/why-is-exception-handling-bad]].
+So maybe its best to not use Exceptions at all.
+
+== rust ==
+
+== D ==
+
+== Haskell ==
+lazy, pure (unless using IO you don't have unkown state, thus Exceptions issues
+and such do not apply). Example app see Yi editor.
+
+== Why does C suck? ==
+
+Yes - I know that a lot of code I depend on is written in C (kernel, Vim, gimp,
+..).
+
+Try rewriting these two examples in C, and you'll understand:
+{{{
+  // RUBY sample code
+  File.open('foo.txt') do |file_handle|
+    file_handle.write(user_input())
+  end
+  // even if user_input() throws an exception the file handle will be closed
+}}}
+{{{
+  // Haskell/ocaml sample code:
+  // polymorphic function.
+  add :: (Numeric n) => n -> n -> n
+  add = (+)
+
+  -- use with floats
+  print (add 2.0 4.0)
+  -- use with ints
+  print (add 2 4)
+  -- haskell will compile two versions of add for each type.
+  -- you write the add implementation only once.
+  -- Yes C++ can do so, too. The problem with C++ is that some C programmers
+  -- think its too easy to shoot yourself into the foot using C++
+  -- example: gnome/gtk/gimp  and Vim
+}}}
+
+The first example is about sane error handling about things like "file cannot
+be opened" for whatever OS reason. The second example is about having simple
+maps associating keys and values (such as global lists, mappings, ..)
