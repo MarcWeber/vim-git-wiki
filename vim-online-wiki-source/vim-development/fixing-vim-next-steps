@@ -69,6 +69,9 @@ maybe JS, string characters are unicode only ..
 
 * Think about which guis to maintain well and which to maintain less
 
+* What should happen on ctrl-c? Tell user what Vim is waiting for, then
+  second ctrl-c hit aborts?
+
 == Can be done with current Vim by patching runtime or the like (not much work)
 * VAM's shell DSL
 * vim-addon-error-formats
@@ -77,3 +80,20 @@ Problems to be fixed see [[topic/in-which-way-does-vim-suck]]
 
 == random ideas
 * evaluatelibuv (because it abstracts many system tasks) according to Thiago Padilha.
+
+
+= this language section will soon be moved to its own file
+
+This is meant to understand which features we care about.
+Whether such a language is a real choice is another topic..
+But let's collect wisdom
+
+== C++ ==
+If choosing C++, what would be nice coding standards?
+When using Exceptions take much care, otherwise inconsistent state might happen.
+Example case: [[http://stackoverflow.com/questions/1736146/why-is-exception-handling-bad]].
+So maybe its best to not use Exceptions at all.
+
+== rust ==
+
+== D ==
