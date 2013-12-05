@@ -11,12 +11,19 @@ Goal: Focus on reusable code, eg think about how to translate to
 C/C++/Elisp/Haskell so that some code eventually can be shared with other
 editors if it makes sense.
 
+== memory handling ==
+which options for what reason?
+
 == C++ ==
 If choosing C++, what would be nice coding standards?
 
 When using Exceptions take much care, otherwise inconsistent state might happen.
 Example case: [[http://stackoverflow.com/questions/1736146/why-is-exception-handling-bad]].
 So maybe its best to not use Exceptions at all.
+
+**cons**:
+* functions have no "throws .." hinting. Thus if Exceptions are introduced by
+  somebody having missed their potential issues ..
 
 == rust ==
 

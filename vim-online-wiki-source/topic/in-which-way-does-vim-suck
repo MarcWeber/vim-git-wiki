@@ -98,3 +98,5 @@ If you want to get added send me an email: marco-oweber AT gmx.de
 What's the main problem? its nontrivial to understand which is the best way to
 continue.
 
+== things to avoid
+* 18:25 @LeoNerd> We don't want to pull in the huge amount of libgtk and all its dependencies just to found out we don't have a $DISPLAY, or libtickit just to find that STDIN is not a TTY

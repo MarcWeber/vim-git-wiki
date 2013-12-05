@@ -1,5 +1,10 @@
 == unfinished work - how to fix Vim - which order - next steps? ==
 
+* Which platforms to support?
+  Windows terminal, Windows GUI, unix like terminal,
+  Operating System / Targets:
+  Unix like  (tty, X11, Qt, Gtk, Wayland, ..), Windows (GUI, terminal), OSX (Aqua?), ..
+
 * Threading.
 
 * Making vim embeddable (making it second point since it is even more
@@ -79,4 +84,5 @@ maybe JS, string characters are unicode only ..
 Problems to be fixed see [[topic/in-which-way-does-vim-suck]]
 
 == random ideas
-* evaluatelibuv (because it abstracts many system tasks) according to Thiago Padilha.
+* evaluate libuv (because it abstracts many system tasks) according to Thiago Padilha.
+* evaluate this library with many backends ? http://git.enlightenment.org/core/efl.git/tree/src/modules/evas/engines
