@@ -76,6 +76,9 @@ Options:
 * switch to Emacs & Evil [[topic/vim-minus-emacs-whats-missing]]
 * switch to Yzis
 * switch to Yi
+* switch to https://github.com/mawww/kakoune/ (TODO review !)
+  concepts: everything is a selection, multi selection built in
+  C/C++
 * switch to .. ?
 * start crowd funding? Preview vote here: [[http://mawercer.de/vim.php]]
 Also see [[topic/vim-keybinding-implementations]]

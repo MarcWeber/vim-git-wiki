@@ -11,27 +11,135 @@ Goal: Focus on reusable code, eg think about how to translate to
 C/C++/Elisp/Haskell so that some code eventually can be shared with other
 editors if it makes sense.
 
+Goals:
+
+* reuse code. Thus don't expect the code to be used in any specific way unless
+  the code is actually compiled for a target
+
+* treat Exceptions as return type (if target supports Exceptions)
+  This way the C++ issues become void to some extend, because they are actually
+  an "outcome" of the action
+
+* understand that the "key" is "state" and "side effects"
+  There are two solutions: Haskell (it avoids state), thus many problems
+  (concurrency, ...) do not apply, and other stateful languages, such as
+  Ruby,JS,C++ (here you get into error handling trouble).
+
+  Haskell also has "state", STM, IO refs and such. So at least it separates
+  concerns.
+
+  This problem will always be there, the key is to make it expricit and
+  understandable.
+
+* should know which code may fail and which code may not fail.
+  (eg what about malloc, usually it does not fail)
+
+== concept aborting code execution ==
+
+** Why code might fail returning a valid result/ reason why Exceptions exist **:
+
+* You want to cancel/stop/abort an operation/thread. Eg Python,Ruby,Haskell:
+  You just throw an Exception at that thread, and the thread aborts whenever it
+  thinks its ready to do so.
+
+* unexpected behaviour (malloc fails, out of memory, ...)
+  Example reaction glib: The application just quits.
+
+== concept Exceptions ==
+What are Exceptions? Well, instead of returning a value, an Exception is
+returned.
+
+**Excption pro**:
+* they allow to escape form execution without much additional code
+* you can "quit many hirarchies" easily. Examples are "end of iterator"
+  (Python), returning completion result (Haxe compiler) and so on.
+
+**Exception con**:
+* when escaping from execution, you still have to worry about resource
+  releasing, what to do when having done half work (see state)
+  Explanation: [[http://stackoverflow.com/questions/1736146/why-is-exception-handling-bad]]
+
+* thus error handling if Exceptions are used in an uncontrolled way are a risk
+  (if you need a system which keeps running)
+
+So Exceptions work fine for PHP (you run one HTTP request, either it succeeds
+or it fails), but except that they only serve the "documentary" purpose: tell
+what went wrong and where (because many Exceptions tend to have a stack trace
+and the like)
+
+== concept state / transactions:
+State is something you look at to know what a system/buffer contains.
+The bigger a system, the harder it is to define state. Examples are
+transactional databases (here its somewhat easy), however such "single state"
+concepts are given up fast if data becomes bigger.
+
+The only "true" solution are pure systems, such as Haskell. Initially they
+don't have state, they just provide functions taking input and having output.
+So nothing can go wrong. Then they introduce IO monad which is about getting
+such input/output from something stateful. (Of course there is more to it STM
+and such).
+Thus Haskell separates code operating on data, and state containers.
+
+** Possible state implemenations:**
+
+* copy on write (Haskell's default). This **is** cool, because it plays nice
+  with Exceptions. If you "copy on write" in memory you can always rollback
+  if your garbage collector is strong enough.
+
+* edit in place (traditional OOP and such)
+
 == memory handling ==
 which options for what reason?
 
 == C++ ==
 If choosing C++, what would be nice coding standards?
 
-When using Exceptions take much care, otherwise inconsistent state might happen.
-Example case: [[http://stackoverflow.com/questions/1736146/why-is-exception-handling-bad]].
-So maybe its best to not use Exceptions at all.
-
 **cons**:
 * functions have no "throws .." hinting. Thus if Exceptions are introduced by
   somebody having missed their potential issues ..
 
+{{{
+    I used D for a project and I quickly went back to C++. When it works
+    fine it is probably better than C++, but in my experience it is rare.
+    I my opinion all the reason to dislike C++ disappeared with C++11.
+}}}
+- N  Paolo Bolzoni
+
+comment: Yzis is written in C++, but maintainers have given up because it got
+too complicated.
+
 == rust ==
 
-== D ==
+== D?
+pros / cons
+  http://lambda-the-ultimate.org/node/4338
+
+== C ==
+**pro**:
+* runs on almost all systems available
+
+**con**:
+* very low level, even basic abstractions such as type safe hashes/maps/lists
+  are not possible without repating yourself writing memory allocation code.
+
+Thus writing complex pieces of software in short time is not possible IMHO.
+That you still can get jobs doen is shown by the linux kernel, git, ..
 
 == Haskell ==
-lazy, pure (unless using IO you don't have unkown state, thus Exceptions issues
-and such do not apply). Example app see Yi editor.
+**properties**:
+* lazy
+* pure
+* nice short concise syntax
+
+**pro**:
+* separates state and code operating on it
+* pretty cross platform today
+* many batteries included
+* many abstractions possible
+
+**con**:
+* due to its nature some issues are hard to debug (eg why do I get a memory
+  overflow).. Conduits and such try to make it easy to keep control
 
 == Why does C suck? ==
 
@@ -66,3 +174,18 @@ Try rewriting these two examples in C, and you'll understand:
 The first example is about sane error handling about things like "file cannot
 be opened" for whatever OS reason. The second example is about having simple
 maps associating keys and values (such as global lists, mappings, ..)
+
+
+== pypy.org
+http://doc.pypy.org/en/latest/translation.html#how-it-fits-together
+
+== Zimbu
+[[http://www.zimbu.org/|Zimbu]] Bram might join when Zimbu would was used.
+cool language. What it does is great and designed the right way. But Marc Weber
+wants more features.
+
+== review  this
+MarcWeber: check out the tutorials for constructing interpreters with rpython 
+http://morepypy.blogspot.ch/2011/04/tutorial-part-2-adding-jit.html ...could be quite handy for reimplementing viml. 
+also did you write out your requirements for for the functional language you wanted we were talking about?
+
