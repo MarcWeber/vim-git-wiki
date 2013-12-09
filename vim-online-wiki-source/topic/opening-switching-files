@@ -14,7 +14,8 @@ typing ctrl-o: open last file (after restarting vim)
 :enew|r!find<cr> then gf/gF on a file
 
 " this is very useful, because typing some characters and <tab> expanding is enough:
-map lhs :b<space>
+set wildcharm=<tab>
+map lhs :b<space><tab>
 }}}
 
 == tab like solutions: ==
