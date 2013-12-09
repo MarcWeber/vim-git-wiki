@@ -80,6 +80,7 @@ maybe JS, string characters are unicode only ..
 == Can be done with current Vim by patching runtime or the like (not much work)
 * VAM's shell DSL
 * vim-addon-error-formats
+* Threading. <a href="https://groups.google.com/forum/#!topic/vim_dev/65jjGqS1_VQ">This patch</a> implements a solution based on a simple message queue/event loop that can be integrated into the current code without much effort(need confirmation by a developer with more experience in vim's code)
 
 Problems to be fixed see [[topic/in-which-way-does-vim-suck]]
 
