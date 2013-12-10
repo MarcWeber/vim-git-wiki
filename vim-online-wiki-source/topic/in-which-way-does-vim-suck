@@ -73,12 +73,7 @@ on this let me know.
 == How to escape from this ==
 Options:
 * Fork Vim (and spend a lot of time fixing this all) ? See [[vim-development/fixing-vim-next-steps]]
-* switch to Emacs & Evil [[topic/vim-minus-emacs-whats-missing]]
-* switch to Yzis
-* switch to Yi
-* switch to https://github.com/mawww/kakoune/ (TODO review !)
-  concepts: everything is a selection, multi selection built in
-  C/C++
+* switch to [[topic/vim-alternatives]]
 * switch to .. ?
 * start crowd funding? Preview vote here: [[http://mawercer.de/vim.php]]
 Also see [[topic/vim-keybinding-implementations]]

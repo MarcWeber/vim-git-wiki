@@ -1,0 +1,31 @@
+== Vim alternatives
+Only listing editors which have kind of Vi Keybindings
+
+== Kakoune 
+[[https://github.com/mawww/kakoune/]]
+[[https://github.com/mawww/kakoune/blob/master/doc/design.asciidoc|design]]
+[[https://github.com/mawww/kakoune/blob/master/doc/interfacing.asciidoc|interaction]]
+
+author says
+* no scripting built in
+* no threading
+* ...
+
+My view: Nice idea, but threading is important, eg do syntax highlighting
+calculation in the background, redraw when finished.
+Thus while some ideas might be cool, I don't think it will serve everybody.
+
+== Emacs & Evil [[topic/vim-minus-emacs-whats-missing]]
+== Yzis
+Comment, Yzis failed on this, see [[http://www.freehackers.org/VimIntegration]]
+* compiles
+* uses lua as scripting language
+* written in C++
+
+== Yi
+* Haskell
+* threading
+* emacs/vi like interface
+* strong parsers for highlighting
+* still needs more love, eg doesn't support working JS highlighting yet
+
