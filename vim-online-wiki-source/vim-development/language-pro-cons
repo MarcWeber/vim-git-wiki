@@ -175,6 +175,8 @@ The first example is about sane error handling about things like "file cannot
 be opened" for whatever OS reason. The second example is about having simple
 maps associating keys and values (such as global lists, mappings, ..)
 
+== mercury language
+http://mercurylang.org/about/backends.html
 
 == pypy.org
 http://doc.pypy.org/en/latest/translation.html#how-it-fits-together
