@@ -19,6 +19,9 @@ slow syntax highlighting, see
 }}}
 Tip by C Campbell from mailinglist
 
+== preview
+Okular and Evince reload files (evince needs to get the focus ?).
+
 = alternatives / related =
 * Emacs (can preview mathematic formulars)
 * Lyx (WYSIWYG for latex like documents)

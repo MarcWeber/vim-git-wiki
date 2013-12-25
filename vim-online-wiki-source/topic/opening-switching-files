@@ -53,3 +53,6 @@ noremap \go :exec 'e '. fnameescape(tlib#input#List('s','select file', split(Fas
 }}}
 
 also [[topic/tags]] like features can be used.
+
+== more links ==
+[[https://github.com/Shougo/unite.vim|unite]]

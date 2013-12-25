@@ -124,6 +124,7 @@ topic. Then they can be referenced.
 [[topic/vim-related-websites]]
 
 = Vim-a-likes =
+[[http://coolwanglu.github.io/vim.js/web/vim.html|Vim in the browser (JS by emscripten)]]
 
 The modal editing found in Vim is that famous that many editors adopted at
 least some ideas: [[topic/vim-keybinding-implementations]]
