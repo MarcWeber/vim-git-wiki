@@ -57,7 +57,7 @@ bisect:: bisect problems by dividing the set of plugins to be activated
 ships-with-vim:: Does the Vim distribution contain it?
 synchronous update install::
 ?:: don't know it well enough, help fill in information
-supports unite:: (whatever that means exactly)
+supports unite:: How tight the integration is have a look at the plugin's documentation
 revision lock:: revision lock can be emulated by putting your .vim into a repository (hg/git/..) using almost any plugin manager (?)
 vundle-compatibility::
 
