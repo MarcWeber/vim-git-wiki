@@ -5,6 +5,11 @@ VimL is
   code execution and will execute any other viml code arbitrarely - it
   just happens to be not a problem commonly because resize event is not
   used often)
+  [[https://groups.google.com/forum/#!searchin/vim_dev/Ruby$20abort$20vim$20marc/vim_dev/irITPpKnTP8/Osl0AHJUH60J|thread illustrating the problem]]
+  **Conclusion:** The community builds uppon a crappy core and calls this a
+  feature. 30 years ago this was "fantastic". But today we should find a way to
+  move into the future.
+
 * slow (if you need more execution power, a status line does not cause
   need much, thus might not be a nice example). In the  past I've hit
   tremendous performance issues eg caching function names for as3
@@ -29,3 +34,4 @@ Of course VimL also has shiny sides:
   then you're out of luck
 * tons of existing code (such as matchit) which really helps writing code
 * ...
+

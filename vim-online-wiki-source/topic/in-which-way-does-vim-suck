@@ -13,13 +13,7 @@ the past. Some could be fixed easily, others are much harder
   productive).  See [[vim-development/language-pro-cons]].
 * VimL is limited, and Vim only. [[topic/in-which-way-does-viml-suck]]
 * Python/Ruby/... support lacks. Eg you can't abort python ruby scripts by
-  {{{ctrl-c}}} the way  you can abort VimL. And the VimL implementation of this
-  is that hacky that it may even happen that your VimL for loop gets
-  interrupted to run some "vim window got resized code" in between
-  [[https://groups.google.com/forum/#!searchin/vim_dev/Ruby$20abort$20vim$20marc/vim_dev/irITPpKnTP8/Osl0AHJUH60J|thread illustrating the problem]]
-  **Conclusion:** The community builds uppon a crappy core and calls this a
-  feature. 30 years ago this was "fantastic". But today we should find a way to
-  move into the future.
+  {{{ctrl-c}}} the way  you can abort VimL. 
 * missing async support. There are many many hacks (See vim-addon-async's
   documentation). Eg Vim is very bad at this simple task:
   Have a look at the first 5 grep results while grep is still running.
