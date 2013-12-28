@@ -1,0 +1,31 @@
+== In which way does VimL suck? ==
+
+VimL is
+* buggy (by design, eg resize event will cause a for loop to interrupt
+  code execution and will execute any other viml code arbitrarely - it
+  just happens to be not a problem commonly because resize event is not
+  used often)
+* slow (if you need more execution power, a status line does not cause
+  need much, thus might not be a nice example). In the  past I've hit
+  tremendous performance issues eg caching function names for as3
+  files and pascal files. Same about caching function locations for
+  .vim files. Get See vim-dev plugin and gf handler. The first time
+  when the cache gets created you wait forever - and this is only due
+  to slowness of viml.
+* is missing quite a lot of abstractions such as closures, etc etc.
+* it is used only inside Vim. Why learn a (buggy) language just to get
+  some things done in an editor?
+* some implementations are broken by design, eg the sign api, see
+* It just doesn't make sense to implement yet another XML parsing library in
+  VimL for the sake of writing one, sry - but you have to do it (see vim webapi
+  for instance) *and me spending time fixing it* and so on ..
+
+Its still hard to drop because so much code has been written in
+
+Of course VimL also has shiny sides:
+* simple
+* autoloading is working great
+* does have basic support for many things you could need. But even {{{rm -fr}}}
+  then you're out of luck
+* tons of existing code (such as matchit) which really helps writing code
+* ...
