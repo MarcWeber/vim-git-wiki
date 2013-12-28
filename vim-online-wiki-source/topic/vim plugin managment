@@ -53,7 +53,6 @@ get-hg:: install from mercurial
 get-svn:: install from svn
 get-bazaar:: install from svn
 get-vim.sf.net:: install from vim.sf.net
-get-vim-scripts.org:: install from vim-scripts.org (git mirror of vim.sf.net)
 bisect:: bisect problems by dividing the set of plugins to be activated
 ships-with-vim:: Does the Vim distribution contain it?
 synchronous update install::
@@ -64,18 +63,18 @@ vundle-compatibility::
 
 
 MATRIX
-VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility
+VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility
 Pathogen:: rtp, rtp-after
-Vundle:: rtp, rtp-after, get-git, get-vim-scripts.org, install progress bar
+Vundle:: rtp, rtp-after, get-git, install progress bar
 GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package description, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
 [[http://github.com/vimjolts/jolt|jolt]]:: ?
 [[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
-[[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, updating plugins, dependencies in packages description, install progress bar
+[[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, updating plugins, dependencies in packages description, install progress bar
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
-[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, synchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility
+[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, synchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
 
 == Example .vimrc setups ==
 
