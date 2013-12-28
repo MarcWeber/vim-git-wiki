@@ -1,5 +1,4 @@
 = vim & C C++ like =
-
 [[plugins/youcompleteme]]
 [[plugins/ecim]]
 [[tips/cpp-show-nesting-level]]

@@ -41,12 +41,13 @@ introducing a pool of known plugins.
 FEATURES
 rtp:: manipulate the runtimepath
 rtp-after:: takes care about after/* files
-activate plugins at runtime:: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file.
+activate plugins at runtime:: Activating plugins at runtime allows you to load ruby related plugins when you open a .rb file. This also means you could load a plugin when pressing a key such as % to load matchit.
 plugin name completion:: completes plugin names in .vim files
 bootstrap from .vimrc:: you can write this code for the other managers easily
 updating plugins::
 install progress bar::
-dependencies:: minimal dependency support
+dependencies in package description:: minimal dependency support
+dependencies in vimrc:: minimal dependency support
 get-git:: install from git repositories
 get-hg:: install from mercurial
 get-svn:: install from svn
@@ -55,21 +56,26 @@ get-vim.sf.net:: install from vim.sf.net
 get-vim-scripts.org:: install from vim-scripts.org (git mirror of vim.sf.net)
 bisect:: bisect problems by dividing the set of plugins to be activated
 ships-with-vim:: Does the Vim distribution contain it?
+synchronous update install::
 ?:: don't know it well enough, help fill in information
+supports unite:: (whatever that means exactly)
+revision lock:: revision lock can be emulated by putting your .vim into a repository (hg/git/..) using almost any plugin manager (?)
+vundle-compatibility::
 
 
 MATRIX
-VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies, bisect
+VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility
 Pathogen:: rtp, rtp-after
 Vundle:: rtp, rtp-after, get-git, get-vim-scripts.org, install progress bar
-GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies, ships-with-vim
+GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package description, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
 [[http://github.com/vimjolts/jolt|jolt]]:: ?
 [[http://github.com/carllerche/vim-nicktears|vim-nicktears]]:: ?
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
-[[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, updating plugins, dependencies, install progress bar
+[[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, get-vim-scripts.org, updating plugins, dependencies in packages description, install progress bar
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
+[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, synchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility
 
 == Example .vimrc setups ==
 
@@ -139,6 +145,35 @@ I've contacted the author to see how VAM and that project can collaborate
 
 This mainly wants to use the existing ruby gem packaging system to manage Vim
 plugins in some way.
+
+**NeoBundle**
+Examples from mail by Marcel Boon, date: December 27 2013 11:25AM illustrating
+some features:
+
+{{{
+Automatic compiling:
+NeoBundle 'Shougo/vimproc', {
+            \ 'build' : {
+            \     'windows' : 'make -f make_mingw32.mak',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
+
+Loading only on a specific command or filetype:
+NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
+            \ 'commands' : 'TortoiseTyping'
+            \ }}
+NeoBundleLazy 'mattn/emmet-vim', {'autoload':
+            \ {'filetypes': ['html', 'xhttml', 'css', 'xml', 'xls', 'markdown']}}
+
+Dependecy handling:
+NeoBundleLazy 'xolox/vim-lua-ftplugin' , {
+            \ 'autoload' : {'filetypes' : 'lua'},
+            \ 'depends' : 'xolox/vim-misc',
+            \ }
+}}}
 
 **GetLatestVimScripts**:
 
