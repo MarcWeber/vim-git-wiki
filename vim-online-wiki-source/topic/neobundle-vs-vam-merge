@@ -126,3 +126,16 @@ autoload/neobundle/config.vim: 573 lines
 (stopping here)
 
 VAM has less LOC's (which might not be representatitve)
+
+== activate options
+There are different use cases for activation:
+
+{{{
+  " force order without specifying depndencies (does this make sense?) probably no.
+  activate('plugin-a then plugin-b')
+
+  activate('plugin', {callback-when-ready})
+
+  " supported by VAM (eg in .vimrc plugin/* files get sourced after .vimrc has finished processing)
+  activate('plugin', {activate immediately without async because I want to use plugin features in next line})
+}}}
