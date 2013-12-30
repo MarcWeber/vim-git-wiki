@@ -115,7 +115,7 @@ function edit_form($content, $email, $comment){
   $_GET['page'] = preg_replace('/[^A-Z_a-z0-9\/ -]/', '', $_GET['page']);
 
   if ($_GET['page'] == 'search'){
-	  $log = $git->command(PATH.GIT.' grep -e '. escapeshellarg($_GET['q']).' | sed -n -e "s@vim-online-wiki-source@@p"' );
+	  $log = $git->command(PATH.GIT.' grep -ie '. escapeshellarg($_GET['q']).' | sed -n -e "s@vim-online-wiki-source@@p"' );
 	  $html = '';
 	  foreach(explode("\n", $log) as $line){
 		  $l = explode(":", $line, 2);
