@@ -76,6 +76,8 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package 
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
 [[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, synchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
 
+Also see [[topic/neobundle-vs-vam-merge]].
+
 == Example .vimrc setups ==
 
 **Pathogen**:
