@@ -1,0 +1,128 @@
+= neobundle vs vam - does thinking about merging make sense?
+
+Both neobundle and vam target a similar user group (power users) which want to
+have control. Neither Shougo nor me are interested in spending more time than
+neccessary on maintaining such code. Thus I feel we should think about merging/
+rewrite. There are at least 3 people (ZyX, Shougo, Marc Weber) who would
+collaborate so we will have results soon, if we want. The main problem is
+finding out which features we want. So let's discuss random features:
+
+== the plugin pool ==
+[[github.com/MarcWeber/vim-addon-manager-known-repositories|VAM-kr]] is a sample.
+It is VimL code merging SCM sources and vim.sf.net sources. the SCSM sources
+are derived from install descriptions found on vim.sf.net mainly (some are
+maintained manually).
+
+**upstream suggestion**:
+* server implementation
+* should allow users to register github urls themselves
+
+**Shougo** wants to join and add support for it.
+
+
+**why is a plugin pool important?**
+* allows to map one name to source
+* allows to mask bad packages (if such happen, eg which contain malicious code
+  or such)
+* allows hinting that other plugins might be better suited to get a task done
+  (without forcing anything on users)
+
+== build instrucctions / dependencies ==
+VAM introduced addon-info.json which has a dependencies key.
+If addon-info.json is missing but required to make a plugin work VAM does add
+it to the plugin's repository.
+
+* + a plugin author can mantain this file on its own
+* + the plugin manager plugin maintainers are likely to not care about it at
+    all
+
+* - repositories which get patched by VAM don't look like they are clean,
+    because an additional file is there.
+
+
+NeoBundle is using recipes (like Emacs's el-get).
+* - a plugin author must send pull request which maintainers must review and
+  maintain (too much work, because there are too many plugins)
+
+
+== parallel installation / fetching
+There are ways to implement it: This would require keeping state, eg which
+targets are waiting for what goals. (this is known from futures in JS).
+
+It can be implemented trivially. It has not been important enough to me.
+If people really want it I'll think about it.
+
+NeoBundle does implement such (how does it work excatly?)
+**TODO**
+Its based on vimproc.
+
+== dependencies
+**VAM**:
+addon-info.json contains the dependencies, thus plugin authors can manage them themselves.
+Because usually seperates plugin recipe information (found in the plugin pool) from names
+having referencing names is easy and uniq, however in addon-info.json files you
+can also pass many options such as git url if required (we prefer dependencies
+to be added to the pool as additional items, though)
+
+**NeoBundle**:
+You have to specify them in your ~/.vimrc (?)
+
+{{{
+    NeoBundle 'Shougo/vimfiler', {'depends' : 'Shougo/unite.vim' }
+    NeoBundle 'Shougo/neocomplcache', {'depends' :
+        \ [ 'Shougo/neosnippet.git',
+        \   ['rstacruz/sparkup', {'rtp': 'vim'}],
+        \ ]}
+    " while its nice that this can be done its bad design, this rtp information
+    " should be attached to the plugin
+}}}
+
+[[https://github.com/Shougo/neobundle-vim-recipes/blob/master/recipes/vimshell.vimrecipe|messy example]]
+Why is this example messy and bad design? Other plugins might depend on
+vimproc, duplicating the build information doesn't make sense, sry.
+Having such a sample is bad design and bad for community. In fact the vimproc
+recipe does duplicate it.
+
+Because ther is no name/ location abstractions its harder to replace one
+repository by another one!
+
+== lazy loading
+**Vam**: Only has a sample illustrating how to implement this yourself.
+
+{{{
+    let ft_addons = [
+      \ {'on_ft': '^\%(c\|cpp\)$', 'activate': [ 'plugin-for-c-development' ]},
+      \ {'on_ft': 'javascript', 'activate': [ 'plugin-for-javascript' ]}
+      \ {'on_name': '\.scad$', 'activate': [ 'plugin-for-javascript' ]}
+    \ ]
+    au FileType * for l in filter(copy(ft_addons), 'has_key(v:val, "on_ft") && '.string(expand('<amatch>')).' =~ v:val.on_ft') | call vam#ActivateAddons(l.activate, {'force_loading_plugins_now':1}) | endfor
+    au BufNewFile,BufRead * for l in filter(copy(ft_addons), 'has_key(v:val, "on_name") && '.string(expand('<amatch>')).' =~ v:val.on_name') | call vam#ActivateAddons(l.activate, {'force_loading_plugins_now':1}) | endfor
+}}}
+
+Vam also has an experimental branch recording mappings so that this lazy
+loading can be done automatically. Whether this is possible at all is another
+topic, because when a plugin adds a mapping could be configurable, too.
+
+* + Beacuse you have a list of addon names you can preserve order which might
+  be important in some cases
+
+**NeoBundle**:
+Has somethingc like ft_addons builtin, thus you tell a plugin to be loaded at
+filetype XY usage. Somthing similar exists for mappings
+
+* + I guess that order can be preserved (order of calling NeoBundleLazy
+
+== startup time / speed
+which one is faster for common use cases?
+
+**VAM**:
+Without installing anything only autoload/vam.vim should be loaded which is about 630 lines
+
+**NeoBundle**:
+plugin/neobundle.vim: 24 lines
+autoload/neobundle.vim: 306 lines (contains the NeoBundle command, which is using ParseBundle)
+autoload/parser.vim: 350 lines which is using config
+autoload/neobundle/config.vim: 573 lines
+(stopping here)
+
+VAM has less LOC's (which might not be representatitve)
