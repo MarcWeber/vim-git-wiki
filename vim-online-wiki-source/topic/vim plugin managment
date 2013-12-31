@@ -1,5 +1,7 @@
 = plugin management =
 
+**dev topic: vipi**: [[topic/vipi]].
+
 **Traditionally** plugins were mantained **manually** by **extracting files into
 $HOME/.vim**. Wrong about this approach is that its hard to maintain because its
 you having to keep track about which files belong to each plugin.

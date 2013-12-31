@@ -1,0 +1,19 @@
+== vipi ==
+draft for creating a vi plugin index or such. Name has been suggested by Shougo.
+
+Features it should have:
+
+* be simple
+
+* low maintainance (make people maintain their own stuff, only provide the
+  infrastructure)
+
+* allow associating mirrors (eg vim-scripts.org, another example is UltiSnips,
+  github is only a mirror)
+
+* allow assigning unique simple names to plugins like VAM-kr did.
+
+* associate vim.sf.net information with github/bitbucket/.. sources
+  (ZyX did most of this work already)
+
+* think about a code search / view feature
