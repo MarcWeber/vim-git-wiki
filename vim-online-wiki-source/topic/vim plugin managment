@@ -80,6 +80,18 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package 
 
 Also see [[topic/neobundle-vs-vam-merge]].
 
+== viml vs other
+Other means something like python pip, ruby gems and the like.
+What's the main difference?
+
+FEATURES
+bootstrapping:: bootstrapping from .vimrc easily possible. Eg you patch the pool in .vimrc, you copy you'r .vimrc and you're done
+reusing existing package managers::
+
+MATRIX
+viml:: bootstrapping
+other:: reusing existing package managers
+
 == Example .vimrc setups ==
 
 **Pathogen**:
