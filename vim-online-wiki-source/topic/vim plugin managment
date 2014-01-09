@@ -284,9 +284,11 @@ are gentoo portage, nix and more. Here its important that tools can be written w
 This is a short list about plugins and kind of dependencies they have so that
 we can think about how to support this in the sanest way for vim-pi.
 
+
 FEATURES
-requires-gcc:
-info-needed:
+requires-gcc:: gcc compiler required (this is not accurate, what about win vs linux, posix etc?)
+info-needed:: people knowing these plugins should add features and finish this description
+
 
 MATRIX
 vim-addon-async:: requires-gcc
