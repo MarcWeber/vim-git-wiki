@@ -5,8 +5,7 @@ Features it should have:
 
 * be simple
 
-* low maintainance (make people maintain their own stuff, only provide the
-  infrastructure)
+* low maintainance (make people maintain their own stuff, only provide the infrastructure)
 
 * allow associating mirrors (eg vim-scripts.org, another example is UltiSnips,
   github is only a mirror)
