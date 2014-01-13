@@ -1,0 +1,42 @@
+== this is incomplete
+
+When starting using Vim you'll have a hard time finding out which is the best way:
+* use keyboard
+* use mouse
+
+And the answer is not easy always.
+
+Thus let's show some commonly used technics to be most productive with mouse
+
+== resizing windows
+{{{c-w 20 | or c-w 40 _ }}} can be used. Alternative: [[https://github.com/MarcWeber/vim-addon-other/blob/master/plugin/vim-addon-other.vim|vim-addon-other]]
+
+Important pieces of code to look for:
+{{{
+  " faster navigation in windows:
+  for i in ["i","j","k","l","q","h"]
+    exec 'noremap <m-s-'.i.'> <c-w>'.i
+  endfor
+
+  " fast resizing of windows:
+  noremap <m-w> :call vim_addon_other#SetWindowSize("h")<cr>
+  " m-s-w could make trouble ..
+  noremap <m-s-w> :call vim_addon_other#SetWindowSize("w")<cr>
+
+  " make it work in Vim
+  for i in split("abdgimnpqrstuxyzABDGHIJKLMNPQRSTUXYZ0123456789",'.\zs')
+    exec 'map <esc>'.i.' <m-'.i.'>'
+  endfor
+
+}}}
+Details see that repository, copy paste what you like.
+
+
+== jumping to locations
+{{{:h motion}}} is important to read. Tricks like {{{/s l}}} to match "Tricks
+like" is fastset often. ttoc like plugins can help jumping to function
+definitions or finding words etc etc.
+
+
+== TODO
+add more ideas how to replace mouse with more effective tools
