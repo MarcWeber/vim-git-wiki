@@ -57,7 +57,7 @@ get-bazaar:: install from svn
 get-vim.sf.net:: install from vim.sf.net
 bisect:: bisect problems by dividing the set of plugins to be activated
 ships-with-vim:: Does the Vim distribution contain it?
-synchronous update install::
+asynchronous update install::
 ?:: don't know it well enough, help fill in information
 supports unite:: How tight the integration is have a look at the plugin's documentation
 revision lock:: revision lock can be emulated by putting your .vim into a repository (hg/git/..) using almost any plugin manager (?)
@@ -76,7 +76,7 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package 
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
 [[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, updating plugins, dependencies in packages description, install progress bar
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
-[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, synchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
+[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, asynchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
 
 Also see [[topic/neobundle-vs-vam-merge]].
 
