@@ -1,0 +1,17 @@
+= how to get help about Vim
+* {{{:help}}} ({{{:h}}}) use vim's builtin help
+* try google
+* [[topic/vim-irc-on-freenode]]
+* [[http://www.vim.org/community.php|mailinglist]]
+* [[http://vim.sf.net|official vim website]]
+* [[topic/vim-related-websites]]
+
+
+= learning Vim tutorial (random order)
+* Watch Derek Wyatt's [[http://www.derekwyatt.org/vim/vim-tutorial-videos/|awesome videos]]!
+* Learn how to use the [[tips/using-vims-help]] command
+* [[http://vim.wikia.com/wiki/Category:Getting_started]]
+* [[http://vim.wikia.com/wiki/Vim_documentation]]
+* [[http://vimcast.org]]
+* [[http://derekwyatt.org/vim/tutorials/novice/#Welcome]]
+* [[http://learnvimscriptthehardway.stevelosh.com/]]
