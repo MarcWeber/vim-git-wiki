@@ -47,6 +47,7 @@ the past. Some could be fixed easily, others are much harder
   parts
 * completion does not allow querying extended information lazily
 * Vim should have a mode "try to guess indentation settings"
+  [[https://github.com/ciaranm/detectindent/network]]
 * Vim being backward compatible just sucks. I don't want to "touch ~/.vimrc"
   and set nocompatible over and over again. Who the hell is still depending on
   that behaviour? Having {{{:e *<tab>}}} completion is more important than being
