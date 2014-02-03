@@ -21,6 +21,9 @@ Of course there are alternatives:
 * online editable wiki [[topic/vimwiki-vs-mediawiki]]
 * ..
 
+If you think a different solution would serve the community much more, tell by
+[[https://github.com/MarcWeber/vim-git-wiki/issues/1||commenting]]
+
 == Why Marc Weber initially didn't choose an alternative solution
 Beacuse 
 * html files cannot be hacked 

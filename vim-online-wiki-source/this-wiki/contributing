@@ -6,7 +6,8 @@ There are two main repositories: One at the web server, on at github.
 Both are merged regularly so that it should not matter to you contribute.
 
 Of course all "github" realted features may be used:
-[[https://bitbucket.org/vimcommunity/vim-git-wiki/issues|bug tracker]]
+[[http://github.com/MarcWeber/vim-git-wiki/issues|bug tracker]]
+[[https://github.com/MarcWeber/vim-git-wiki/issues|bug tracker (github issues)]]
 
 == checking broken links ==
 See [[this-wiki/checking-broken-links]]
