@@ -1,0 +1,5 @@
+== unite plugin
+[[https://github.com/Shougo/unite.vim|unite]]
+
+This plugin tries to "unify" many different features so that you don't have to
+remember many ways to access those.

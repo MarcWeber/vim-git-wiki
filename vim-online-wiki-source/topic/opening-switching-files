@@ -54,5 +54,13 @@ noremap \go :exec 'e '. fnameescape(tlib#input#List('s','select file', split(Fas
 
 also [[topic/tags]] like features can be used.
 
-== more links ==
-[[https://github.com/Shougo/unite.vim|unite]]
+== most recently used files
+Opening files you used recently fast:
+* tmru
+* github.com/MarcWeber/vim-addon-mru
+  (Probbaly there are more implementations)
+* ...
+(Does unite have such, too?)
+
+== related links ==
+[[plugins/unite]]
