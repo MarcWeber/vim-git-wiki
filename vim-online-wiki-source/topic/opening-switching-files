@@ -52,7 +52,9 @@ endfun
 noremap \go :exec 'e '. fnameescape(tlib#input#List('s','select file', split(FastGlob(input('glob pattern, curr dir:','**/*')),"\n") ))<cr>
 }}}
 
-also [[topic/tags]] like features can be used.
+== additional tools:
+* [[topic/tags]] like features can be used.
+* {{{:grep ..}}} ..
 
 == most recently used files
 Opening files you used recently fast:
