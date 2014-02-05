@@ -6,5 +6,20 @@
 On www.vim.org there is a viml only java parser. But AFAIK it is no longer
 developped. It may work well for simple Java projects.
 
-However for browsing proper IDES such as IDEA, Netbeans, Eclipse can be helpful, too.
-They even implement decompiling .jars on the fly and similar features
+Most IDES (Netbeans, Eclipse, IDEA) implement Vim like modes today.
+In the Eclipse case you have to pay some $ (viplugin).
+
+IDES usually also implement
+* fast completion
+* on the fly error checking/compilation
+* indexing (jump to code), thus browsing might be easier
+* class hirarchy views
+* debugging
+...
+
+Eg Eclipse implements "create method from usage" quickfix like stuff which
+might be very helpful.
+
+As alternative there is a headless Eclipse implementation which can be used to
+provide some features for Vim even refactorings etc. Its called eclim. However
+naturally you'll have some small overhead.
