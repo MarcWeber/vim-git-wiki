@@ -23,3 +23,7 @@ might be very helpful.
 As alternative there is a headless Eclipse implementation which can be used to
 provide some features for Vim even refactorings etc. Its called eclim. However
 naturally you'll have some small overhead.
+
+
+Thus the best option could be start both and use whatever app is best suited
+for your current task.

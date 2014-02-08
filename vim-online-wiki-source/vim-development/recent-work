@@ -46,6 +46,26 @@ into Vim then this patch may be obsolete.
 I don't know much about it. Its used by
 [[https://github.com/MarcWeber/SmartTag/blob/master/doc/SmartTag.txt|SmartTag]]
 
+
+**text objects**:
+Don't know about the status, just adding them for completness:
+{{{
+    (mail by Christian Wellenbrock to vim_use)
+    You are absolutely right. Here are two related discussions over at vim_dev.
+
+    [1] Patch to utilize undefined text-objects
+    [2] patch for block textobj search
+
+    We're also having a small discussion about these patches over at /r/vim. [3]
+
+    One major difference between our approaches is that I treat separators differently from quotes, as illustrated in the `da,` exampl
+    If I'm not mistaken that would not be possible with these patches.
+
+    [1] https://groups.google.com/forum/#!topic/vim_dev/pZxLAAXxk0M
+    [2] https://groups.google.com/forum/#!topic/vim_dev/I9sKIJh-uT4
+    [3] http://redd.it/1x7pfr
+}}}
+
 == finished patches / why haven't they been merged ?
 [[http://pyclewn.sourceforge.net/|pyclewn]] debugger integration into Vim?
 

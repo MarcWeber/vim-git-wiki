@@ -67,7 +67,7 @@ vundle-compatibility::
 MATRIX
 VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility
 Pathogen:: rtp, rtp-after
-Vundle:: rtp, rtp-after, get-git, install progress bar
+Vundle:: rtp, rtp-after, get-git, install progress bar, activate plugins at runtime
 GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package description, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
