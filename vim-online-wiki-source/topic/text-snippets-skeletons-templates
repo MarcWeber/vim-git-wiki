@@ -22,7 +22,7 @@ FEATURES
 manual-reload:: you have to reload snippet files
 automatic-reload:: Its enough to write a snippet file, it'll be reloaded automatically
 runtimepath-support:: Pick snippets by looking at &runtimepath
-space-abstraction:: Some projects require for(a; b; c) others require for ( a; b; c; )
+space-abstraction:: There is a way to configure whether arguments eg in for(a; b; c) get prefixed/suffixed by spaces
 can-read-snippets-files:: snipmate is very popular. Comprehensive snippet collection can be found at [[http://github.com/honza/vim-snippets|vim-snippets]]
 requires-python::
 nested placeholders::
