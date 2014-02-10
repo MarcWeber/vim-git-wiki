@@ -10,20 +10,41 @@ If you want to join just contact MarcWeber by mail or on irc.freenode (or ZyX).
 
 
 == github organrizations vs bitbucket
-FEATURES
-issue_or_bug_tracker::
-can_reply_by_mail_to_issues::
-git_support::
-mercurial_support::
-push_key_for_one_project:: Allows to assign a key with push access to individual repositories
-biggest_community:: Well - we all just think github is almost standard ..
 
-MATRIX
-bitbucket:: issue_or_bug_tracker, can_reply_by_mail_to_issues, git_support, mercurial_support
-github:: issue_or_bug_tracker, can_reply_by_mail_to_issues, git_support, push_key_for_one_project, biggest_community
+Most items contributed by Zyx (Thanks!):
+
+**both support:**
+* replying by mail
+* git repositories
+* issue trackers
+* ...
+
+
+**Bitbucket pros:**
+
+* Mercurial support.
+* Bug tracker with components, priorities, more statuses.
+* Bug tracker with advanced search.
+* Bug tracker with issues import.
+* Bug tracker with votes.
+* No space limit.
+* (not related to vim-pi) No limit on private repositories.
+* Better PR design decision: diff is shown right on the first page. It is more interesting then commit list, though diff and commit list would be better. When I give some remarks regarding the PR I usually give it regarding the code and not commit messages or number of commits.
+* Better main user page design decision: when I look at the user page I usually use it to navigate to user repository and do not want to see user activity.
+
+**Github pros:**
+
+* Diff views work faster.
+* Better mobile version.
+* No need to update PR from web interface when adding each new commit.
+* Though search is not as flexible, for usual cases it is much more convenient. (Still note that for some unusual cases it is simply impossible to perform what you want: e.g. after I labeled issues in powerline issue tracker I found myself wanting to find issues which have specific label present and other specific label not present.)
+* Issue tracker labels are more flexible.
+* Issue tracker has inline issues search (I mean what happens if you type a hash).
+* Some markdown features are missing in bitbucket.
+* Github issues tracker has per-issue TODO list. It also has a way to reference issues from other projects.
+* Reply by email works far better.
+* probably bigger community
+* Allows to assign a key with push access to individual repositories
 
 So which one is better?
 Is Vim using mercurial as strong reason (there are two git mirrors @ github)
-
-**push_key_for_one_project**:
-bitbucket has deploy keys
