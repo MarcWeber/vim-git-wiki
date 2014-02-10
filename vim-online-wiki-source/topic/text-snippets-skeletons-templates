@@ -73,7 +73,7 @@ you want)
   I don't know much about it - help fill in more information. This feature list is incomplete
 
 **lh-suite**:
-  [[https://code.google.com/p/lh-vim/wiki/muTemplate|lh-suite/mu-template]] is a forked version of mu-template. Also provides template like support. Snippets can surround a selection. Parameters can be injected in snippets. Snippets can import/call other snippets. Project settings (like the exact copyrights file-header) can be set before expanding a template. [[https://code.google.com/p/lh-vim/wiki/License#License_exception_for_generated_code|License compatible with code generation.]]
+  [[https://code.google.com/p/lh-vim/wiki/muTemplate|lh-suite/mu-template]] is a forked version of mu-template. Also provides template like support. Snippets can surround a selection. Parameters can be injected in snippets. Snippets can import/call other snippets. Snippets can react to settings (expression values), and react to user interactions. Project settings (like the exact copyrights file-header) can be set before expanding a template. [[https://code.google.com/p/lh-vim/wiki/License#License_exception_for_generated_code|License compatible with code generation.]]
 
 
 == snippet engine features by examples ==
