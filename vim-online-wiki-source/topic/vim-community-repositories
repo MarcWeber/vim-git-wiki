@@ -1,0 +1,29 @@
+= vim community repositories
+I and ZyX (and Shougo?) are maintaining [[http://bitbucket.org/vimcommunity]]
+The reason to have a "community" maintained orginization like thing is that
+individuals can go on holidays (or drop out) without affecting the overall
+community. Eg if an author of a github account vanishes (for whatever reason)
+it usually takes a long time to find out for, and tell people about new
+upstreams. Having many maintainers leads to better code and better service.
+
+If you want to join just contact MarcWeber by mail or on irc.freenode (or ZyX).
+
+
+== github organrizations vs bitbucket
+FEATURES
+issue_or_bug_tracker::
+can_reply_by_mail_to_issues::
+git_support::
+mercurial_support::
+push_key_for_one_project:: Allows to assign a key with push access to individual repositories
+biggest_community:: Well - we all just think github is almost standard ..
+
+MATRIX
+bitbucket:: issue_or_bug_tracker, can_reply_by_mail_to_issues, git_support, mercurial_support
+github:: issue_or_bug_tracker, can_reply_by_mail_to_issues, git_support, push_key_for_one_project, biggest_community
+
+So which one is better?
+Is Vim using mercurial as strong reason (there are two git mirrors @ github)
+
+**push_key_for_one_project**:
+bitbucket has deploy keys
