@@ -71,6 +71,10 @@ function edit_form($content, $email, $comment){
 	  return render_page($title, $content_str);
   }
 
+  function page_url($page) {
+	  return 'http://'.EDIT_DOMAIN.'/wiki/'.$page.'.html';
+  }
+
   function edit_page_url($path){
 	  return 'http://'.EDIT_DOMAIN.'/wiki/edit?path='.urlencode($path);
   }
@@ -225,6 +229,14 @@ function edit_form($content, $email, $comment){
 			echo render_page_cached($page->title(), $page->html_content());
 		  }
 	  } else  {
+                  foreach (explode("\n", file_get_contents('moved.txt')) as $line) {
+                    if ($line == '') continue;
+                    list($from, $to) = explode(" ", $line);
+                    if ($_GET['page'] == $from){
+                      redirect_permanently(page_url($to));
+                    }
+                  }
+
 		  // 404
 		  header("HTTP/1.0 404 Not Found");
 		  echo render_page('Page '.$_GET['page'].' missing, create it?',
