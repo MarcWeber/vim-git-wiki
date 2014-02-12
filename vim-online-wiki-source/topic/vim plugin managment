@@ -231,6 +231,13 @@ Now it might look that being able to install from git repositories only is a maj
 Its not because there is [[http://vim-scripts.org|vim-scripts.org]] mirroring
 [[http://www.vim.org|www.vim.org]] plugins in git repositories.
 
+Please note that vim-srcipts does **not disambiguate names**
+[[https://github.com/vim-scraper/vim-scraper/issues/65|related vim-scraper issue]]
+Test yourself:
+[[http://vim-scripts.org/vim/scripts.html||search]] for rpl (after the slash
+there is an input), then click on all 3 rpl plugins which get linked to the
+same github page! This is a bug.
+
 == plugin dependencies ==
 Right now VAM is the only plugin manager which introduces a addon-info.json
 file (which could be used by other tools) which allows to specify dependencies
