@@ -236,6 +236,10 @@ garbas/snipmate" which would have been the solution provided by VAM.
 
 I only did this one search - hoping that its representative. :/
 
+A second search {{{:Scry commenting}}} is missing
+github.com/MarcWeber/vim-addon-commenting which at least Marc Weber considers
+to be the most simple yet somewhat featureful solution.
+
 **Npackd**:
 Its a package manager for Windows which happens to contain some Vim plugins.
 Pathogen, VAM etc can be used to load the plugins.
