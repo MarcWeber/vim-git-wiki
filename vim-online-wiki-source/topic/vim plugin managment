@@ -214,6 +214,28 @@ GetLatestVimScripts.dat:
   " or run :GLVS
 }}}
 
+**vizardry**:
+Tries to be simple. A simple {{{:Scry snipmate}}} search illustrates its
+potential problems, the result is (2013-02-14):
+
+{{{
+    :Scry snipmate leads to:
+
+    0: msanders/snipmate.vim
+    (snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim. )
+
+    1: honza/vim-snippets
+    (vim-snipmate default snippets (Previously snipmate-snippets))
+
+    [.. some more omitted ..]
+}}}
+
+The point is: Upstream is garbas/snimpate (and you're very likely to miss that
+ending up asking on #vim for support) - and people will tell you "use
+garbas/snipmate" which would have been the solution provided by VAM.
+
+I only did this one search - hoping that its representative. :/
+
 **Npackd**:
 Its a package manager for Windows which happens to contain some Vim plugins.
 Pathogen, VAM etc can be used to load the plugins.
