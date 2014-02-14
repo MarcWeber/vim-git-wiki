@@ -2,14 +2,23 @@
 Creating a vimrc is the first step  [[topic/vimrc]].
 Writing ftplugin/*.vim files is the next (configure vim for some filetypes only).
 
+Such mapping can be helpful which opens the filetype specific file
+corresponding to whatever you're editing right now:
+{{{
+noremap \ft :exec 'e ~/.vim/after/ftplugin/'.&filetype.'_you.vim'<cr>
+}}}
+
 If you need more control you can try auto commands like this:
 
 {{{
 augroup YOUR_PROJECT
-  autocmd BufRead,BufNewFile PATH_TO_YOUR_PROJECT/**/*.c	set sw=2
+  au!
+  autocmd BufRead,BufNewFile PATH_TO_YOUR_PROJECT/\\42*/*.c	set sw=2
 augroup end
 }}}
 
-Tips:
-* [[tips/local-vimrc]]
-* [[tips/modeline]]
+**project local settings**:
+see [[tips/local-vimrc]]
+
+**per file**: 
+see [[tips/modeline]]

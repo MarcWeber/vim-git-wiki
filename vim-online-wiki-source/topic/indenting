@@ -15,6 +15,9 @@ treated as display setting. Use {{{sw}}} setting and {{{c-t}}}, {{{c-d}}} instea
   :set list  : displays spaces and tabs
 }}}
 
+**Where to set those options?**:
+See [[topic/configuring-vim]]
+
 == how to make vim reindent lines ? ==
 
 The {{{:h =}}} is the command which is commonly used for using the Vim's
@@ -27,5 +30,4 @@ V/ABC<cr>=  :select everything till ABC then reindent this block
 }}}
 
 
-See
-[[topic/configuring-vim]]
+
