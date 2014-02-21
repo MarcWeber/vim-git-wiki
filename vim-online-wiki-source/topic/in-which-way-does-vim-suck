@@ -53,6 +53,8 @@ the past. Some could be fixed easily, others are much harder
   that behaviour? Having {{{:e *<tab>}}} completion is more important than being
   compatible for ever!
 * pipes instead of temporary files (eg for :make like stuff)
+* .viml files should be allowed to have 1310 line endings on Windows
+  (See discussion [[https://github.com/gmarik/Vundle.vim/issues/6]])
 
 Yes - I agree on "Vim should be a text editor only" - but I also want it to be
 smart enough to let me do what I want. And at some point you hit a border.

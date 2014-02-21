@@ -78,6 +78,7 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package 
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
 [[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, asynchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
 [[http://www.vim.org/scripts/script.php?script_id=4818|vizardry]]:: rtp, rtp-after, ?
+[[https://github.com/airblade/voom||voom]]:: ?
 
 
 Also see [[topic/neobundle-vs-vam-merge]].
@@ -252,6 +253,10 @@ execute pathogen#infect($ALLUSERSPROFILE . '/Npackd/VimPlugins/{}')
 
 VAM will provide a xml source file for all plugins. Npackd support .bat files which
 can be used to git/mercurial/... on Windows in the future in some way.
+
+**voom**:
+depends on pathogen, its a simple shell script reading a text file running git
+clone
 
 
 == supporting git only - is it a problem ? vim-scripts.org

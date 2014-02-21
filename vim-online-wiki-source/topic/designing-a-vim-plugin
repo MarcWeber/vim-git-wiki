@@ -62,3 +62,10 @@ My personal recommendation is bind them all to different keys so that you always
 completing.
 [[https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt|vim-addon-completion]]
 has some helper functions
+
+== test suite?
+Example [[https://github.com/glts/vim-magnum|magnum]]
+
+== TODO
+.gitattributes -> force LF line endings (document this) - some git
+distributions use 1310 when checking out files Vim has trouble with
