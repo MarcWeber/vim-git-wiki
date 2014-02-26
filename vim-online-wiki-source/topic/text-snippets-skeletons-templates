@@ -40,7 +40,7 @@ MATRIX
 XPTemplate:: manual-reload, space-abstraction
 Sander's snipmate:: manual-reload, can-read-snippets-files, completion-menu
 snipmate:: automatic-reload, runtimepath-support, can-read-snippets-files, completion-menu, generated-snippets
-UltiSnips:: automatic-reload, requires-python, nested placeholders, regular-expression-as-trigger
+UltiSnips:: automatic-reload, requires-python, nested placeholders, regular-expression-as-trigger, can-read-snippets-files
 UltiSnipsF:: automatic-reload, runtimepath-support, can-read-snippets-files, requires-python, nested placeholders, completion-menu, regular-expression-as-trigger
 neo snippet:: automatic-reload, can-read-snippets-files, completion-menu, nested placeholders, regular-expression-as-trigger, snippet-header
 vim-template:: info-missing
@@ -65,6 +65,8 @@ you want)
   because everything Marc Weber cares about works
 
   UltiSnips will soon have a new release containing most of these changes
+
+  Update: SirVer has updated Ultisnips so that it can also read snipmate files.
 
 **neo snippet**:
   It uses marker to implement snippet features instead of snipMate and
