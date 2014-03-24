@@ -62,12 +62,14 @@ asynchronous update install::
 supports unite:: How tight the integration is have a look at the plugin's documentation
 revision lock:: revision lock can be emulated by putting your .vim into a repository (hg/git/..) using almost any plugin manager (?)
 vundle-compatibility::
+helptags-on-install:: This means :help is likely to do what you expect it to do without running helptags on each startup and without caring.
+manual-helptags:: Provides command to run :helptags conveniently
 
 
 MATRIX
-VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility
-Pathogen:: rtp, rtp-after
-Vundle:: rtp, rtp-after, get-git, install progress bar, activate plugins at runtime
+VAM:: rtp, rtp-after, get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, activate plugins at runtime, plugin name completion, bootstrap from .vimrc, updating plugins, dependencies in package description, bisect, vundle-compatibility, helptags-on-install
+Pathogen:: rtp, rtp-after, manual-helptags
+Vundle:: rtp, rtp-after, get-git, install progress bar, activate plugins at runtime, manual-helptags, helptags-on-install
 GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package description, ships-with-vim
 [[https://bitbucket.org/sharat87/vimpire|Vimpire]]:: get-hg ?
 [[http://github.com/c9s/Vimana|Vimana]]:: ?
@@ -76,7 +78,7 @@ GetLatestVimScripts:: get-vim.sf.net, updating plugins, dependencies in package 
 [[http://www.vim.org/scripts/script.php?script_id=3135|Vim Srcipt Updater]]:: ?
 [[https://code.google.com/p/windows-package-manager|Npackd]]:: get-git, get-hg, get-svn, get-bazaar, get-vim.sf.net, updating plugins, dependencies in packages description, install progress bar
 [[https://www.relishapp.com/kana/vim-flavor/docs/philosophy||vim-flavor]]:: ?
-[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, asynchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar
+[[https://github.com/Shougo/neobundle.vim|NeoBundle]]:: ?, rtp, activate plugins at runtime, dependencies in vimrc, asynchronous update install, supports unite, revision lock, get-git, get-svn, get-hg, vundle-compatibility, rtp-after, updating plugins, get-bazaar, manual-helptags
 [[http://www.vim.org/scripts/script.php?script_id=4818|vizardry]]:: rtp, rtp-after, ?
 [[https://github.com/airblade/voom||voom]]:: ?
 
