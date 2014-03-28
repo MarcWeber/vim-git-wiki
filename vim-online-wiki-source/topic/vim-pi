@@ -1,0 +1,8 @@
+== vim-pi
+vim plugin index. Meant to be a source/pool of vim plugins usable by everyone.
+VAM and NeoBundle can use it right now.
+
+[[https://bitbucket.org/vimcommunity/vim-pi]]
+
+Important goals
+[[https://bitbucket.org/vimcommunity/vim-pi/issue/91/common-interface-for-most-plugin-managers]]

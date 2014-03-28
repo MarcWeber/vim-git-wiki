@@ -1,0 +1,60 @@
+= addon-info.json
+VAM introduced addon-info.json to document important properties 
+of Vim plugins such as:
+
+* author
+* upstream
+* dependencies
+* additional custom meta data (be open to everyone)
+
+JSON format has been chosen because
+
+* Vim can read it (almost [1]) natively by using eval (even though its evil, but
+  you trust a plugin anyway)
+* its likely that other tools can read JSON, too
+* its very simple for humans to edit, too
+* its widely known (due to popularity by JavaScript)
+
+
+== most important keys
+
+**runtimepath**:
+
+Some repositories have a "vim/" subdirectory which needs to be used intsead of root.
+This key indicates this. Examples are sparkup,merlin,vimwiki,vimbufsync.
+
+**depedencies**: (VAM only?) See example below
+
+== VAM's usage ==
+
+{{{
+  {
+    'depedencies': {
+    'name': { opts-as-in-addon-info.json }
+    }
+  }
+}}}
+
+
+opts are usually empty, but you could use the "url" key to tell VAM where to
+download the dependency. Usually the download location is derived from [[topic/vim-pi]] pool.
+
+VAM's documentation lists more keys, which can be used, but they don't have
+very important meaning. We could think about supporting keys
+
+* forcing versions (eg git hash of a dependency)
+* version constraints (like cabal which is the haskell package manager)
+* ...
+
+All keys are described in VAM's documentation
+
+== future
+Some proposals exist to declare versioned dependendencies, reciepes about how to unpack sources etc
+
+ideas:
+[[https://bitbucket.org/vimcommunity/vim-pi/issue/80/create-some-kind-of-api-which-makes-vim-pi|create-some-kind-of-api-which-makes-vim-pi| vim-pi issue]]
+[[http://titanpad.com/AcUfZQjXUz]]
+
+== historical notes
+VAM still contains some legacy code to support the older .json file names which
+contained the plugin name.
