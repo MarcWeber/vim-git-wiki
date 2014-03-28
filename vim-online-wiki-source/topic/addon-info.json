@@ -51,9 +51,11 @@ All keys are described in VAM's documentation
 == future
 Some proposals exist to declare versioned dependendencies, reciepes about how to unpack sources etc
 
-ideas:
-[[https://bitbucket.org/vimcommunity/vim-pi/issue/80/create-some-kind-of-api-which-makes-vim-pi|create-some-kind-of-api-which-makes-vim-pi| vim-pi issue]]
-[[http://titanpad.com/AcUfZQjXUz]]
+**ideas:**
+
+[[https://bitbucket.org/vimcommunity/vim-pi/issue/80/create-some-kind-of-api-which-makes-vim-pi|vim-pi issue]]
+
+[[http://titanpad.com/AcUfZQjXUz|initial thoughts by Marc Weber and Garbas, titanpad]]
 
 == historical notes
 VAM still contains some legacy code to support the older .json file names which
