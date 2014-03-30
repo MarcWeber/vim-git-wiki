@@ -1,4 +1,4 @@
-= addon-info.json
+= addon-info.json (official minimal documentation)
 VAM introduced addon-info.json to document important properties 
 of Vim plugins such as:
 
@@ -60,3 +60,7 @@ Some proposals exist to declare versioned dependendencies, reciepes about how to
 == historical notes
 VAM still contains some legacy code to support the older .json file names which
 contained the plugin name.
+
+== notes about this page:
+keep the introduction short. Add detailed information into additional sections
+later on this page

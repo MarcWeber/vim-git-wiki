@@ -10,6 +10,12 @@ When does a new release happen?
 However code.google.com is lacking some social features which is why we want to
 provide official bitbucket and github mirrors
 
+Important fork [[topic/neovim]].
+
+== patch workflow ==
+Bram asked "Christian Brabandt to write down how he creates and maintains patches".
+This is the result: [[http://www.vim.org/develop.php]]
+
 == official bug tracker (?):
 [[https://code.google.com/p/vim/issues/list|issues @ vim @ code.google.com]]
 I don't think there is a need to change that

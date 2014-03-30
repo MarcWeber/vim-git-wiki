@@ -6,6 +6,11 @@ a good idea :)
 == Have a look at the main repository and its mirrors
 See [[vim-development/development]]
 
+
+== Tarruda
+Forked, see neovim [[topic/neovim]].
+Future will tell wether a merge will happen in the future.
+
 == Marc Weber wants
 * improve async support
 * make scripting languages like python interruptable
