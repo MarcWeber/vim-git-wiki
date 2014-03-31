@@ -63,6 +63,12 @@ completing.
 [[https://github.com/MarcWeber/vim-addon-completion/blob/master/doc/vim-addon-completion.txt|vim-addon-completion]]
 has some helper functions
 
+== documenting source
+[[topic/vimdoc]]
+Keep in mind that having too much documentation can take more time than it adds
+value. Thus think twice about what and how to document your code. Good code
+doesn't require much documentation.
+
 == test suite?
 Example [[https://github.com/glts/vim-magnum|magnum]]
 
