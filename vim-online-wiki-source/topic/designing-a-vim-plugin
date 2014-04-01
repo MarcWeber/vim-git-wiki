@@ -64,7 +64,8 @@ completing.
 has some helper functions
 
 == documenting source
-[[topic/vimdoc]]
+[[topic/vimdoc]] generates documentation if you don't want to write help files entirely by hand.
+
 Keep in mind that having too much documentation can take more time than it adds
 value. Thus think twice about what and how to document your code. Good code
 doesn't require much documentation.
