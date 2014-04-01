@@ -1,3 +1,4 @@
 = vimdoc
 See [[https://github.com/google/vimdoc]]
-vimdoc generates documantion form .vim files
+
+vimdoc generates documentation from .vim files and other metadata, allowing you to write documentation for your functions, commands, etc. as inline comments and automatically produce well-formatted vim help files.
