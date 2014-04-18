@@ -119,26 +119,33 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 
 **VAM**:
-vimrc:
-{{{
-  " recommended code checking out initial vim-addon-manager omitted here
-  
-  " plugin-name1 will be looked up from plugin pool
-  " vim-addon-manager-known-repositories, however you can create that
-  " plugin-name1 directory manually and put there any plugin code you like
-  call vam#ActivateAddons(['plugin-name1', 'github:name/repo']
-                        \ , {'auto_install': 1})
 
-  " eg when opening a .c file activate plugin-for-c-development lazily
-  let ft_addons = {
-      \ '^\%(c\|cpp\)$': [ 'plugin-for-c-development' ],
-      \ 'javascript$': [ 'plugin-for-javascript' ]
-    \ }
-  au BufRead,BufNew * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) 
-                  \ | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) 
-                  \ | endfor
+vim-plugins.file (this could be implemented by all plugin managers):
+{{{
+# By topic, see tag_regex below
+{'name': 'plugin_c', 'tag': 'c-dev'}
+{'name': 'plugin_ruby', 'tag': 'ruby-dev'}
+
+# These will be loaded always
+"snipmate"
+"github:user/repo"
+{'name': 'foo', 'type':'git', 'url': 'github:....', 'at-git-hash': '...'}
+
+# This will be loaded when you open .php files:
+{'name': 'script-php', 'ft_regex':'^\.php$'}
+
+# Additional keys such as "at-git-hash: CFE94A" could be implemented trivially
 }}}
-runtime:
+
+.vimrc:
+{{{
+  " Code omitted checking out VAM and setting runtimepath. See VAM's Readme
+  call vam#Scripts("vim-plugins.file", {'tag_regex': 'c-dev\|ruby-dev'})
+  " or
+  VamActivate plugin-name1 plugin-name2
+}}}
+
+at runtime (activate plugins lazily when you need them):
 {{{
   " most useful commands supporting tab completion:
 
