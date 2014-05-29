@@ -1,5 +1,9 @@
 == unfinished work - how to fix Vim - which order - next steps? ==
 
+Important fork [[topic/neovim]].
+
+=== older items:
+
 * Which platforms to support?
   Windows terminal, Windows GUI, unix like terminal,
   Operating System / Targets:
