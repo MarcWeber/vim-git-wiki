@@ -2,6 +2,7 @@
 Only listing editors which have kind of Vi Keybindings
 
 == NeoVim
+[[http://neovim.org]]
 Re-factoring of Vim code with async, GUI/vim-server segregation, better vim dev cycle, and replacement of VimL with Lua for fast scripting in more broadly used language.
 
 == Kakoune 
